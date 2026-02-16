@@ -1,0 +1,238 @@
+\documentclass[11pt]{article}
+
+\oddsidemargin=17pt \evensidemargin=17pt
+\headheight=9pt     \topmargin=26pt
+\textheight=564pt   \textwidth=433.8pt
+
+\usepackage{amsmath, amsthm, amssymb,graphicx,color,enumitem}%,mathrsfs}%,hyperref
+\setlist[enumerate]{parsep=0pt plus 4pt,topsep=3pt plus 4pt}
+\setlist[itemize]{parsep=0pt plus 4pt,topsep=3pt plus 4pt,itemsep=.5ex}
+
+\leftmargini=5.5ex
+\leftmarginii=3.5ex
+
+%for \marginpar to fit optimally
+%hoffset=-1.02in
+\setlength\marginparwidth{2.2in}
+\setlength\marginparsep{1mm}
+\newcommand\red[1]{\marginpar{\linespread{.85}\sf%
+\vspace{-1.4ex}\footnotesize{\color{red}#1}}}
+%newcommand\score[1]{\marginpar{\colorbox{yellow}{#1/3}}\hspace{-1ex}}
+\newcommand\score[1]{\marginpar{\vspace{-2ex}\color{blue}{#1/3}}\hspace{-1ex}}
+\newcommand\extra[1]{\marginpar{\color{blue}{#1/1}}\hspace{-1ex}}
+\newcommand\total[2]{\marginpar{\colorbox{yellow}{\huge #1/#2}}}
+\newcommand\collab[1]{\marginpar{\vspace{-11ex}\colorbox{yellow}{#1/3}}\hspace{-1ex}}
+\newcommand\magenta[1]{\colorbox{magenta}{\!\!#1\!\!}}
+\newcommand\yellow[1]{\colorbox{yellow}{\!\!#1\!\!}}
+\newcommand\green[1]{\colorbox{green}{\!\!#1\!\!}}
+\newcommand\cyan[1]{\colorbox{cyan}{\!\!#1\!\!}}
+\newcommand\rmagenta[2][\vspace{0ex}]{\red{#1\magenta{\phantom{:}}\,: #2}}
+\newcommand\ryellow[2][\vspace{0ex}]{\red{#1\yellow{\phantom{:}}\,: #2}}
+\newcommand\rgreen[2][\vspace{0ex}]{\red{#1\green{\phantom{:}}\,: #2}}
+\newcommand\rcyan[2][\vspace{0ex}]{\red{#1\cyan{\phantom{:}}\,: #2}}
+
+%For separated lists with consecutive numbering
+\newcounter{separated}
+
+\newcommand{\excise}[1]{}
+\newcommand{\comment}[1]{{$\star$\sf\textbf{#1}$\star$}}
+\newcommand{\exnumber}[1]{\noindent\textbf{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                 %
+% TO ENABLE GRADING, DO NOT ALTER ABOVE THIS LINE %
+%                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%new math symbols taking no arguments
+\newcommand\0{\mathbf{0}}
+\newcommand\CC{\mathbb{C}}
+\newcommand\FF{\mathbb{F}}
+\newcommand\NN{\mathbb{N}}
+\newcommand\QQ{\mathbb{Q}}
+\newcommand\RR{\mathbb{R}}
+\newcommand\ZZ{\mathbb{Z}}
+\newcommand\bb{\mathbf{b}}
+\newcommand\kk{\Bbbk}
+\newcommand\mm{\mathfrak{m}}
+\newcommand\xx{\mathbf{x}}
+\newcommand\yy{\mathbf{y}}
+\newcommand\GL{\mathit{GL}}
+\newcommand\pset{\mathcal{P}}
+\newcommand\into{\hookrightarrow}
+\newcommand\nsub{\trianglelefteq}
+\newcommand\onto{\twoheadrightarrow}
+\newcommand\minus{\smallsetminus}
+\newcommand\goesto{\rightsquigarrow}
+
+%redefined math symbols taking no arguments
+\newcommand\<{\langle}
+\renewcommand\>{\rangle}
+\renewcommand\iff{\Leftrightarrow}
+\renewcommand\phi{\varphi}
+\renewcommand\implies{\Rightarrow}
+
+%new math symbols taking arguments
+\newcommand\ol[1]{{\overline{#1}}}
+	
+%redefined math symbols taking arguments
+\renewcommand\mod[1]{\ (\mathrm{mod}\ #1)}
+
+%roman font math operators
+\DeclareMathOperator\im{im}
+
+%for easy 2 x 2 matrices
+\newcommand\twobytwo[1]{\left[\begin{array}{@{}cc@{}}#1\end{array}\right]}
+
+%for easy column vectors of size 2
+\newcommand\tworow[1]{\left[\begin{array}{@{}c@{}}#1\end{array}\right]}
+	
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{\mbox{}\\[-8ex]Functions Solutions\normalsize
+	\\[-2.5ex]}
+\author{Solutions by: Raindrops\_drop \\[1ex]
+	\\[-1ex]}
+\date{February 13, 2026} 
+\maketitle
+
+\vspace{-3ex}%
+\noindent
+
+\exnumber{Exercises}
+
+\exnumber{1.} Let $f: A \to B$. Let $A_0 \subset A$ and $B_0 \subset B$.
+\begin{enumerate}[label=(\alph*)]
+	\item Show that $A_0 \subset f^{-1}(f(A_0))$ and that equality holds if $f$ is 
+	injective.
+	\begin{proof}
+		Note that if $A_0$ is empty, then $A_0 \subseteq f^{-1}(f(A_0))$ trivially.
+		Thus we assume that $A_0$ is non-empty. Let $x \in A_0$. Then, $f(x) \in f(A_0)$
+		by definition. Since $f(x) \in f(A_0)$, we have that $x \in f^{-1}(f(A_0))$.
+		Therefore, $A_0 \subseteq f^{-1}(f(A_0))$.
+		
+		Let $x \in f^{-1}(f(A_0))$. By definition, $f(x) \in f(A_0)$. In particular, this
+		implies that $f(x) = b$ such that $b \in f(A_0)$. Since it may be that $f$ is 
+		not injective, we cannot conclude that $x \in A_0$. This is because there
+		may exist some $y \in A_0$ such that $f(y) = f(x) \in f(A_0)$ and $y \neq x$.
+		
+		If, however, $f$ is injective, then it must be that $y = x$ since $f(y) = f(x)$.
+		In particular, this would imply that $x \in A_0$ must be true since $f(x) \in f(A_0)$.
+		Therefore, we've shown that equality holds if $f$ is injective.
+	\end{proof}
+	 
+	\item Show that $f(f^{-1}(B_0)) \subset B_0$ and that equality holds if $f$ is 
+	surjective. 
+	\begin{proof}
+		If $f(f^{-1}(B_0))$ is empty, then it is trivially a subset of $B_0$. Thus we 
+		will assume that $f(f^{-1}B_0)$ is non-empty. Let $x \in f(f^{-1} B_0)$.
+		By definition, $x = f(a)$ for at least one $a \in f^{-1}(B_0)$. Since 
+		$a \in f^{-1}(B_0)$, it must be that $f(a) \in B_0$. Therefore, $x \in B_0$
+		and we can conclude that $f(f^{-1} B_0) \subseteq B_0$.
+		
+		Let $x \in B_0$. Since $f$ is not necessarily surjective, it might be that 
+		there exists no $a \in A$ such that $f(a) = x$. As such, $f^{-1}(x) = \emptyset$,
+		and therefore, $f^{-1}(x) \notin f^{-1}(B_0)$. Furthermore, since 
+		$f^{-1}(x) \notin f^{-1}(B_0)$, it is also true that $x \notin f(f^{-1}(B_0))$.
+		
+		Thus, assume that $f$ is surjective. Then, there exists some $a \in A$ such that
+		$f(a) = x$. In particular, since $x \in B_0$, $a \in f^{-1}(B_0)$. Furthermore,
+		we conclude that $f(f^{-1}(B_0))$ contains $x$. Therefore, 
+		$B_0 \subseteq f(f^{-1}(B_0))$ and thus equality holds if $f$ is surjective.
+	\end{proof}
+\end{enumerate}
+
+\pagebreak
+\exnumber{2.} Let $f: A \to B$ and let $A_i \subset A$ and $B_i \subset B$ for $i = 0$
+and $i = 1$. Show that $f^{-1}$ preserves inclusions, unions, intersections, and differences
+of sets:
+\begin{enumerate}[label=(\alph*)]
+	\item $B_0 \subset B_1 \implies f^{-1}(B_0) \subset f^{-1}(B_1)$.
+	\begin{proof}
+		Let $B_0 \subseteq B_1$. If $B_0$ is the empty set, then note that $f^{-1}(B_0)$
+		is also the empty set, since $f$ is a rule of assignment, and as such every element
+		of $A$ must be mapped to at least one element in $B$. Therefore, it is trivial to note
+		that $f^{-1}(B_0) \subseteq f^{-1}(B_1)$. We arrive at the same conclusion if 
+		$B_1$ is the empty set. Thus, we will assume that $B_0$ and $B_1$ are non-empty.
+		
+		If $f^{-1}(B_0)$ is empty, then it is trivial to note that $f^{-1}(B_0) \subseteq 
+		f^{-1}(B_1)$. Similarly if $f^{-1}(B_1)$ is empty. Thus assume that 
+		$f^{-1}(B_0)$ is non-empty. Let $x \in f^{-1}(B_0)$ and note that this implies 
+		that $f(x) \in B_0$ by definition. Since $B_0 \subseteq B_1$, we have that 
+		$f(x) \in B_1$. In particular, this implies that $x \in f^{-1}(B_1)$ by definition.
+		Therefore, we conclude that $f^{-1}(B_0) \subseteq f^{-1}(B_1)$.
+	\end{proof}
+	\item $f^{-1}(B_0 \cup B_1) = f^{-1}(B_0) \cup f^{-1}(B_1)$.
+	\begin{proof}
+		
+	\end{proof}
+	\item $f^{-1}(B_0 \cap B_1) = f^{-1}(B_0) \cap f^{-1}(B_1)$.
+	\item $f^{-1}(B_0 - B_1) = f^{-1}(B_0) - f^{-1}(B_1)$.
+\end{enumerate}
+Show that $f$ preserves inclusions and unions only:
+\begin{enumerate}
+	\item[(e)] $A_0 \subset A_1 \implies f(A_0) \subset f(A_1)$.
+	\item[(f)] $f(A_0 \cup A_1) = f(A_0) \cup f(A_1)$.
+	\item[(g)] $f(A_0 \cap A_1) \subset f(A_0) \cap f(A_1)$; show that equality holds
+	if $f$ is injective.
+	\item[(h)] $f(A_0 - A_1) \supset f(A_0) - f(A_1)$; show that equality holds if 
+	$f$ is injective.
+\end{enumerate}
+
+\exnumber{3.} Show that (b), (c), (f), and (g) of Exercise 2 hold for arbitrary unions 
+and intersections.
+
+\exnumber{4.} Let $f: A \to B$ and $g: B \to C$.
+\begin{enumerate}[label=(\alph*)]
+	\item If $C_0 \subset C$, show that $(g \circ f)^{-1}(C_0) = f^{-1}(g^{-1}(C_0))$.
+	\item If $f$ and $g$ are injective, show that $g \circ f$ is injective.
+	\item If $g \circ f$ is injective, what can you say about the injectivity of 
+	$f$ and $g$?
+	\item If $f$ and $g$ are surjective, show that $g \circ f$ is surjective.
+	\item If $g \circ f$ is surjective, what can you say about the surjectivity of 
+	$f$ and $g$?
+	\item Summarize your answers to (b)-(c) in the form of a theorem.
+\end{enumerate}
+
+\exnumber{5.} In general, let us denote the \textbf{\textit{identity function}} for a 
+set $C$ by $i_C$. That is, define $i_C: C \to C$ to be the function given by the rule 
+$i_C(x) = x$ for all $x \in C$. Given $f: A \to B$, we say that $h: B \to A$ is a 
+\textbf{\textit{right inverse}} for $f$ if $f \circ h = i_B$.
+\begin{enumerate}[label=(\alph*)]
+	\item Show that if $f$ has a left inverse, $f$ is injective; and if $f$ has a right
+	inverse, $f$ is surjective.
+	\item Give an example of a function that has a left inverse but no right inverse.
+	\item Give an example of a function that has a right inverse but no left inverse.
+	\item Can a function have more than one left inverse? More than one right inverse?
+	\item Show that if $f$ has both a left inverse $g$ and a right inverse $h$, then
+	$f$ is bijective and $g = h = f^{1}$.
+\end{enumerate}
+
+\exnumber{6.} Let $f: \RR \to \RR$ be the function $f(x) = x^3 - x$. By restricting the domain
+and range of $f$ appropriately, obtain from $f$ a bijective function $g$. Draw the graphs 
+of $g$ and $g^{-1}$. (There are several possible choices for $g$.)
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Various Emacs customizations:
+%%% Local Variables:
+%%% mode: latex
+%%% mode: LaTeX-math
+%%% mode: reftex
+%%% mode: Tex-PDF
+%%% fill-column: 70
+%%% indent-tabs-mode: t
+%%% TeX-electric-sub-and-superscript: nil
+%%% TeX-brace-indent-level: 0
+%%% LaTeX-indent-level: 0
+%%% LaTeX-item-indent: 0
+%%% TeX-master: t
+%%% End:

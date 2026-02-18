@@ -97,7 +97,7 @@
 	\\[-2.5ex]}
 \author{Solutions by: Raindrops\_drop \\[1ex]
 	\\[-1ex]}
-\date{February 17, 2026} 
+\date{February 13, 2026} 
 \maketitle
 
 \vspace{-3ex}%
@@ -168,23 +168,440 @@ of sets:
 	\end{proof}
 	\item $f^{-1}(B_0 \cup B_1) = f^{-1}(B_0) \cup f^{-1}(B_1)$.
 	\begin{proof}
+		If $f^{-1}(B_0 \cup B_1)$ is empty, this implies that there exists no 
+		$a \in A$ such that $f(a) \in B_0 \cup B_1$. In particular, for any $a \in A$,
+		$f(a) \notin B_0$ and $f(a) \notin B_1$. Thus, for any $a \in A$, 
+		$a \notin f^{-1}(B_0)$ and $a \notin f^{-1}(B_1)$. Therefore, $f^{-1}(B_0)
+		\cup f^{-1}(B_1)$ is empty, and thus the equality in our claim holds.
 		
+		If $f^{-1}(B_0) \cup f^{-1}(B_1)$ is empty, then there exists no $a \in A$
+		such that $f(a) \in B_0$ or $f(a) \in B_1$ or both. This implies that for
+		all $a \in A$, $f(a) \notin B_0$ and $f(a) \notin B_1$. In particular,
+		$f(a) \notin B_0 \cup B_1$. As such, for all $a \in A$, $a \notin f^{-1}(B_0 \cup B_1)$.
+		Therefore, $f^{-1}(B_0 \cup B_1)$ is empty and the equality in our claim is 
+		true.
+		
+		Since we've shown that our claim holds when either of the sets is empty, we will
+		assume that both sets are non-empty.
+		
+		Let $a \in f^{-1}(B_0 \cup B_1)$. By definition, $f(a) \in B_0 \cup B_1$.
+		Therefore, either $f(a) \in B_0$, $f(a) \in B_1$, or both. If $f(a) \in B_0$,
+		note that it implies that $a \in f^{-1}(B_0)$. In particular, we have that 
+		$a \in f^{-1}(B_0) \cup f^{-1}(B_1)$. Thus, we conclude that 
+		$f^{-1}(B_0 \cup B_1) \subseteq f^{-1}(B_0) \cup f^{-1}(B_1)$. We arrive at 
+		the same conclusion by using an analogous argument for the other cases.
+		
+		Let $a \in f^{-1}(B_0) \cup f^{-1}(B_1)$. Note that either $a \in f^{-1}(B_0)$,
+		$a \in f^{-1}(B_1)$, or both. If $a \in f^{-1}(B_0)$, then $f(a) \in B_0$.
+		Note that $B_0 \subseteq B_0 \cup B_1$. Therefore, $f(a) \in B_0 \cup B_1$.
+		In particular, $a \in f^{-1}(B_0 \cup B_1)$ and we can conclude that 
+		$f^{-1}(B_0) \cup f^{-1}(B_1) \subseteq f^{-1}(B_0 \cup B_1)$. We will arrive
+		at this same conclusion by using an analogous argument for the other cases.
+		
+		Therefore, we conclude that $f^{-1}(B_0 \cup B_1) = f^{-1}(B_0) \cup f^{-1}(B_1)$.
 	\end{proof}
+	\pagebreak
 	\item $f^{-1}(B_0 \cap B_1) = f^{-1}(B_0) \cap f^{-1}(B_1)$.
+	\begin{proof}
+		If $f^{-1}(B_0 \cap B_1)$ is empty, then it implies that there exists no $a \in A$
+		such that $f(a) \in B_0 \cap B_1$. Since $f(a) \notin B_0 \cap B_1$, it must
+		be that either $f(a) \notin B_0$, $f(a) \notin B_1$, or both. If $f(a) \notin B_0$,
+		then it must be that $a \notin f^{-1}(B_0)$. In particular, since $
+		a \notin f^{-1}(B_0)$, $a \notin f^{-1}(B_0) \cap f^{-1}(B_1)$. Since this is 
+		an argument for all $a \in A$, we conclude that $f^{-1}(B_0) \cap f^{-1}(B_1)$
+		must be empty. Thus, the equality in our claim holds. We arrive at this same 
+		conclusion for the other cases by using an analogous argument.
+		
+		If $f^{-1}(B_0) \cap f^{-1}(B_1)$ is empty, then it implies that there exists
+		no $a \in A$ such that $a \in f^{-1}(B_0) \cap f^{-1}(B_1)$. Since for all
+		$a \in A$, $a \notin f^{-1}(B_0) \cap f^{-1}(B_1)$, it implies that 
+		either $a \notin f^{-1}(B_0)$, $a \notin f^{-1}(B_1)$, or both. 
+		If $a \notin f^{-1}(B_0)$, then $f(a) \notin B_0$. In particular, it implies 
+		that $f(a) \notin B_0 \cap B_1$. As such, $a \notin f^{-1}(B_0 \cap B_1)$.
+		Since this is true for all $a \in A$, we conclude that $f^{-1}(B_0 \cap B_1)$
+		is empty. Thus, the equality in our claim holds. We can arrive at this same
+		conclusion by following an analogous argument for the other cases.
+		
+		Since our claim holds if either of the sets is empty, we will assume that both
+		of them are non-empty.
+		
+		Let $a \in f^{-1}(B_0 \cap B_1)$. Therefore, $f(a) \in B_0 \cap B_1$.
+		This implies that $f(a) \in B_0$ and $f(a) \in B_1$. In particular, it must be
+		that $a \in f^{-1}(B_0)$ and $a \in f^{-1}(B_1)$. Therefore, 
+		$a \in f^{-1}(B_0) \cap f^{-1}(B_1)$, and we conclude that 
+		$f^{-1}(B_0 \cap B_1) \subseteq f^{-1}(B_0) \cap f^{-1}(B_1)$.
+		
+		Let $a \in f^{-1}(B_0) \cap f^{-1}(B_1)$. Then, it must be that $a \in f^{-1}(B_0)$
+		and $a \in f^{-1}(B_1)$. In particular, we have that $f(a) \in B_0$ and 
+		$f(a) \in B_1$. Therefore, $f(a) \in B_0 \cap B_1$ which implies that 
+		$a \in f^{-1}(B_0 \cap B_1)$. Hence, we conclude that
+		$f^{-1}(B_0 \cap B_1) = f^{-1}(B_0) \cap f^{-1}(B_1)$. 
+	\end{proof}
 	\item $f^{-1}(B_0 - B_1) = f^{-1}(B_0) - f^{-1}(B_1)$.
+	\begin{proof}
+		If $f^{-1}(B_0 - B_1)$ is empty, then there exists no $a \in A$ such that 
+		$a$ is an element of $f^{-1}(B_0 - B_1)$. This implies that $f(a) \notin B_0 - B_1$
+		for all $a \in A$. Since $f(a) \notin B_0 - B_1$, it must be that either
+		$f(a) \notin B_0$ or $f(a) \in B_0 \cap B_1$. Note that if $f(a) \notin B_0$,
+		then $a \notin f^{-1}(B_0)$ and thus $a \notin f^{-1}(B_0) - f^{-1}(B_1)$
+		for all $a \in A$. Thus, $f^{-1}(B_0) - f^{-1}(B_1)$ must be empty, and therefore
+		the equality in our claim holds. If $f(a) \in B_0 \cap B_1$, note 
+		that $a \in f^{-1}(B_0 \cap B_1)$. In particular, this implies that 
+		$a \notin f^{-1}(B_0) - f^{-1}(B_1)$ by definition. Hence, $f^{-1}(B_0) -
+		f^{-1}(B_1)$ is empty and our claim holds.
+		
+		If $f^{-1}(B_0) - f^{-1}(B_1)$ is empty, then there exists no $a \in A$ such that
+		$a$ is an element of $f^{-1}(B_0) - f^{-1}(B_1)$. In particular, since 
+		$a \notin f^{-1}(B_0) - f^{-1}(B_1)$, it must be that either 
+		$a \notin f^{-1}(B_0)$ or $a \in f^{-1}(B_0) \cap f^{-1}(B_1)$. If $a \notin
+		f^{-1}(B_0)$, then $f(a) \notin B_0$. In particular, $f(a) \notin B_0 - B_1$.
+		Hence, $a \notin f^{-1}(B_0 - B_1)$. Since this is true for all $a \in A$,
+		it must be that $f^{-1}(B_0 - B_1)$ is empty and thus our claim holds.
+		If $a \in f^{-1}(B_0) \cap f^{-1}(B_1)$, then note that $a \notin f^{-1}(B_0 \cap B_1)$
+		by problem (c). As such, $f(a) \in B_0 \cap B_1$, and therefore,
+		$f(a) \notin B_0 - B_1$. Thus, for all $a \in A$, $a \notin f^{-1}(B_0 - B_1$.
+		As such $f^{-1}(B_0 - B_1)$ is empty and our claim holds.
+		
+		Since our property holds if either of the sets is empty, we will now assume that
+		both sets are non-empty.
+		
+		Let $a \in f^{-1}(B_0 - B_1)$. By definition, $f(a) \in B_0 - B_1$. This implies
+		that $f(a) \in B_0$ and $f(a) \notin B_1$. As such, $a \in f^{-1}(B_0)$ and 
+		$a \notin f^{-1}(B_1)$. Therefore, $a \in f^{-1}(B_0) - f^{-1}(B_1)$ and we
+		conclude that $f^{-1}(B_0 - B_1) \subseteq f^{-1}(B_0) - f^{-1}(B_1)$.
+		
+		Let $a \in f^{-1}(B_0) - f^{-1}(B_1)$. By definition, $a \in f^{-1}(B_0)$
+		and $a \notin f^{-1}(B_1)$. Since $a \in f^{-1}(B_0)$ we have that 
+		$f(a) \in B_0$. Similarly, since $a \notin f^{-1}(B_1)$ we have that 
+		$f(a) \notin B_1$. Therefore, since $f(a) \in B_0$ and $f(a) \notin B_1$
+		we have that $f(a) \in B_0 - B_1$. Hence, $a \in B_0 - B_1$. Therefore,
+		$f^{-1}(B_0) - f^{-1}(B_1) \subseteq f^{-1}(B_0 - B_1)$,
+		Thus, we conclude that $f^{-1}(B_0 - B_1) = f^{-1}(B_0) - f^{-1}(B_1)$.
+	\end{proof}
 \end{enumerate}
 Show that $f$ preserves inclusions and unions only:
 \begin{enumerate}
 	\item[(e)] $A_0 \subset A_1 \implies f(A_0) \subset f(A_1)$.
+	\begin{proof}
+		Let $A_0 \subseteq A_1$. Note that if either $f(A_0)$ or $f(A_1)$ are empty our 
+		claim will hold. As such, we will assume that both $A_0$ and $A_1$ are non-empty.
+		
+		Let $b \in f(A_0)$. This implies that there exists at least one $a \in A_0$
+		such that $f(a) = b$. By assumption, $A_0 \subseteq A_1$ and thus it must
+		be that $a \in A_1$. Therefore, $f(a) \in A_1$. Since $f(a) = b$ it must
+		be that $b \in A_1$. Therefore, $f(A_0) \subseteq f(A_1)$.
+	\end{proof}
 	\item[(f)] $f(A_0 \cup A_1) = f(A_0) \cup f(A_1)$.
+	\begin{proof}
+		If $f(A_0 \cup A_1)$ is empty, then it implies that $A_0 \cup A_1$ is empty.
+		In particular, this means $A_0$ and $A_1$ are empty and thus 
+		$f(A_0)$ and $f(A_1)$ are empty. Hence, our claim holds. 
+		If $f(A_0) \cup f(A_1)$ is empty, then it must be that $f(A_0)$ and $f(A_1)$
+		are both empty. Hence, $A_0$ and $A_1$ must be empty. Therefore,
+		$f(A_0 \cup A_1)$ is empty and our property holds.
+		
+		Since our property hold if either of the sets are empty, we will assume that 
+		both of the sets are non-empty.
+		
+		Let $x \in f(A_0 \cup A_1)$. By definition, it must be that $x = f(a)$ for 
+		some $a \in A_0 \cup A_1$. Thus, it must be that either $a \in A_0$, $a \in A_1$,
+		or both. If $a \in A_0$, it implies that $f(a) \in f(A_0)$, i.e., $x \in f(A_0)$.
+		In particular, since $x \in f(A_0)$, we have that $x \in f(A_0) \cup f(A_1)$.
+		Thus, we conclude that $f(A_0 \cup A_1) \subseteq f(A_0) \cup f(A_1)$.
+		
+		Let $x \in f(A_0) \cup f(A_1)$. Thus, either $x \in f(A_0)$, $x \in f(A_1)$,
+		or both. If $x \in f(A_0)$ we have that there exists at least one $a \in A_0$
+		such that $f(a) = x$. In particular, since $a \in A_0$ it is also true that
+		$a \in A_0 \cup A_1$. Therefore, $f(a) = x \in f(A_0 \cup A_1)$. Thus,
+		we conclude that $f(A_0) \cup f(A_1) \subseteq f(A_0 \cup A_1)$. We arrive
+		at the same conclusion by following an analogous argument for the other cases.
+		Therefore, we conclude that $f(A_0 \cup A_1) = f(A_0) \cup f(A_1)$.
+	\end{proof}
+	\pagebreak
 	\item[(g)] $f(A_0 \cap A_1) \subset f(A_0) \cap f(A_1)$; show that equality holds
 	if $f$ is injective.
+	\begin{proof}
+		If $f(A_0 \cap A_1)$ is empty, then it is trivial to note that our claim hold
+		wether $f(A_0) \cap f(A_1)$ is empty or not.
+		
+		If $f(A_0) \cap f(A_1)$ is empty, it implies that there is no $a \in A$
+		such that $f(a) \in f(A_0)$, or $f(a) \in f(A_1)$, or both. Since $f$ may not be
+		injective, it could be that $a \in A$ is an element of either 
+		$A_0$, $A_1$, or both. In the case $a$ is an element of both we note that 
+		$a \in A_0 \cap A_1$ and therefore $f(a) \in f(A_0 \cap A_1)$. Thus,
+		we cannot conclude that $f(A_0) \cap f(A_1) \subset f(A_0 \cap A_1)$
+		for general $f$. Thus, let $f$ be injective. Recall either $f(a) \notin f(A_0)$,
+		$f(a) \notin f(A_1)$, or both. If $f(a) \notin f(A_0)$ but $f(a) \in f(A_1)$,
+		then $a \notin A_0$ and $a \in A_1$ by definition, i.e., $a \notin A_0 \cap A_1$. 
+		Since $f$ is injective, there are no other $a' \in A$ distinct from $a$ such that
+		$f(a') = f(a)$. Hence, since $a \notin A_0 \cap A_1$, $f(a) \notin f(A_0 \cap A_1)$. 
+		Since this is true for any $a \in A$ we conclude that $f(A_0 \cap A_1)$ must 
+		be empty and thus our claim holds.
+		
+		We've shown that our claim holds if either empty is set. Furthermore, we also
+		showed that equality holds if $f$ is injective when either set is empty.
+		Thus, we need only show our claim holds for the case where both sets are 
+		non-empty.
+		
+		Let $x \in f(A_0 \cap A_1)$. By definition, there exists at least one 
+		$a \in A_0 \cap A_1$ such that $f(a) = x$. In particular, for such $a$ we
+		have that $a \in A_0$ and $a \in A_1$. We note that $f(a) \in A_0$ and 
+		$f(a) \in A_1$ by definition. Since $f(a) = x$ we conclude that 
+		$x \in f(A_0) \cap A_1$. Therefore, $f(A_0 \cap A_1) \subseteq f(A_0) \cap f(A_1)$.
+		
+		Let $x \in f(A_0) \cap f(A_1)$. Thus, $x \in f(A_0)$ and $x \in f(A_1)$.
+		As such, there exists at least one $a_0 \in A_0$ such that $f(a_0) = x$
+		and at least one $a_1 \in A_1$ such that $f(a_1) = x$. Since $f$ is not injective,
+		it may be that $a_0 \neq a_1$. Therefore, it may be that $a_0, a_1 \notin A_0 \cap A_1$.
+		This can be true for any $a \in A$ such that $f(a) = x$. Hence, it may be
+		that $x \notin f(A_0 \cap A_1)$ for general $f$. If $f$ is injective,
+		note that it must be that $a = a_0 = a_1$ as such, since $a_0 \in A_0$ and 
+		$a_1 \in A_1$, we have that $a \in A_0 \cap A_1$ (where $a$ stands for any $a \in A$
+		that could have mapped onto $x$ through $f$). Therefore, $f(a) \in f(A_0 \cap A_1)$,
+		and since $x = f(a)$ we can conclude that $x \in f(A_0 \cap A_1)$. Hence,
+		$f(A_0) \cap f(A_1) \subseteq f(A_0 \cap A_1)$, and we can conclude that
+		$f(A_0 \cap A_1) = f(A_0) \cap f(A_1)$ for $f$ injective.
+	\end{proof}
 	\item[(h)] $f(A_0 - A_1) \supset f(A_0) - f(A_1)$; show that equality holds if 
 	$f$ is injective.
+	\begin{proof}
+		Consider the case where $f(A_0 - A_1)$ is empty. Then, it must be that
+		$A_0 - A_1$ is empty. Since $A_0 - A_1$ is empty, either $A_0$ is empty
+		or $A_0 \subseteq A_1$. If $A_0$ is empty, note that $f(A_0)$ must also be empty.
+		As such, $f(A_0) - f(A_1)$ will also be empty, showing that our claim holds.
+		If $A_0 \subseteq A_1$, by problem (e) we have that $f(A_0) \subseteq f(A_1)$.
+		Therefore, $f(A_0) - f(A_1)$ must be empty. Hence, our claim holds. 
+		
+		Consider now the case where $f(A_0) - f(A_1)$ is empty. This implies that
+		either $f(A_0)$ is empty or $f(A_0) \subseteq f(A_1)$ where $f(A_0)$ is non-empty. 
+		If $f(A_0)$ is empty, note that it implies that $A_0$ is empty. Hence, $A_0 - A_1$
+		must also be empty. Therefore, $f(A_0 - A_1)$ is empty and our property holds. 
+		Thus, assume that $f(A_0) \subseteq f(A_1)$ where $f(A_0)$ is non-empty. Consider
+		$x \in f(A_0)$, and note that there exists at least one $a_0 \in A_0$ such
+		that $f(a_0) = x$. Furthermore, since $f(A_0) \subseteq f(A_1)$ we note that
+		$x \in f(A_1)$. In particular, there exists at least one $a_1 \in A_1$ such
+		that $f(a_1) = x$. Since $f$ may not be injective, it could be that $a_0 \neq a_1$
+		and as such it may be that $a_0 \in A_0 - A_1$. Therefore, we may have that
+		$x = f(a_0) \in f(A_0 - A_1)$ implying this set is non-empty. Thus, our claim
+		still holds for general $f$. Note, however, if $f$ were injective then
+		$a_0 = a_1$ must be true since $f(a_0) = x = f(a_1)$. Therefore, it must be 
+		that $a_0 \notin A_0 - A_1$. Therefore, it must be that $A_0 - A_1$ is empty, 
+		and therefore $f(A_0 - A_1)$ is also empty, showing that equality holds if $f$
+		is injective.
+		
+		We've shown that our claim holds when either of the sets is empty. Thus, we 
+		will now assume that both sets are non-empty.
+		
+		Let $x \in f(A_0) - f(A_1)$. This implies that $x \in f(A_0)$ and $x \notin f(A_1)$.
+		Therefore, there exists at least one $a_0 \in A_0$ such that $f(a_0) = x$
+		and that there exists no $a_1 \in A_1$ such that $f(a_1) = x$. In particular,
+		this implies that $a_0 \neq a_1$ since the element they are mapped onto by $f$
+		is different. In particular, $a_0 \in A_0$ and $a_0 \notin A_1$. Therefore,
+		$a_0 \in A_0 - A_1$. By definition, $x = f(a_0) \in f(A_0 - A_1)$. Thus,
+		we conclude that $f(A_0) - f(A_1) \subseteq f(A_0 - A_1)$.
+		
+		Let $x \in f(A_0 - A_1)$. This implies that there exists at least one 
+		$a \in A_0 - A_1$ such that $f(a) = x$. In particular, we have that $a \in A_0$
+		and $a \notin A_1$. Note that since $f$ is not injective, it could be that
+		there exists some $a' \in A_1$ such that $a' \notin A_0$ and $f(a') = x$.
+		As such, it would imply that $x \in f(A_0)$ and $x \in f(A_1)$. Therefore,
+		it would not be possible for $x$ to be an element of $f(A_0) - f(A_1)$.
+		If $f$ were injective, then it must be that $a = a'$ since they both map onto $x$.
+		In particular, it must be that $a' \in A_0$ and $a' \in A_1$ since that 
+		is how we defined $a$. As such, $x \in f(A_0)$ and $x \notin f(A_1)$,
+		and we conclude that $x \in f(A_0) - f(A_1)$. Hence, if $f$ is injective
+		we also have that $f(A_0 - A_1) \subseteq f(A_0) - f(A_1)$ and thus
+		$f(A_0 - A_1) = f(A_0) - f(A_1)$.
+	\end{proof}
 \end{enumerate}
 
 \exnumber{3.} Show that (b), (c), (f), and (g) of Exercise 2 hold for arbitrary unions 
 and intersections.
+\begin{enumerate}
+	\item[(b)] $f^{-1} \big(\bigcup_{B \in \mathcal{B}} B\big) = 
+	\bigcup_{B \in \mathcal{B}} f^{-1}(B)$.
+	\begin{proof}
+		Let $f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$ be empty. By definition,
+		we have that there exists no $a \in A$ such that 
+		$f(a) \in \big(\bigcup_{B \in \mathcal{B}} B\big)$. As such, it must be 
+		that $f(a)$ is not an element of $B$ for all $B \in \mathcal{B}$. In particular,
+		this implies that $a \notin f^{-1}(B)$ for all $B \in \mathcal{B}$. Thus, note
+		that this allows us to conclude that $a \notin \bigcup_{B \in \mathcal{B}} f^{-1}(B)$.
+		Since this is true for all $a \in A$, we conclude that 
+		$\bigcup_{B \in \mathcal{B}} f^{-1}(B)$ is empty and therefore our claim holds.
+		
+		Let $\bigcup_{B \in \mathcal{B}} f^{-1}(B)$ be empty. This implies that 
+		$f^{-1}(B)$ is empty for all $B \in \mathcal{B}$. By definition, this means 
+		that there exists no $a \in A$ such that $f(a) \in B$ for all $B \in \mathcal{B}$.
+		In particular, we note that $f(a) \notin \bigcup_{B \in \mathcal{B}} B$.
+		Therefore, it must be that $a \notin f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$.
+		Since this is true for all $a \in A$, we conclude that 
+		$f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$ is empty, and thus our claim holds.
+		
+		Thus, we've shown that if either of the sets is empty our property will hold. We
+		need only check for the case where both sets are non-empty.
+		
+		Let $a \in f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$. By definition,
+		$f(a) \in \bigcup_{B \in \mathcal{B}} B$. This implies that 
+		${f(a) \in B}$ for at least one $B \in \mathcal{B}$. In particular, note that
+		$a \in f^{-1}(B)$. Thus, it must be that ${f(a) \in \bigcup_{B \in \mathcal{B}} B}$.
+		Hence, we conclude that $a \in \bigcup_{B \in \mathcal{B}} f^{-1}(B)$.
+		Therefore, $f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big) \subseteq 
+		\bigcup_{B \in \mathcal{B}} f^{-1}(B)$.
+		
+		Let $a \in \bigcup_{B \in \mathcal{B}} f^{-1}(B)$. This implies that 
+		${a \in f^{-1}(B)}$ for at least one $B \in \mathcal{B}$. Therefore,
+		$f(a) \in B$ for at least one $B \in \mathcal{B}$. In particular, 
+		$f(a) \in \bigcup_{B \in \mathcal{B}} B$. Thus, we can conclude that
+		$a \in f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$. Hence,
+		$\bigcup_{B \in \mathcal{B}} f^{-1}(B) = f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$.
+	\end{proof}
+	\item[(c)] $f^{-1} \big(\bigcap_{B \in \mathcal{B}} B\big) = 
+	\bigcap_{B \in \mathcal{B}} f^{-1}(B)$.
+	\begin{proof}
+		Let $f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big)$ be empty. This implies
+		that there exists no $a \in A$ such that $f(a) \in \bigcap_{B \in \mathcal{B}} B$.
+		By definition, it must be that $f(a) \notin B$ for at least one ${B \in \mathcal{B}}$.
+		Thus, $a \notin f^{-1}(B)$ for at least one $B \in \mathcal{B}$. In particular, 
+		it must be that $a \notin \bigcap_{B \in \mathcal{B}} f^{-1}(B)$. Since this is 
+		true for all $a \in A$, we conclude that $\bigcap_{B \in \mathcal{B}} f^{-1}(B)$
+		must be empty, thus our claim holds.
+		
+		Let $\bigcap_{B \in \mathcal{B}} f^{-1}(B)$ be empty. This implies that
+		$f^{-1}(B)$ is empty for at least one $B \in \mathcal{B}$ or that 
+		$f^{-1}(B) \cap f^{-1}(B') = \emptyset$ for all $B, B' \in \mathcal{B}$.
+		If at least one $f^{-1}(B)$ is empty, then it implies that there exists no
+		$a \in A$ such that $f(a) \in B$. In particular, since $f(a) \notin B$,
+		it must be that $f(a) \notin \bigcap_{B \in \mathcal{B}} B$. Therefore,
+		$a \notin f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big)$ and thus this set must
+		be empty which allows our claim to hold. If $f^{-1}(B) \cap f^{-1}(B') = \emptyset$ 
+		for all $B, B' \in \mathcal{B}$, note if $a \in f^{-1}(B)$, then it must be
+		that $a \notin f^{-1}(B')$. In particular, this implies that 
+		$f(a) \in B$ and $f(a) \notin B'$, as such $f(a) \notin B \cap B'$.
+		Since $B, B' \in \mathcal{B}$, we conclude that 
+		$f(a) \notin \bigcap_{B \in \mathcal{B}} B$. Therefore,
+		$a \notin f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big)$. Since this is true
+		for all $a \in A$, we conclude that $f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big)$
+		must be empty, thus our claim holds.
+		
+		Since we have shown our property holds when either of the sets is empty, we need
+		only show that our property holds when both sets are non-empty.
+		
+		Let $a \in f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big)$. By definition,
+		$f(a) \in \bigcap_{B \in \mathcal{B}} B$. Thus, we have that 
+		$f(a) \in B$ for all $B \in \mathcal{B}$. In particular, it must be that 
+		$a \in f^{-1}(B)$ for all $B \in \mathcal{B}$. Hence, 
+		$a \in \bigcap_{B \in \mathcal{B}} f^{-1}(B)$ by definition. Therefore we 
+		conclude that $f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big) \subseteq
+		\bigcap_{B \in \mathcal{B}} f^{-1}(B)$.
+		
+		Let $a \in \bigcap_{B \in \mathcal{B}} f^{-1}(B)$. By definition,
+		$a \in f^{-1}(B)$ for all $B \in \mathcal{B}$. This implies that 
+		$f(a) \in B$ for all $B \in \mathcal{B}$. By definition, it must be 
+		that $f(a) \in \bigcap_{B \in \mathcal{B}} B$. Therefore, we conclude 
+		that $a \in f^{-1} \big(\bigcap_{B \in \mathcal{B}} B\big)$.
+		Hence we have that $f^{-1} \big(\bigcap_{B \in \mathcal{B}} B\big) = 
+		\bigcap_{B \in \mathcal{B}} f^{-1}(B)$.
+	\end{proof}
+	\item[(f)] $f\big(\bigcup_{A \in \mathcal{A}} A\big) = 
+	\bigcup_{A \in \mathcal{A}} f(A)$.
+	\begin{proof}
+		Let $f\big(\bigcup_{A \in \mathcal{A}} A\big)$ be empty. This can only be true
+		if $\bigcup_{A \in \mathcal{A}} A$ is empty itself. Thus it must be that 
+		$A = \emptyset$ for all $A \in \mathcal{A}$. As such, $f(A)$ is empty 
+		for all $A \in \mathcal{A}$. Therefore, $\bigcup_{A \in \mathcal{A}} f(A)$
+		is empty and our property holds.
+		
+		Let $\bigcup_{A \in \mathcal{A}} f(A)$ be empty. This implies that 
+		$f(A)$ is empty for all $A \in \mathcal{A}$. Note that $f(A)$ can only 
+		be empty if $A$ itself is empty. Therefore, $A = \emptyset$ for all 
+		$A \in \mathcal{A}$, and as such $\bigcup_{A \in \mathcal{A}} A$ must also
+		be empty. Thus, $f\big(\bigcup_{A \in \mathcal{A}} A\big)$ is empty and our 
+		property holds.
+		
+		We have shown that our property holds when either of the sets is empty. Thus,
+		we need only show that the claim holds when both sets are non-empty.
+		
+		Let $x \in f\big(\bigcup_{A \in \mathcal{A}} A\big)$. Thus, there exists
+		at least one $a \in \bigcup_{A \in \mathcal{A}} A$ such that ${f(a) = x}$.
+		By definition, $a \in A$ for at least one $A \in \mathcal{A}$. As such,
+		$f(a) \in f(A)$ for at least one $A \in \mathcal{A}$. In particular, this 
+		implies that $f(a) \in \bigcup_{A \in \mathcal{A}} f(A)$. Since 
+		$f(a) = x$ we note that $x \in \bigcup_{A \in \mathcal{A}} f(A)$.
+		Therefore, $f\big(\bigcup_{A \in \mathcal{A}} A\big) \subseteq 
+		\bigcup_{A \in \mathcal{A}} f(A)$.
+		
+		Let $x \in \bigcup_{A \in \mathcal{A}} f(A)$. By definition, 
+		$x \in f(A)$ for at least one $A \in \mathcal{A}$, let $A$ be such set.
+		Thus, there exists at least one $a \in A$ such that $f(a) = x$.
+		Note that since $a \in A$ and $A \in \mathcal{A}$, it must be that 
+		$a \in \bigcup_{A \in \mathcal{A}} A$. Therefore, 
+		$x = f(a) \in f\big(\bigcup_{A \in \mathcal{A}} A\big)$.
+		Thus, we conclude that $f\big(\bigcup_{A \in \mathcal{A}} A\big) = 
+		\bigcup_{A \in \mathcal{A}} f(A)$.
+	\end{proof}
+	\item[(g)] $f\big(\bigcap_{A \in \mathcal{A}} A\big) \subseteq 
+	\bigcap_{A \in \mathcal{A}} f(A)$; show that equality holds if $f$ is injective.
+	\begin{proof}
+		Let $f\big(\bigcap_{A \in \mathcal{A}} A\big)$ be empty. This can only be
+		true if $\bigcap_{A \in \mathcal{A}} A$ is itself empty. Thus, it must be 
+		that at least one $A \in \mathcal{A}$ is empty, or $A \cap A' = \emptyset$
+		for all $A, A' \in \mathcal{A}$. If at least one $A \in \mathcal{A}$ is empty,
+		note that $f(A)$ is empty for such $A$. Note that this implies that 
+		$\bigcap_{A \in \mathcal{A}} f(A)$ is empty and thus our property holds.
+		If $A \cap A' = \emptyset$ for all $A, A' \in \mathcal{A}$, note that we 
+		cannot say anything about $f(A) \cap f(A')$. This is because $f$ is not 
+		necessarily injective, as such there may exist $a \in A$ and $a' \in A'$
+		such that $f(a) = f(a')$. Thus, it could be that $f(A) \cap f(A')$ is non-empty.
+		Thus, at most we can only conclude that $f\big(\bigcap_{A \in \mathcal{A}} A\big)
+		\subseteq \bigcap_{A \in \mathcal{A}} f(A)$. If $f$ was injective,
+		note that such $a$ and $a'$ cannot exists since $f(a) = f(a')$ only if 
+		$a = a'$. Thus, we note that $f(A) \cap f(A')$ must be empty for 
+		all $A, A' \in \mathcal{A}$. Therefore, $\bigcap_{A \in \mathcal{A}} f(A)$
+		must be empty and equality holds.
+		
+		Let $\bigcap_{A \in \mathcal{A}} f(A)$ be empty. This implies that 
+		either $f(A)$ is empty for at least one $A \in \mathcal{A}$ or 
+		$f(A) \cap f(A') = \emptyset$ for all $A, A' \in \mathcal{A}$.
+		If $f(A)$ is empty for at least one $A \in \mathcal{A}$ note that 
+		$A$ must be empty. Thus, $\bigcap_{A \in \mathcal{A}} A$ must also be empty,
+		and therefore $f\big(\bigcap_{A \in \mathcal{A}} A\big)$ is empty and 
+		our property holds. If $f(A) \cap f(A') = \emptyset$ for all $A, A' \in \mathcal{A}$,
+		then for any $a$ such that $f(a) \in f(A)$ it must be that $f(a) \notin f(A')$.
+		Thus, it must be that $a \in A$ and $a \notin A'$ by definition. Since 
+		$A, A' \in \mathcal{A}$ we note that $a \notin \bigcap_{A \in \mathcal{A}} A$.
+		Therefore, $f(a) \notin f\big(\bigcap_{A \in \mathcal{A}} A\big)$. Since this 
+		is true for all $a$ we conclude that $f\big(\bigcap_{A \in \mathcal{A}} A\big)$
+		must be empty and our property holds.
+		
+		Since we have shown that our claim holds when either of the sets is empty,
+		and furthermore that equality holds when $f$ is injective, we need only show
+		that our claim holds when both sets are non-empty.
+		
+		Let $x \in f\big(\bigcap_{A \in \mathcal{A}} A\big)$. By definition,
+		there exists at least one $a \in \bigcap_{A \in \mathcal{A}} A$ such that
+		$f(a) = x$. Since $a \in \bigcap_{A \in \mathcal{A}} A$, it must be that 
+		$a \in A$ for all $A \in \mathcal{A}$. In particular, $f(a) \in f(A)$
+		for all $A \in \mathcal{A}$. By definition, 
+		$x = f(a) \in \bigcap_{A \in \mathcal{A}} f(A)$. Thus, we conclude that 
+		$f\big(\bigcap_{A \in \mathcal{A}} A\big) \subseteq \bigcap_{A \in \mathcal{A}} f(A)$.
+		
+		Let $x \in \bigcap_{A \in \mathcal{A}} f(A)$. By definition, 
+		$x \in f(A)$ for all $A \in \mathcal{A}$. Consider $A, A' \in \mathcal{A}$.
+		Note that there exists at least one $a \in A$ and one $a' \in A'$ such that 
+		$f(a) = x = f(a')$. Since it may not be true that $f$ is injective, we may 
+		have that $a \neq a'$. In particular, note that $a, a' \notin A \cap A'$.
+		Thus, we cannot conclude that there exists some $a'' \in \bigcap_{A \in \mathcal{A}} A$
+		such that $f(a'') = x$ since it could be that all $a \in A$ for all $A \in \mathcal{A}$
+		such that $f(a) = x$ are distinct. If, however, $f$ is injective, note it must 
+		be that $a = a'$ since $f(a) = x = f(a')$. Since this is true for all
+		$A, A' \in \mathcal{A}$ we conclude that $a \in \bigcap_{A \in \mathcal{A}} A$.
+		Thus, $x = f(a) = f\big(\bigcap_{A \in \mathcal{A}} A\big)$.
+		Therefore, $f\big(\bigcap_{A \in \mathcal{A}} A\big) \subseteq 
+		\bigcap_{A \in \mathcal{A}} f(A)$ if $f$ is injective.
+		
+	\end{proof}
+\end{enumerate}
 
 \exnumber{4.} Let $f: A \to B$ and $g: B \to C$.
 \begin{enumerate}[label=(\alph*)]

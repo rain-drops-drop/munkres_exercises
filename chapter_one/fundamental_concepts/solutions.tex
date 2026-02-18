@@ -16,88 +16,88 @@
 \setlength\marginparwidth{2.2in}
 \setlength\marginparsep{1mm}
 \newcommand\red[1]{\marginpar{\linespread{.85}\sf%
-	\vspace{-1.4ex}\footnotesize{\color{red}#1}}}
-	%newcommand\score[1]{\marginpar{\colorbox{yellow}{#1/3}}\hspace{-1ex}}
-	\newcommand\score[1]{\marginpar{\vspace{-2ex}\color{blue}{#1/3}}\hspace{-1ex}}
-	\newcommand\extra[1]{\marginpar{\color{blue}{#1/1}}\hspace{-1ex}}
-	\newcommand\total[2]{\marginpar{\colorbox{yellow}{\huge #1/#2}}}
-	\newcommand\collab[1]{\marginpar{\vspace{-11ex}\colorbox{yellow}{#1/3}}\hspace{-1ex}}
-	\newcommand\magenta[1]{\colorbox{magenta}{\!\!#1\!\!}}
-	\newcommand\yellow[1]{\colorbox{yellow}{\!\!#1\!\!}}
-	\newcommand\green[1]{\colorbox{green}{\!\!#1\!\!}}
-	\newcommand\cyan[1]{\colorbox{cyan}{\!\!#1\!\!}}
-	\newcommand\rmagenta[2][\vspace{0ex}]{\red{#1\magenta{\phantom{:}}\,: #2}}
-	\newcommand\ryellow[2][\vspace{0ex}]{\red{#1\yellow{\phantom{:}}\,: #2}}
-	\newcommand\rgreen[2][\vspace{0ex}]{\red{#1\green{\phantom{:}}\,: #2}}
-	\newcommand\rcyan[2][\vspace{0ex}]{\red{#1\cyan{\phantom{:}}\,: #2}}
+\vspace{-1.4ex}\footnotesize{\color{red}#1}}}
+%newcommand\score[1]{\marginpar{\colorbox{yellow}{#1/3}}\hspace{-1ex}}
+\newcommand\score[1]{\marginpar{\vspace{-2ex}\color{blue}{#1/3}}\hspace{-1ex}}
+\newcommand\extra[1]{\marginpar{\color{blue}{#1/1}}\hspace{-1ex}}
+\newcommand\total[2]{\marginpar{\colorbox{yellow}{\huge #1/#2}}}
+\newcommand\collab[1]{\marginpar{\vspace{-11ex}\colorbox{yellow}{#1/3}}\hspace{-1ex}}
+\newcommand\magenta[1]{\colorbox{magenta}{\!\!#1\!\!}}
+\newcommand\yellow[1]{\colorbox{yellow}{\!\!#1\!\!}}
+\newcommand\green[1]{\colorbox{green}{\!\!#1\!\!}}
+\newcommand\cyan[1]{\colorbox{cyan}{\!\!#1\!\!}}
+\newcommand\rmagenta[2][\vspace{0ex}]{\red{#1\magenta{\phantom{:}}\,: #2}}
+\newcommand\ryellow[2][\vspace{0ex}]{\red{#1\yellow{\phantom{:}}\,: #2}}
+\newcommand\rgreen[2][\vspace{0ex}]{\red{#1\green{\phantom{:}}\,: #2}}
+\newcommand\rcyan[2][\vspace{0ex}]{\red{#1\cyan{\phantom{:}}\,: #2}}
+
+%For separated lists with consecutive numbering
+\newcounter{separated}
+
+\newcommand{\excise}[1]{}
+\newcommand{\comment}[1]{{$\star$\sf\textbf{#1}$\star$}}
+\newcommand{\exnumber}[1]{\noindent\textbf{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                 %
+% TO ENABLE GRADING, DO NOT ALTER ABOVE THIS LINE %
+%                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%new math symbols taking no arguments
+\newcommand\0{\mathbf{0}}
+\newcommand\CC{\mathbb{C}}
+\newcommand\FF{\mathbb{F}}
+\newcommand\NN{\mathbb{N}}
+\newcommand\QQ{\mathbb{Q}}
+\newcommand\RR{\mathbb{R}}
+\newcommand\ZZ{\mathbb{Z}}
+\newcommand\bb{\mathbf{b}}
+\newcommand\kk{\Bbbk}
+\newcommand\mm{\mathfrak{m}}
+\newcommand\xx{\mathbf{x}}
+\newcommand\yy{\mathbf{y}}
+\newcommand\GL{\mathit{GL}}
+\newcommand\pset{\mathcal{P}}
+\newcommand\into{\hookrightarrow}
+\newcommand\nsub{\trianglelefteq}
+\newcommand\onto{\twoheadrightarrow}
+\newcommand\minus{\smallsetminus}
+\newcommand\goesto{\rightsquigarrow}
+
+%redefined math symbols taking no arguments
+\newcommand\<{\langle}
+\renewcommand\>{\rangle}
+\renewcommand\iff{\Leftrightarrow}
+\renewcommand\phi{\varphi}
+\renewcommand\implies{\Rightarrow}
+
+%new math symbols taking arguments
+\newcommand\ol[1]{{\overline{#1}}}
 	
-	%For separated lists with consecutive numbering
-	\newcounter{separated}
-	
-	\newcommand{\excise}[1]{}
-	\newcommand{\comment}[1]{{$\star$\sf\textbf{#1}$\star$}}
-	\newcommand{\exnumber}[1]{\noindent\textbf{#1}}
-	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%                                                 %
-	% TO ENABLE GRADING, DO NOT ALTER ABOVE THIS LINE %
-	%                                                 %
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
-	%new math symbols taking no arguments
-	\newcommand\0{\mathbf{0}}
-	\newcommand\CC{\mathbb{C}}
-	\newcommand\FF{\mathbb{F}}
-	\newcommand\NN{\mathbb{N}}
-	\newcommand\QQ{\mathbb{Q}}
-	\newcommand\RR{\mathbb{R}}
-	\newcommand\ZZ{\mathbb{Z}}
-	\newcommand\bb{\mathbf{b}}
-	\newcommand\kk{\Bbbk}
-	\newcommand\mm{\mathfrak{m}}
-	\newcommand\xx{\mathbf{x}}
-	\newcommand\yy{\mathbf{y}}
-	\newcommand\GL{\mathit{GL}}
-	\newcommand\pset{\mathcal{P}}
-	\newcommand\into{\hookrightarrow}
-	\newcommand\nsub{\trianglelefteq}
-	\newcommand\onto{\twoheadrightarrow}
-	\newcommand\minus{\smallsetminus}
-	\newcommand\goesto{\rightsquigarrow}
-	
-	%redefined math symbols taking no arguments
-	\newcommand\<{\langle}
-	\renewcommand\>{\rangle}
-	\renewcommand\iff{\Leftrightarrow}
-	\renewcommand\phi{\varphi}
-	\renewcommand\implies{\Rightarrow}
-	
-	%new math symbols taking arguments
-	\newcommand\ol[1]{{\overline{#1}}}
-	
-	%redefined math symbols taking arguments
-	\renewcommand\mod[1]{\ (\mathrm{mod}\ #1)}
-	
-	%roman font math operators
-	\DeclareMathOperator\im{im}
-	
-	%for easy 2 x 2 matrices
-	\newcommand\twobytwo[1]{\left[\begin{array}{@{}cc@{}}#1\end{array}\right]}
-	
-	%for easy column vectors of size 2
-	\newcommand\tworow[1]{\left[\begin{array}{@{}c@{}}#1\end{array}\right]}
+%redefined math symbols taking arguments
+\renewcommand\mod[1]{\ (\mathrm{mod}\ #1)}
+
+%roman font math operators
+\DeclareMathOperator\im{im}
+
+%for easy 2 x 2 matrices
+\newcommand\twobytwo[1]{\left[\begin{array}{@{}cc@{}}#1\end{array}\right]}
+
+%for easy column vectors of size 2
+\newcommand\tworow[1]{\left[\begin{array}{@{}c@{}}#1\end{array}\right]}
 	
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\title{\mbox{}\\[-8ex]Fundamental Concepts Solutions\normalsize
+\title{\mbox{}\\[-8ex]Functions Solutions\normalsize
 	\\[-2.5ex]}
 \author{Solutions by: Raindrops\_drop \\[1ex]
-	 \\[-1ex]}
-\date{February 12, 2026} 
+	\\[-1ex]}
+\date{February 13, 2026} 
 \maketitle
 
 \vspace{-3ex}%
@@ -105,738 +105,535 @@
 
 \exnumber{Exercises}
 
-\exnumber{1.} Check the distributive laws for \(\cup\) and \(\cap\) and DeMorgan's laws.
-
-\begin{proof}
-	We first show the distributive laws for the union and intersection set operations.
-	Let \(A, B, C\) be sets. Thus, the laws we aim to prove are:
-	\begin{enumerate}
-		\item[(a)] \(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\).
-		\item[(b)] \(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\). 
-	\end{enumerate}
-	
-	We begin by showing \((a)\). If \(A\) were empty, then \(A \cup (B \cap C) = B \cap C\).
-	Furthermore, \((A \cup B) \cap (A \cup C) = B \cap C\). Thus, our property holds. Similarly,
-	if either \(B\) or \(C\) were empty, then \(B \cap C = \emptyset\). Thus, \(A \cup (B \cap C) = A\)
-	and \((A \cup B) \cap (A \cup C) = A \cap A = A\). Thus, our property holds if either \(B\) or \(C\)
-	are empty. In particular, we conclude that this equality holds if either or all of the sets are 
-	empty. Thus we will now assume that \(A, B\), and \(C\) are all non-empty.
-	
-	Let \(x \in A \cup (B \cap C)\). Then, either \(x \in A\), \(x \in B \cap C\) or \(x\) is in 
-	both sets are true. If \(x \in A\), then notably \(x \in A \cup B\) and \(x \in A \cup C\),
-	and therefore \(x \in (A \cup B) \cap (A \cup C)\). Now, consider \(x \in B \cap C\). Then,
-	by definition \(x \in B\) and \(x \in C\). In particular, \(x \in A \cup B\) and \(x \in A \cup C\),
-	and therefore, \(x \in (A \cup B) \cap (A \cup C)\). Thus, we can conclude that 
-	\(A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)\).
-	
-	Let \(y \in (A \cup B) \cap (A \cup C)\). Then, by definition \(y \in A \cup B\) and 
-	\(y \in A \cup C\). Then, either \(y \in A, y \in B, y \in C\), or \(y\) is an element of all the
-	sets or any combination of two of the sets. If \(y \in A\), note then that \(y \in A \cup (B \cap C)\).
-	Thus, assume that \(y \notin A\). Then it must be that \(y \in B\) and \(y \in C\). This is true 
-	because of the fact that \(y \in A \cup B\) and \(y \in A \cup C\). Thus, \(y \in B \cap C\),
-	and therefore, \(y \in A \cup (B \cap C)\). Therefore, we can conclude that 
-	\((A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)\). As such, we've shown that 
-	\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\).
-	
-	We shall now prove \((b)\). If $A$ we empty, then $A \cap (B \cup C) = \emptyset$. Furthermore,
-	$(A \cap B) \cup (A \cap C) = \emptyset$. Thus, the identity holds. Assume now that $B$ is empty.
-	Then, $B \cup C = C$. Thus, $A \cap (B \cup C) = A \cap C$, and $(A \cap B) \cup (A \cap C) = A \cap C$.
-	So, the identity holds, and similarly for the case where $C$ is empty. Note then that this identity 
-	will hold if any of the sets is empty, and in particular it will also hold if any pair of sets or all
-	the sets are empty. Thus, we will assume that $A, B,$ and $C$ are non-empty.
-	
-	Let $x \in A \cap (B \cup C)$. Then, $x \in A$ and $x \in B \cup C$. Since $x in B \cup C$, 
-	either $x \in B, x \in C$, or $x$ is in both sets. If $x \in B$, then $x \in A \cap B$ and thus
-	$x \in (A \cap B) \cup (A \cap C)$. Similarly, if $x \in C$, then $x \in A \cap C$ and thus 
-	$x \in (A \cap B) \cup (A \cap C)$. Therefore, we can conclude that $A \cap (B \cup C) \subseteq 
-	(A \cap B) \cup (A \cap C)$.
-	
-	Let $y \in (A \cap B) \cup (A \cap C)$. Then, either $y \in A \cap B$, $y \in A \cap C$, or 
-	$y$ is an element of both sets. Assume that $y \in A \cap B$, then $y \in A$ and $y \in B$.
-	In particular, since $y \in B$, it must also be true that $y \in B \cup C$. Thus,
-	$y \in A \cap (B \cup C)$. Similarly, if $y \in A \cap C$, then $y \in A$ and $y \in C$.
-	Since $y \in C$, it is also true that $y \in B \cap C$. Thus, $y \in A \cap (B \cup C)$.
-	Thus, we conclude that $(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)$.
-	Therefore, we have shown that \(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\). 
-	
-	We will now focus on the DeMorgan's laws. Which are as follows:
-	\begin{enumerate}
-		\item[(c)] $A - (B \cup C) = (A - B) \cap (A - C)$.
-		\item[(d)] $A - (B \cap C) = (A - B) \cup (A - C)$.
-	\end{enumerate}
-	
-	We will first prove $(c)$. Note that the identity holds if either $A = \emptyset$, $B = \emptyset$,
-	or $C = \emptyset$. In particular, it will also hold if all three sets or any combination of two
-	of the sets are empty. Thus, we will assume that all three sets are non-empty.
-	
-	Let $x \in A - (B \cup C)$. Then, by definition, $x \in A$ and $x \notin B \cup C$. Since 
-	$x \notin B \cup C$, we note that it must be true that $x \notin B$ and $x \notin C$. 
-	Thus, we note that by definition, $x \in A - B$ and $x \in A - C$. Therefore, $x \in (A - B) \cap 
-	(A - C)$. As such, we can conclude that $A - (B - C) \subseteq (A - B) \cap (A - C)$.
-	
-	Let $y \in (A - B) \cap (A - C)$. Then, $x \in A - B$ and $x \in A - C$. In particular, we note 
-	that $x \in A$. Furthermore, $x \notin B$ and $x \notin C$, which implies that $x \notin B \cup C$.
-	Thus, $x \in A - (B \cup C)$; therefore, we have shown that $(A - B) \cap (A - C) \subseteq A - 
-	(B \cup C)$. Thus, we conclude that $A - (B \cup C) = (A - B) \cap (A - C)$.
-	
-	We will now focus on proving $(d)$. Note that if $A = \emptyset$ our identity will still hold.
-	If $B = \emptyset$, then $A - (B \cap C) = A$. Further note that $(A - B) \cup (A - C) = 
-	A \cup (A - C)$. Since $A - C \subseteq A$, we note that $A \cup (A - C) = A$. Thus, our identity
-	holds if $B = \emptyset$. If $C = \emptyset$, using a similar argument as with $B$, we also note
-	that the identity holds. In particular, if any combination of two of the three sets or all three 
-	sets are empty the identity will hold. Thus, we will assume that all of the sets are non-empty.
-	
-	Let $x \in A - (B \cap C)$. Then, $x \in A$ and $x \notin B \cap C$. Since $x \notin B \cap C$,
-	either $x \notin B, x \notin C$ or $x$ is not an element of both sets. Assume that $x \notin B$,
-	then $x \in A - B$; furthermore, $x \in (A - B) \cup (A - C)$. Similarly, if $x \notin C$,
-	then $x \in A - C$, and thus $x \in (A - B) \cup (A - C)$. Thus, we have shown that 
-	$A - (B \cap C) \subseteq (A - B) \cup (A - C)$.
-	
-	Let $y \in (A - B) \cup (A - C)$. Then, either $y \in A - B, y \in A - C$, or $y$ is an element 
-	of both sets. Note that $y \in A$ in all of the possibilities. Thus, $y \notin B, y \notin C$,
-	or $y$ is not an element of either set. In particular, note that in either of the possibilities,
-	it must be that $y \notin B \cap C$. Thus, $y \in A - (B \cap C)$. Therefore, we have shown
-	that $(A - B) \cup (A - C) \subseteq A - (B \cap C)$. Thus, we have shown that 
-	$A - (B \cap C) = (A - B) \cup (A - C)$.
-\end{proof}
-
-\newpage
-
-\exnumber{2.} Determine which of the following statements are true for all sets $A,B, C$ and $D$. 
-If a double implication fails, determine whether one or the other of the possible implications holds.
-If an equality fails determine whether the statement becomes true if the "equals" symbol is replaced
-by one or the other of the inclusion symbols $\subset$ or $\supset$.
-
+\exnumber{1.} Let $f: A \to B$. Let $A_0 \subset A$ and $B_0 \subset B$.
 \begin{enumerate}[label=(\alph*)]
-	\item $A \subset B$ and $A \subset C \iff A \subset (B \cup C)$.
+	\item Show that $A_0 \subset f^{-1}(f(A_0))$ and that equality holds if $f$ is 
+	injective.
 	\begin{proof}
-		Assume that $A \subset B$ and $A \subset C$. Note that if either $B$ or $C$ are empty,
-		then it must be that $A = \emptyset$. As such, $A \subset (B \cup C)$. Thus, we assume that 
-		neither $B$ or $C$ are empty. If $A = \emptyset$, then trivially $A \subset (B \cup C)$.
-		Thus, we further assume that $A \neq \emptyset$. Let $a \in A$. Then, by definition, 
-		$a \in B$ and $a \in C$. Thus, $a \in (B \cup C)$. Therefore, if $A \subset B$ and 
-		$A \subset C$, then $A \subset (B \cup C)$.
+		Note that if $A_0$ is empty, then $A_0 \subseteq f^{-1}(f(A_0))$ trivially.
+		Thus we assume that $A_0$ is non-empty. Let $x \in A_0$. Then, $f(x) \in f(A_0)$
+		by definition. Since $f(x) \in f(A_0)$, we have that $x \in f^{-1}(f(A_0))$.
+		Therefore, $A_0 \subseteq f^{-1}(f(A_0))$.
 		
-		Assume that $A \subset (B \cup C)$. Note that if $B = \emptyset$ and both $A$ and $C$ are
-		nonempty, then $B \cup C = C$, and $A \subset C$. Since $A$ is non-empty, it cannot be
-		that $A \subset B$ since $B$ is empty. Thus, it is not true, in general, that 
-		if $A \subset (B \cup C)$ then $A \subset B$ and $A \subset C$.
+		Let $x \in f^{-1}(f(A_0))$. By definition, $f(x) \in f(A_0)$. In particular, this
+		implies that $f(x) = b$ such that $b \in f(A_0)$. Since it may be that $f$ is 
+		not injective, we cannot conclude that $x \in A_0$. This is because there
+		may exist some $y \in A_0$ such that $f(y) = f(x) \in f(A_0)$ and $y \neq x$.
 		
-		Therefore, we can only conclude that $A \subset B$ and $A \subset C \implies A \subset (B \cup C)$.
+		If, however, $f$ is injective, then it must be that $y = x$ since $f(y) = f(x)$.
+		In particular, this would imply that $x \in A_0$ must be true since $f(x) \in f(A_0)$.
+		Therefore, we've shown that equality holds if $f$ is injective.
 	\end{proof}
-	\item $A \subset B$ or $A \subset C \iff A \subset (B \cup C)$. 
+	 
+	\item Show that $f(f^{-1}(B_0)) \subset B_0$ and that equality holds if $f$ is 
+	surjective. 
 	\begin{proof}
-		Assume that $A \subset B$ or $A \subset C$. If $A = \emptyset$, then $A \subset  (B \cup C)$.
-		Assume $B = \emptyset$, if $A \subset B$, then $A = \emptyset$ and thus $A \subset (B \cup C)$.
-		If $A \subset C$, then $A \subset (B \cup C)$. We arrive at the same conclusion if $C = \emptyset$
-		In particular, if any pair of these three sets or all three of them are empty, then we can
-		conclude that $A \subset (B \cup C)$. Therefore, we will assume that all three of these sets 
-		are non-empty.
+		If $f(f^{-1}(B_0))$ is empty, then it is trivially a subset of $B_0$. Thus we 
+		will assume that $f(f^{-1}B_0)$ is non-empty. Let $x \in f(f^{-1} B_0)$.
+		By definition, $x = f(a)$ for at least one $a \in f^{-1}(B_0)$. Since 
+		$a \in f^{-1}(B_0)$, it must be that $f(a) \in B_0$. Therefore, $x \in B_0$
+		and we can conclude that $f(f^{-1} B_0) \subseteq B_0$.
 		
-		Assume that $A \subset B$. Then, if $a \in A$, it must be true that $a \in B$. Thus,
-		$a \in B \cup C$, and we can conclude that $A \subset (B \cup C)$. Similarly, if $A \subset C$,
-		and $a \in A$, we have that $a \in C$. Thus, $a \in B \cup C$, and thus $A \subset (B \cup C)$.
+		Let $x \in B_0$. Since $f$ is not necessarily surjective, it might be that 
+		there exists no $a \in A$ such that $f(a) = x$. As such, $f^{-1}(x) = \emptyset$,
+		and therefore, $f^{-1}(x) \notin f^{-1}(B_0)$. Furthermore, since 
+		$f^{-1}(x) \notin f^{-1}(B_0)$, it is also true that $x \notin f(f^{-1}(B_0))$.
 		
-		Now, assume that $A \subset (B \cup C)$. For this counterexample, assume that $A, B$, and $C$
-		are all non-empty. Furthermore, assume that $B - C$ and $C - B$ are nonempty. Since $A \subset 
-		(B \cup C)$, let $a_1, a_2 \in A$ such that $a_1 \in B - C$ and $a_2 \in C - B$. Note then that
-		$A \not\subset B$ and $A \not\subset C$ since $a_1 \not\in C$ and $a_2 \not\in B$. Thus,
-		we cannot conclude in general that if $A \subset (B \cup C)$, then $A \subset B$ or $A \subset C$.
-		Therefore, we can only conclude that $A \subset B$ or $A \subset C \implies A \subset (B \cup C)$.
+		Thus, assume that $f$ is surjective. Then, there exists some $a \in A$ such that
+		$f(a) = x$. In particular, since $x \in B_0$, $a \in f^{-1}(B_0)$. Furthermore,
+		we conclude that $f(f^{-1}(B_0))$ contains $x$. Therefore, 
+		$B_0 \subseteq f(f^{-1}(B_0))$ and thus equality holds if $f$ is surjective.
 	\end{proof}
-	\item $A \subset B$ and $A \subset C \iff A \subset (B \cap C)$.
-	\begin{proof}
-		Assume that $A \subset B$ and $A \subset C$. Note that if either $B$ or $C$ are the empty set,
-		then $A$ must be the empty set. In particular, it would imply that $A \subset (B \cap C)$.
-		Similarly if $A$ were the empty set. Furthermore, if any two of the three sets are the empty
-		set, or all three of the sets are empty, then $A \subset (B \cap C)$. Therefore, we will
-		assume that all three sets are non-empty.
-		
-		Let $a \in A$. Then, by our assumption, $a \in B$ and $a \in C$. Thus, by definition,
-		$a \in B \cap C$. So, we conclude that $A \subset (B \cap C)$.
-		
-		Now, assume that $A \subset (B \cap C)$. Note that if either of the sets is empty,
-		then $A \subset B$ and $A \subset B$. Furthermore, if any two of the three sets or all sets
-		are empty, then $A \subset B$ and $A \subset C$. Thus, we will assume that all three sets are 
-		non-empty.
-		
-		Let $a \in A$. Then, by our assumption, $a \in (B \cap C)$. Thus, $a \in B$ and $a \in C$.
-		Thus, by definition of a subset, $A \subset B$ and $A \subset C$. Therefore, we conclude that 
-		$A \subset B$ and $A \subset C \iff A \subset (B \cap C)$.
-	\end{proof}
-	\item $A \subset B$ or $A \subset C \iff A \subset (B \cap C)$.
-	\begin{proof}
-		Assume that $A \subset B$ or $A \subset C$. Note that if all sets are non-empty, $A \subset B$,
-		$B \cap C = \emptyset$, then $A \not\subset (B \cap C)$. Thus, it is not true in general that 
-		if $A \subset B$ or $A \subset C$, then $A \subset (B \cap C)$.
-		
-		Assume that $A \subset (B \cap C)$. Then, by $(c)$, $A \subset B$ and $A \subset C$.
-		In particular, $A \subset B$ or $A \subset C$ is also true. Therefore, we've shown that 
-		$A \subset B$ or $A \subset C \impliedby A \subset (B \cap C)$. 
-	\end{proof} 
-	\item $A - (A - B) = B$.
-	\begin{proof}
-		This equality is not true in general. To show this we will first show three results. The first
-		of such results is the fact that $A - B = A \cap B^{c}$. 
-		
-		First note that this result is true if either $A$ or $B$ or both are the empty set. Thus,
-		we will assume that neither are empty.
-		Let $x \in A - B$. Then, $x \in A$ and $x \notin B$. By definition, $x \in B^{c}$. Thus,
-		it must be that $x \in A \cap B^{c}$. Therefore, $A - B \subseteq A \cap B^{c}$.
-		
-		Let $y \in A \cap B^{c}$. Then, $x \in A$ and $x \in B^{c}$. Since $x \in B^{c}$, it must be 
-		that $x \notin B$. Thus,by definition $x \in A - B$. Therefore, $A \cap B^{c} \subseteq A -B$.
-		As such, we have shown that $A - B = A \cap B^{c}$.
-		
-		The next result we will show is the fact that $(A^{c})^{c} = A$. If $A = \emptyset$, then
-		$A^{c} = X$ where $X$ is the ambient set under which $A$ is defined. In particular,
-		the compliment of the set is the empty set. Thus, $(A^{c})^{c} = \emptyset = A$. Thus our 
-		result holds. Therefore, we will assume that $A$ is non-empty.
-		
-		Let $a \in (A^{c})^{c}$. By definition, $a \notin A^{c}$. Since $a \notin A^{c}$, it must 
-		be that $a \in A$. Thus, $(A^{c})^{c} \subseteq A$. Now, let $a \in A$. Then, by definition,
-		$a \notin A^{c}$. Since $a \notin A^{c}$, it must be that $a \in (A^{c})^{c}$. Therefore,
-		$A \subseteq (A^{c})^{c}$. As such, $A = (A^{c})^{c}$.
-		
-		The final result we need is the following: $(A \cap B)^c = A^c \cup B^c$. 
-		Note that if $A = \emptyset$, $()A \cap B)^c = (\emptyset)^c = X$, where $X$
-		is the ambient set. Furthermore, $A^c \cup B^c = X \cup B^c = X$. Thus, 
-		the result is true. We arrive at the same conclusion through an analogous argument
-		if $B = \emptyset$ or both sets are empty. Thus, we will assume that both sets 
-		are non-empty.
-		
-		Let $x \in (A \cap B)^c$. By definition, $x \notin A \cap B$. Thus, either $x \notin
-		A$, $x \notin B$, or $x$ is not in both sets. If $x \notin A$, then $x \in A^c$, as 
-		such $x \in A^c \cup B^c$. Therefore, $(A \cap B)^c \subseteq A^c \cup B^c$. We 
-		arrive at the same conclusion in the other two cases through an analogous 
-		argument.
-		
-		Let $x \in A^c \cup B^c$. Then, either $x \in A^c$, $x \in B^c$, or $x$ is in both
-		sets. If $x \in A^c$, then $x \notin A$. In particular, this implies that 
-		$x \notin A \cap B$. Thus, $x \in (A \cap B)^c$ and therefore $A^c \cup B^c
-		\subseteq (A \cap B)^c$. We arrive at the same conclusion through analogous arguments
-		for the other cases. Hence, we conclude that $(A \cap B)^c = A^c \cup B^c$.  
-		
-		With these three results we can now prove our original claim.
-		\begin{align*}
-			A - (A - B) &= A \cap (A - B)^{c} \\
-						&= A \cap (A^{c} \cup (B^{c})^{c}) \\ 
-						&= A \cap (A^{c} \cup B) \\
-						&= (A \cap A^{c}) \cup (A \cap B) \\
-						&= A \cap B		
-		\end{align*}
-		Hence, $A - (A - B) = A \cap B$. In particular, it implies that $A - (A - B) \subset B$.
-	\end{proof}
-	\item $A - (B - A) = A - B$.
-	\begin{proof}
-		We will make use of the results proved in the previous problem.
-		\begin{align*}
-			A - (B - A) &= A \cap (B - A)^c \\
-						&= A \cap (B \cap A^c)^c \\
-						&= A \cap (B^c \cup (A^c)^c) \\
-						&= A \cap (B^c \cup A) \\
-						&= (A \cap B^c) \cup (A \cap A) \\
-						&= (A - B) \cup A \\
-						&= A
-		\end{align*}
-		Note that $A - B \subseteq A$. As such, it must be that the claim in this problem
-		is not true in general and thus, $A - (B - A) \supseteq A - B$
-	\end{proof}
-	\item  $A \cap (B - C) = (A \cap B) - (A \cap C)$.
-	\begin{proof}
-		If $A$ is empty, note that $A \cap (B - C) = \emptyset$ and $(A \cap B) - (A \cap C) = 
-		\emptyset$. Thus the claim is true. If $B$ is empty, then $(B - C) = \emptyset$,
-		and thus $A \cap (B - C) = \emptyset$. Furthermore, $A \cap B = \emptyset$, and as 
-		such $(A \cap B) - (A \cap C) = \emptyset$. Thus, the claim is true. Similarly,
-		if $C = \emptyset$, then $A \cap (B - C) = A \cap C$. $(A \cap B) - (A \cap C) = 
-		A \cap B$. Thus, the claim is true. In particular, if any two of the three
-		sets are empty, or all three sets are empty the claim will be true. As such, we 
-		will assume that all three sets are non-empty. 
-		
-		Let $x \in A \cap (B - C)$. Then, $x \in A$ and $x \in B - C$. Since $x \in B - C$,
-		$x \in B$ and $x \notin C$. In particular, we note that $x \in A \cap B$.
-		Since $x \notin C$, we have that $x \notin A \cap C$. Therefore, 
-		$x \in (A \cap B) - (A \cap C)$. Hence, we conclude that 
-		$A \cap (B - C) \subseteq (A \cap B) - (A \cap C)$.
-		
-		Let $x \in (A \cap B) - (A \cap C)$. Then, $x \in A \cap B$ and $x \notin A \cap C$.
-		Since $x \in A \cap B$, $x \in A$ and $x \in B$. Furthermore, since $x \notin A \cap C$
-		and $x \in A$, it must be that $x \notin C$. In particular, we have that 
-		$x \in B - C$ by definition and $x \in A$. Therefore, $x \in A \cap (B - C)$.
-		Hence, $(A \cap B) - (A \cap C) \subseteq A \cap (B - C)$. Thus, we can
-		conclude that $A \cap (B - C) = (A \cap B) - (A \cap C)$.
-	\end{proof}
-	\item $A \cup (B - C) = (A \cup B) - (A \cup C)$.
-	\begin{proof}
-		Note that if $B = \emptyset$, then $A \cup (B - C) = A$. Furthermore,
-		$(A \cup B) - (A \cup C) = A - (A \cup C) = \emptyset$. Thus, the equality does 
-		not hold in general since $\emptyset \subset A$ and not equal. Hence, we will
-		aim to prove instead that $A \cup (B - C) \supseteq (A \cup B) - (A \cup C)$.
-		If $A$ is empty, note that $A \cup (B - C) = B - C$. Furthermore, 
-		$(A \cup B) - (A \cup C) = B - C$. Thus, our claim holds. If $C$ is empty,
-		then $A \cup (B - C) = A \cup B$. Furthermore, $(A \cup B) - (A \cup C) = 
-		(A \cup B) - A = B - A$. Note $B - A \subseteq A \cup B$. Thus, our claim holds.
-		In particular, if any two of the three sets are empty or all three sets are empty,
-		the claim will hold. Thus, we will assume that all three sets are non-empty.
-		
-		Let $x \in (A \cup B) - (A \cup C)$. Then, $x \in A \cup B$ and $x \notin A \cup C$.
-		Since $x \in A \cup B$, either $x \in A$, $x \in B$, or $x$ is an element of both
-		sets. Furthermore, since $x \notin A \cup C$, then $x \notin A$ and $x \notin C$.
-		Since $x \notin A$, it must be that $x \in B$. By definition, we have that 
-		$x \in B - C$. In particular, we also have that $x \in A \cup (B - C)$.
-		Therefore, we conclude that $A \cup (B - C) \supseteq (A \cup B) - (A \cup C)$.
-	\end{proof}
-	\item $(A \cap B) \cup (A - B) = A$.
-	\begin{proof}
-		Let $A = \emptyset$, then $A \cap B = \emptyset$, and $A - B = \emptyset$,
-		as such, $(A \cap B) \cup (A - B) = \emptyset$. Thus, the claim holds. 
-		If $B = \emptyset$, then $A \cap B = \emptyset$, and $A - B = A$. Thus,
-		$(A \cap B) \cup (A - B) = A$. Thus, our claim holds. Also note that the claim
-		holds if both sets are empty. Thus, we will assume that both sets are non-empty.
-		
-		Let $a \in (A \cap B) \cup (A - B)$. By definition, either $a \in A \cap B$,
-		$a \in A - B$, or $a$ is an element of both sets. If $a \in A \cap B$, we note 
-		that $a \in A$. If $a \in A - B$ we also have that $a \in A$. Therefore, 
-		since in all cases $a \in A$, we conclude that $(A \cap B) \cup (A - B) \subseteq  A$.
-		
-		Let $a \in A$. If $A \cap B = \emptyset$, then note that $a \in A - B$ and therefore,
-		$a \in (A \cap B) \cup (A - B)$. Thus, assume that $A \cap B \neq \emptyset$. Note that 
-		if $a \in A$ and $a \notin A \cap B$, we also have that $a \in A - B$. Since 
-		$A \cap B \neq \emptyset$ there exists some $a \in A$ such that $a \in A \cap B$ also.
-		Therefore, $a \in (A \cap B) \cup (A - B)$. Note that there cannot exist some $a \in A$
-		such that $a \notin A - B$ and $a \notin A \cap B$. This is because if $a \in A$, but
-	and $D$ are non-empty and $B \cap D$ is non-empty. 	$a \notin A - B$, it must be that $a \in B$ and therefore $a \in A \cap B$.
-		Similarly, if $a \in A$ and $a \notin A \cap B$, then $a \notin B$ and therefore
-		$a \in A - B$. Thus, we have shown that $A \subseteq (A \cap B) \cup (A - B)$.
-		Therefore, we can conclude that $(A \cap B) \cup (A - B)$.
-	\end{proof}
-	\newpage
-	\item $A \subset C$ and $B \subset D \implies (A \times B) \subset (C \times D)$.  
-	\begin{proof}
-		Let $A \subset C$ and $B \subset D$. Consider the set $A \times B$. If $A$ is empty,
-		note that $A \times B = \emptyset$ and thus $A \times B \subset C \times D$.
-		We arrive at the same conclusion if $B$ is empty or both sets are empty through
-		an analogous argument. Thus, we will assume that both $A$ and $B$ are non-empty.
-		
-		Let $x \in A \times B$. By definition, $x = (a, b)$ such that $a \in A$ and $b \in B$.
-		By assumption, we have that $a \in C$ and $b \in D$ since $A \subset C$ and 
-		$B \subset D$. Therefore, we have that $(a, b) \in C \times D$. Thus, we conclude
-		that $A \times B \subset C \times D$.
-	\end{proof}
-	\item The converse of $(i)$. If $A \times B \subset C \times D$, then 
-	$A \subset C$ and $B \subset D$.
-	\begin{proof}
-		This statement is not true in general. If $A = \emptyset$, $B = \{1, 2\}$,
-		$C = \{1\}$, and $D = \{2\}$, note that $A \times B = \emptyset$ is a subset
-			of $C \times D$. However, $B$ is not a subset of $D$. 
-	\end{proof}
-	\item The converse of $(i)$, assuming that $A$ and $B$ are nonempty.
-	\begin{proof}
-		Let $A \times B \subset C \times D$ such that $A$ and $B$ are nonempty.
-		As such, there exists some $x \in A \times B$ which, by definition, 
-		has the property that $x = (a, b)$ where $a \in A$ and $b \in B$. Since 
-		$A \times B \subset C \times D$, $(a, b) \in C \times D$. Therefore,
-		$a \in C$ and $b \in D$ by definition. Thus, we can conclude that 
-		$A \subset C$ and $B \subset D$.
-	\end{proof}
-	\item $(A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D)$.
-	\begin{proof}
-		Note that if $A$ is empty, then $(A \times B) \cup (C \times D) = C \times D$.
-		Furthermore, $(A \cup C) \times (B \cup D) = C \times (B \cup D)$. Note that 
-		$C \subseteq C$ and $D \subseteq B \cup D$. Thus, by $(j)$ we have that 
-		$C \times D \subseteq C \times (B \cup D)$. In particular if any of the sets is 
-		empty we arrive at an analogous conclusion using a similar argument. If both 
-		$A$ and $B$ are empty, note that both sides of the identity will be equal, 
-		which will also happen if both $C$ and $D$ are empty. If $A$ and $C$ are empty,
-		then both sides of the equality are empty and thus are equal, which will also happen
-		if both $B$ and $D$ are empty. If $A$ and $D$ are empty, the left side will be empty,
-		and the right side will be $C \times B$, note $\emptyset \subseteq C \times B$.
-		We arrive at a similar conclusion if both $B$ and $C$ are empty through an 
-		analogous argument. If any three of the four sets are empty, then both sides
-		of the identity will be empty, similarly if all four sets are empty.
-		
-		From this, we've noted that this identity will fail if $A$ is empty, $B,C,$ and $D$
-		are non-empty such that $B - D \neq \emptyset$. Thus, $C \times D \subset 
-		C \times (B \cup D)$. Since $B - D$ is nonempty, there exists some $d \in D$
-		such that $d \notin B$, Thus, this is a strict inclusion and therefore the equality
-		does not hold. As such, it is not true in general that $(A \cup C) \times (B \cup D)
-		\subseteq (A \times B) \cup (C \times D)$. We may check for the opposite direction
-		of the inclusion.
-		
-		Assume that all sets are non-empty, as we have already checked the cases where 
-		each set is empty and they all agree that $(A \times B) \cup (C \times D) \subseteq 
-		(A \cup C) \times (B \cup D)$.
-		
-		Let $x \in (A \times B) \cup (C \times D)$. By definition, either $x \in A \times B$,
-		$x \in C \times D$, or $x$ is an element of both sets. Let $x = (n, m)$. If 
-		$x \in A \times B$, then $n \in A$ and $m \in B$. In particular, $n \in A \cup C$
-		and $m \in B \cup D$. Therefore, $x \in (A \cup C) \times (B \cup D)$. We arrive 
-		at the same conclusion if $x \in C \times D$ through an analogous argument.
-		Therefore, we can conclude that $(A \times B) \cup (C \times D) \subseteq 
-		(A \cup C) \times (B \cup D)$.
-	\end{proof}
-	\item $(A \times B) \cup (C \times D) = (A \cap C) \times (B \cap D)$.
-	\begin{proof}
-		Firstly, note that if any of the sets are empty then both sides of the claim 
-		will be empty and the equality will hold. In particular, this will be true 
-		for any combination of the sets being empty. As such, we shall examine this 
-		claim for when all the sets are non-empty.
-		
-		Let $x \in (A \times B) \cup (C \times D)$ such that $x = (n, m)$. Then, 
-		$x \in A \times B$ and $x \in C \times D$. Since $x \in A \times B$, $n \in A$
-		and $m \in B$. Furthermore, since $x \in C \times D$, $n \in C$ and $m \in D$.
-		Since $n \in A$ and $n \in C$, $n \in A \cap C$. Similarly, since $m \in B$
-		and $m \in D$, $m \in B \cap D$. By definition, it must be that 
-		$x \in (A \cap C) \times (B \cap D)$. Therefore, we conclude that 
-		$(A \times B) \cap (C \times D) \subseteq (A \cap C) \times (B \cap D)$.
-		
-		Let $y \in (A \cap C) \times (B \cap D)$ such that $y = (n, m)$. By definition,
-		$n \in A \cap C$ and $m \in B \cap D$. Since $n \in A \cap C$, it must be 
-		that $n \in A$ and $n \in C$. Similarly, since $m \in B \cap D$, it must also be
-		that $m \in B$ and $m \in D$. In particular, $x \in A \times B$ and 
-		$x \in C \times D$ by definition. Therefore, $x \in (A \times B) \cap (C \times D)$.
-		Hence, it must be that $(A \cap C) \times (B \cap D) \subseteq (A \times B)
-		\cap (C \times D)$. Therefore, we conclude that $(A \times B) \cap (C \times D) = 
-		(A \cap C) \cap (B \times D)$.
-	\end{proof}
-	\item $A \times (B - C) = (A \times B) - (A \times C)$.
-	\begin{proof}
-		Note that if either $A$ or $B$ are empty, then both sides of this claim will
-		be empty allowing the equality to hold. If $C$ is empty note that both sides
-		of the claim will be equivalent to $A \times B$. If any two of the three
-		sets or all three of the sets note that both sides of the claim will be empty.
-		Thus, the equality will hold for all of these cases. As such, we will focus now
-		on the case where all of the sets are non-empty.
-		
-		Let $x \in A \times (B - C)$ such that $x = (n, m)$. By definition,
-		$n \in A$ and $m \in B - C$. Note that $m \in B$ and $m \notin C$. 
-		In particular, since $m \notin C$ it must be that $x \notin A \times C$.
-		Since $n \in A$ and $m \in B$ we have that $x \in A \times B$. Thus, we 
-		conclude that $x \in (A \times B) - (A \times C)$. Therefore, 
-		$A \times (B - C) \subseteq (A \times B) - (A \times C)$.
-		
-		Let $y \in (A \times B) - (A \times C)$ such that $y = (n. m)$. 
-		By definition, $y \in A \times B$ and $y \notin A \times C$.
-		Since $y \in A \times B$, $n \in A$ and $m \in B$. Furthermore,
-		since $y \notin A \times C$, either $n \notin A$, $m \notin C$, or both are 
-		not in the corresponding set. Since $n \in A$, it must be that $m \notin C$.
-		Thus, not that $m \in B$ and $m \notin C$, which implies that $m \in B - C$.
-		Therefore, we have that $y \in A \times (B - C)$. As such, we conclude that
-		$(A \times B) - (A \times C) \subseteq A \times (B - C)$. Hence, we have shown 
-		that $A \times (B - C) = (A \times B) - (A \times C)$.
-	\end{proof}
-	\item $(A - B) \times (C - D) = (A \times C - B \times C) - A \times D$.
-	\begin{proof}
-		Firstly, note that if either $A$ or $C$ are empty, both sides of this claim are 
-		empty and as such are equal. If $B$ is empty, the claim will reduce to 
-		$A \times (C - D) = (A \times C) - (A \times D)$ which is true by $(o)$. 
-		If $D$ is empty, the claim will reduce to $(A - B) \times C = (A \times C)
-		- (B \times C)$, which is true by $(o)$. If $B$ and $D$ are empty,
-		note that the claim will reduce to $A \times C = A \times C$ which is true.
-		If any other combination of two of the four sets are empty, then both sides
-		of the claim will be empty. Similarly, if any combination of three of the four
-		sets or all of the four sets are empty, then both sides of the claim will be true.
-		Thus, the only case left to check is when all of the four sets are non-empty.
-		
-		Let $x \in (A - B) \times (C - D)$ such that $x = (n, m)$. By definition,
-		$n \in A - B$ and $m \in C - D$. Since $n \in A - B$, we have that 
-		$n \in A$ and $n \notin B$. Similarly, it must be that $m \in C$ and $m \notin D$.
-		In particular, note that $x \in A \times C$ and that $x \notin B \times C$
-		since $n \notin B$. Therefore, $x \in (A \times C) - (B \times C)$. Furthermore,
-		since $m \notin D$, $x \notin A \times D$. Thus, we conclude that 
-		$x \in (A \times C - B \times C) - A \times D$.
-		
-		Let $y \in (A \times C - B \times C) - A \times D$ such that $y = (n, m)$. 
-		By definition, $n \in A$ and $m \in C$. Since $y \notin B \times C$ and 
-		$m \in C$ it must be that $n \notin B$. Furthermore, since $y \notin A \times D$
-		and $n \in A$, it must be that $m \notin D$. In particular, since $n \in A$ and 
-		$n \notin B$, $n \in A - B$. Further, since $m \in C$ and $m \notin D$, 
-		$m \in C - D$. Therefore, $y \in (A - B) \times (C - D)$. Hence, we conclude that
-		$(A \times C - B \times C) - A \times D \subseteq (A - B) \times (C - D)$.
-		Therefore, we conclude that $(A - B) \times (C - D) = (A \times C - B \times C)
-		- A \times D$. 
-	\end{proof}
-	\item $(A \times B) - (C \times D) = (A - C) \times (B - D)$.
-	\begin{proof}
-		Note that if either $A$ or $B$ are empty, then both sides of the claim are empty
-		and the equality holds. If $C$ is empty, then the claim will become
-		$A \times B = A \times (B - D)$, which in general note that $A \times B
-		\supseteq A \times (B - D)$. In particularly, the equality does not hold
-		if both $B$, $D$, and $B \cap D$ are non-empty. If $D$ is empty, the claim
-		reduces to $A \times B = (A - C) \times B$. Using a similar argument as 
-		with the previous case, we arrive that only $\supseteq$ can be true in general
-		for this case. If both $C$ and $D$ are empty, note that the claim reduces 
-		to $A \times B = A \times B$ which is true. If any other combination of two
-		of the four sets are empty, both sides of the claim are empty and thus the claim is 
-		true. Similarly, any combination of three of the four sets or all four of the 
-		sets are empty, then both sides of the equality are empty. Thus, since in general
-		only $\supseteq$ may be true for this claim, we need only check that direction
-		for the case where all four sets are non-empty.
-		
-		Let $x \in (A - C) \times (B - D)$ such that $x = (n, m)$. By definition,
-		$n \in A$ and $n \notin C$, and $m \in B$ and $m \notin D$. Since 
-		$n \in A$ and $m \in B$, $x \in A \times B$. Furthermore, since 
-		$n \notin C$ and $m \notin D$, $x \notin C \times D$. As such, 
-		$x \in (A \times B) - (C \times D)$. Therefore, $(A \times B) - (C \times D) 
-		\supseteq (A - C) \times (B - D)$.
-	\end{proof} 
-\end{enumerate}
-
-\exnumber{3.} 
-\begin{enumerate}[label=(\alph*)]
-	\item Write the contrapositive and converse of the following statement: "If $x < 0$,
-	then $x^2 - x > 0$," and determine which (if any) of the three statements are true.
-	\begin{proof}
-		Firstly, we will show the main statement is true. Note that if $x < 0$, then
-		$-x > 0$. Furthermore, by properties of the field of real numbers, $x^2 > 0$.
-		Therefore, $x^2 - x > 0$.
-		
-		The contrapositive of the statement will be: "If $x^2 - x \leq 0$, then $x \geq 0$."
-		Since the contrapositive of a statement is logically equivalent to the original
-		statement, and in this case, the original statement is true, it must be that
-		this statement is also true.
-		
-		The converse of the statement is: "If $x^2 - x > 0$, then $x < 0$." Note that this 
-		statement is not true in general. Let $x^2 - x = 2 > 0$. Then, note that 
-		either $x = 2$ or $x = -1$. Since it is possible $x = 2 > 0$, the statement 
-		is not true.
-	\end{proof}
-	\item Do the same for the statement "If $x > 0$, then $x^2 - x > 0$.
-	\begin{proof}
-		First, we will show that the main statement is not true in general. 
-		Consider the case $x = 1/2$. Then, $x^2 - x = -1/4 < 0$.
-		
-		The contrapositive of the statement is: "If $x^2 - x \leq 0$, then $x \leq 0$."
-		Since the contrapositive of a statement is logically equivalent to the original
-		statement we can conclude that this claim is not true since the original claim
-		was not true.
-		
-		The converse of the statement is: "If $x^2 - x > 0$, then $x > 0$." This claim
-		is not true in general. To show this simply consider the same example as in
-		$(a)$ in which $x^2 - x = 2 > 0$.
-	\end{proof}
-\end{enumerate}
-
-\exnumber{4.} Let $A$ and $B$ be sets of real numbers. Write the negation of each of the 
-following statements.
-\begin{enumerate}[label=(\alph*)]
-	\item For every $a \in A$, it is true that $a^2 \in B$.
-	
-	The negation of this statement is: For at least one $a \in A$, it is true 
-	that $a^2 \notin B$.
-	\item For at least one $a \in A$, it is true that $a^2 \in B$.
-	
-	The negation of this statement is: For every $a \in A$, it is true that $a^2 \notin B$.
-	\item For every $a \in A$, it is true that $a^2 \notin B$. 
-	
-	The negation of this statement is: For at least one $a \in A$, it is true that
-	$a^2 \in B$.
-	\item For at least one $a \notin A$, it is true that $a^2 \in B$.
-	
-	The negation of this statement is: For all $a \notin A$, it is true that 
-	$a^2 \notin B$.
 \end{enumerate}
 
 \pagebreak
-\exnumber{5.} Let $\mathcal{A}$ be a nonempty collection of sets. Determine the truth
-of each of the following statements and of their converses:
+\exnumber{2.} Let $f: A \to B$ and let $A_i \subset A$ and $B_i \subset B$ for $i = 0$
+and $i = 1$. Show that $f^{-1}$ preserves inclusions, unions, intersections, and differences
+of sets:
 \begin{enumerate}[label=(\alph*)]
-	\item $x \in \bigcup_{A \in \mathcal{A}} A \implies x \in A$ for at least one 
-	$A \in \mathcal{A}$.
-	
+	\item $B_0 \subset B_1 \implies f^{-1}(B_0) \subset f^{-1}(B_1)$.
 	\begin{proof}
-		Let $x \in \bigcup_{A \in \mathcal{A}} A$. Then, by definition 
-		$x \in A$ for at least one $A \in \mathcal{A}$. 
+		Let $B_0 \subseteq B_1$. If $B_0$ is the empty set, then note that $f^{-1}(B_0)$
+		is also the empty set, since $f$ is a rule of assignment, and as such every element
+		of $A$ must be mapped to at least one element in $B$. Therefore, it is trivial to note
+		that $f^{-1}(B_0) \subseteq f^{-1}(B_1)$. We arrive at the same conclusion if 
+		$B_1$ is the empty set. Thus, we will assume that $B_0$ and $B_1$ are non-empty.
 		
-		Let $x \in A$ for at least one $A \in \mathcal{A}$. By definition, $x \in 
-		\bigcup_{A \in \mathcal{A}} A$. 
-		
-		Therefore, by definition this claim and its converse are true.
+		If $f^{-1}(B_0)$ is empty, then it is trivial to note that $f^{-1}(B_0) \subseteq 
+		f^{-1}(B_1)$. Similarly if $f^{-1}(B_1)$ is empty. Thus assume that 
+		$f^{-1}(B_0)$ is non-empty. Let $x \in f^{-1}(B_0)$ and note that this implies 
+		that $f(x) \in B_0$ by definition. Since $B_0 \subseteq B_1$, we have that 
+		$f(x) \in B_1$. In particular, this implies that $x \in f^{-1}(B_1)$ by definition.
+		Therefore, we conclude that $f^{-1}(B_0) \subseteq f^{-1}(B_1)$.
 	\end{proof}
-	
-	\item $x \in \bigcup_{A \in \mathcal{A}} A \implies x \in A$ for every $A \in \mathcal{A}$.
-	
+	\item $f^{-1}(B_0 \cup B_1) = f^{-1}(B_0) \cup f^{-1}(B_1)$.
 	\begin{proof}
-		Let $x \in \bigcup_{A \in \mathcal{A}} A$. By definition, $x \in A$ for at least
-		one $A \in \mathcal{A}$. Let $A$ be the $A \in \mathcal{A}$ such that 
-		$x \in A$. In particular, assume there exists some $A' \in \mathcal{A}$
-		such that $x \notin A'$. Since $x \in A$ it is still true that 
-		$x \in \bigcup_{A \in \mathcal{A}} A$ even though $x \notin A'$. Thus,
-		this statement is not true in general.
+		If $f^{-1}(B_0 \cup B_1)$ is empty, this implies that there exists no 
+		$a \in A$ such that $f(a) \in B_0 \cup B_1$. In particular, for any $a \in A$,
+		$f(a) \notin B_0$ and $f(a) \notin B_1$. Thus, for any $a \in A$, 
+		$a \notin f^{-1}(B_0)$ and $a \notin f^{-1}(B_1)$. Therefore, $f^{-1}(B_0)
+		\cup f^{-1}(B_1)$ is empty, and thus the equality in our claim holds.
 		
-		Let $x \in A$ for every $A \in \mathcal{A}$. In particular, this implies that
-		$x \in A$ for at least one $A \in \mathcal{A}$. Therefore, by definition,
-		$x \in \bigcup_{A \in \mathcal{A}}A$. As such the converse of the claim is true.
-	\end{proof}
-	
-	\item $x \in \bigcap_{A \in \mathcal{A}} A \implies x \in A$ for at least one 
-	$A \in \mathcal{A}$.
-	
-	\begin{proof}
-		Let $x \in \bigcap_{A \in \mathcal{A}} A$. By definition, $x \in A$ for every
-		$A \in \mathcal{A}$. In particular, since $x \in A$ for every $A \in \mathcal{A}$,
-		it is also true that $x \in A$ for at least one $A \in \mathcal{A}$.
+		If $f^{-1}(B_0) \cup f^{-1}(B_1)$ is empty, then there exists no $a \in A$
+		such that $f(a) \in B_0$ or $f(a) \in B_1$ or both. This implies that for
+		all $a \in A$, $f(a) \notin B_0$ and $f(a) \notin B_1$. In particular,
+		$f(a) \notin B_0 \cup B_1$. As such, for all $a \in A$, $a \notin f^{-1}(B_0 \cup B_1)$.
+		Therefore, $f^{-1}(B_0 \cup B_1)$ is empty and the equality in our claim is 
+		true.
 		
-		Let $x \in A$ for at least one $A \in \mathcal{A}$. In particular, there may
-		exist some $A' \in \mathcal{A}$ such that $x \notin A'$. As such,
-		it cannot be that in general $x \in \bigcap_{A \in \mathcal{A}} A$.
-		Therefore, the converse of the statement is not true in general.
-	\end{proof}
-	
-	\item $x \in \bigcap_{A \in \mathcal{A}} A \implies x \in A$ for every $A \in \mathcal{A}$.
-	
-	\begin{proof}
-		Let $x \in \bigcap_{A \in \mathcal{A}} A$. By definition $x \in A$ for every
-		$A \in \mathcal{A}$.
+		Since we've shown that our claim holds when either of the sets is empty, we will
+		assume that both sets are non-empty.
 		
-		Let $x \in A$ for every $A \in \mathcal{A}$. By definition 
-		$x \in \bigcap_{A \in \mathcal{A}} A$. Thus, the converse of the statement is 
-		also true.
-	\end{proof}
-\end{enumerate}
-
-\exnumber{6.} Write the contrapositive of each of the statements of Exercise 5.
-\begin{enumerate}[label=(\alph*)]
-	\item $x \notin A$ for every $A \in \mathcal{A} \implies 
-	x \notin \bigcup_{A \in \mathcal{A}} A$.
-	\item $x \notin A$ for at least one $A \in \mathcal{A} \implies x \notin 
-	\bigcup_{A \in \mathcal{A}} A$.
-	\item $x \notin A$ for every $A \in \mathcal{A} \implies 
-	x \notin \bigcap_{A \in \mathcal{A}} A$.
-	\item $x \notin A$ for at least one $A \in \mathcal{A} \implies 
-	x \notin \bigcap_{A \in \mathcal{A}} A$.
-\end{enumerate}
-
-\pagebreak
-\exnumber{7.} Given sets $A, B$, and $C$, express each of the following sets in terms of 
-$A, B$, and $C$, using the symbols $\cup, \cap, -$.
-\begin{enumerate}[label=(\alph*)]
-	\item $D = \{x \mid x \in A \text{ and } (x \in B) \text{ or } x \in C\}$.
-	
-	$D = A \cap (B \cup C)$.
-	\item $E = \{x \mid (x \in A \text{ and } x \in B) \text{ or } x \in C\}$.
-	
-	$E = (A \cap B) \cup C$.
-	\item $F = \{x \mid x \in A \text{ and } (x \in B \implies x \in C)\}$.
-	
-	$F = A - (B - C)$.
-\end{enumerate}
-
-\exnumber{8.} If a set $A$ has two elements, show that $\pset(A)$ has four elements.
-How many elements does $\pset(A)$ have if $A$ has one element? Three elements? 
-No elements? Why is $\pset(A)$ called the power set of $A$?
-
-Let $A$ be a set of two elements, $A = \{a, b\}$. Note that the power set of $A$
-is equal to $\{\{\}, \{a\}, \{b\}, \{a, b\}\}$. which has four elements. If 
-$A$ has one element, say $A = \{a\}$, then the power set of $A$ will be the set 
-$\{\{\}, \{a\}\}$, which has two elements. If $A$ has three elements, say 
-$A = \{a, b, c\}$ the power set of $A$ will be 
-$\{\{\}, \{a\}, \{b\}, \{c\}, \{a, b\}, \{a, c\}, \{b, c\}, \{a, b, c\}\}$, which 
-has eight elements. If $A$ has no elements, note that its power set will be the set 
-$\{\{\}\}$ which has one element.
-
-We note that in each of these cases, the cardinality of $\pset(A)$ has been
-$2^n$ where $n$ is the cardinality of $A$. As such, that is why $\pset(A)$
-is called the power set of $A$.
-
-\exnumber{9.} Formulate and prove DeMorgan's laws for arbitrary unions and intersections.
-
-Let $A$ be a set and $\mathcal{B}$ be a collection of sets.
-\begin{enumerate}[label=(\alph*)]
-	\item $A - \bigcup_{B \in \mathcal{B}} B = \bigcap_{B \in \mathcal{B}} (A - B)$.
-	
-	\begin{proof}
-		Note that if $A$ is empty, both sides of the identity are empty, and as such are 
-		equal. If $\mathcal{B}$ is a collection of empty sets, note that both
-		sides of the identity will be equivalent to $A$, and as such the equality holds.
-		If $A$ is empty and $\mathcal{B}$ is a collection of empty sets, then the identity
-		will hold. Thus, we will assume that $A$ is non-empty, and that $\mathcal{B}$ contains
-		at least one set $B$ that is not empty.
+		Let $a \in f^{-1}(B_0 \cup B_1)$. By definition, $f(a) \in B_0 \cup B_1$.
+		Therefore, either $f(a) \in B_0$, $f(a) \in B_1$, or both. If $f(a) \in B_0$,
+		note that it implies that $a \in f^{-1}(B_0)$. In particular, we have that 
+		$a \in f^{-1}(B_0) \cup f^{-1}(B_1)$. Thus, we conclude that 
+		$f^{-1}(B_0 \cup B_1) \subseteq f^{-1}(B_0) \cup f^{-1}(B_1)$. We arrive at 
+		the same conclusion by using an analogous argument for the other cases.
 		
-		If $A - \bigcup_{B \in \mathcal{B}} B$ is empty, then it is trivially a subset 
-		of $\bigcap_{B \in \mathcal{B}} (A - B)$. Thus, we will assume that
-		$A - \bigcup_{B \in \mathcal{B}} B$ is non-empty. Let 
-		$x \in A - \bigcup_{B \in \mathcal{B}} B$. Then $x \in A$ and 
-		$x \notin \bigcup_{B \in \mathcal{B}} B$. In particular, since 
-		$x \notin \bigcup_{B \in \mathcal{B}} B$, by definition $x \notin B$
-		for any $B \in \mathcal{B}$. Thus, $x \in A - B$ for all $B \in \mathcal{B}$.
-		Therefore, $x \in \bigcap_{B \in \mathcal{B}} (A - B)$, and we can conclude that
-		$A - \bigcup_{B \in \mathcal{B}} B \subseteq \bigcap_{B \in \mathcal{B}} (A - B)$.
+		Let $a \in f^{-1}(B_0) \cup f^{-1}(B_1)$. Note that either $a \in f^{-1}(B_0)$,
+		$a \in f^{-1}(B_1)$, or both. If $a \in f^{-1}(B_0)$, then $f(a) \in B_0$.
+		Note that $B_0 \subseteq B_0 \cup B_1$. Therefore, $f(a) \in B_0 \cup B_1$.
+		In particular, $a \in f^{-1}(B_0 \cup B_1)$ and we can conclude that 
+		$f^{-1}(B_0) \cup f^{-1}(B_1) \subseteq f^{-1}(B_0 \cup B_1)$. We will arrive
+		at this same conclusion by using an analogous argument for the other cases.
 		
-		If $\bigcap_{B \in \mathcal{B}} (A - B)$ is empty,  then it is trivially a subset
-		of $A - \bigcup_{B \in \mathcal{B}} B$. Thus we will assume that it is non-empty.
-		Let $x \in \bigcap_{B \in \mathcal{B}} (A - B)$. By definition, $x \in A - B$
-		for all $B \in \mathcal{B}$. Thus, $x \in A$ and $x \notin B$ for all 
-		$B \in \mathcal{B}$ Therefore, $x \in A - \bigcup_{B \in \mathcal{B}} B$
-		by definition. Hence, $\bigcap_{B \in \mathcal{B}} (A - B) \subset 
-		A - \bigcup_{B \in \mathcal{B}} B$.
-		
-		Therefore, we conclude that $A - \bigcup_{B \in \mathcal{B}} B = 
-		\bigcap_{B \in \mathcal{B}} (A - B)$.
+		Therefore, we conclude that $f^{-1}(B_0 \cup B_1) = f^{-1}(B_0) \cup f^{-1}(B_1)$.
 	\end{proof}
 	\pagebreak
-	\item $A - \bigcap_{B \in \mathcal{B}} B = \bigcup_{B \in \mathcal{B}} (A - B)$.
-	
+	\item $f^{-1}(B_0 \cap B_1) = f^{-1}(B_0) \cap f^{-1}(B_1)$.
 	\begin{proof}
-		Note that if $A$ is empty, both sides of the identity are empty, and as such
-		are equal. If at least one $B \in \mathcal{B}$ is empty, then 
-		$\bigcap_{B \in \mathcal{B}} B = \emptyset$. Thus, in this case we have 
-		that the identity becomes $A = A$, which holds true. In particular, if 
-		$A$ is empty and at least one $B \in \mathcal{B}$ is empty, then the 
-		identity will hold. Thus, we will assume that $A$ is non-empty, and that
-		every $B \in \mathcal{B}$ is non-empty.
+		If $f^{-1}(B_0 \cap B_1)$ is empty, then it implies that there exists no $a \in A$
+		such that $f(a) \in B_0 \cap B_1$. Since $f(a) \notin B_0 \cap B_1$, it must
+		be that either $f(a) \notin B_0$, $f(a) \notin B_1$, or both. If $f(a) \notin B_0$,
+		then it must be that $a \notin f^{-1}(B_0)$. In particular, since $
+		a \notin f^{-1}(B_0)$, $a \notin f^{-1}(B_0) \cap f^{-1}(B_1)$. Since this is 
+		an argument for all $a \in A$, we conclude that $f^{-1}(B_0) \cap f^{-1}(B_1)$
+		must be empty. Thus, the equality in our claim holds. We arrive at this same 
+		conclusion for the other cases by using an analogous argument.
 		
-		If $A - \bigcap_{B \in \mathcal{B}} B$ is empty, then it is trivially a subset
-		of $\bigcup_{B \in \mathcal{B}} (A - B)$. Thus, we will assume that 
-		$A - \bigcap_{B \in \mathcal{B}} B$ is non-empty. Let 
-		$x \in A - \bigcap_{B \in \mathcal{B}} B$. By definition, $x \in A$
-		and $x \notin \bigcap_{B \in \mathcal{B}} B$. Since 
-		$x \notin \bigcap_{B \in \mathcal{B}} B$, then $x \notin B$ for at least one 
-		$B \in \mathcal{B}$. In particular, $x \in A - B$ for such $B \in \mathcal{B}$.
-		Note that $A - B \in \bigcup_{B \in \mathcal{B}} (A - B)$. Therefore,
-		$x \in \bigcup_{B \in \mathcal{B}} (A - B)$ and we can conclude that 
-		$A - \bigcap_{B \in \mathcal{B}} B \subseteq \bigcup_{B \in \mathcal{B}} (A - B)$.
+		If $f^{-1}(B_0) \cap f^{-1}(B_1)$ is empty, then it implies that there exists
+		no $a \in A$ such that $a \in f^{-1}(B_0) \cap f^{-1}(B_1)$. Since for all
+		$a \in A$, $a \notin f^{-1}(B_0) \cap f^{-1}(B_1)$, it implies that 
+		either $a \notin f^{-1}(B_0)$, $a \notin f^{-1}(B_1)$, or both. 
+		If $a \notin f^{-1}(B_0)$, then $f(a) \notin B_0$. In particular, it implies 
+		that $f(a) \notin B_0 \cap B_1$. As such, $a \notin f^{-1}(B_0 \cap B_1)$.
+		Since this is true for all $a \in A$, we conclude that $f^{-1}(B_0 \cap B_1)$
+		is empty. Thus, the equality in our claim holds. We can arrive at this same
+		conclusion by following an analogous argument for the other cases.
 		
-		If $\bigcup_{B \in \mathcal{B}} (A - B)$ is empty, then it is trivially a subset
-		of $A - \bigcap_{B \in \mathcal{B}} B$. Thus, we will assume that 
-		$\bigcup_{B \in \mathcal{B}} (A - B)$ is non-empty. Let 
-		$x \in \bigcup_{B \in \mathcal{B}} (A - B)$. By definition, $x \in A - B$
-		for at least one $B \in \mathcal{B}$. In particular, $x \in A$ and 
-		$x \notin B$ for at least one $B$. Since $x \notin B$ for at least one 
-		$B \in \mathcal{B}$, it must be that $x \notin \bigcap_{B \in \mathcal{B}} B$.
-		Therefore, since $x \in A$ and $x \notin \bigcap_{B \in \mathcal{B}} B$,
-		we have that $x \in A - \bigcap_{B \in \mathcal{B}} B$. Hence, we conclude
-		that $\bigcup_{B \in \mathcal{B}} (A - B) \subseteq A - \bigcap_{B \in \mathcal{B}} B$.
-		As such, we conclude that $A - \bigcap_{B \in \mathcal{B}} B = 
-		\bigcup_{B \in \mathcal{B}} (A - B)$.
+		Since our claim holds if either of the sets is empty, we will assume that both
+		of them are non-empty.
+		
+		Let $a \in f^{-1}(B_0 \cap B_1)$. Therefore, $f(a) \in B_0 \cap B_1$.
+		This implies that $f(a) \in B_0$ and $f(a) \in B_1$. In particular, it must be
+		that $a \in f^{-1}(B_0)$ and $a \in f^{-1}(B_1)$. Therefore, 
+		$a \in f^{-1}(B_0) \cap f^{-1}(B_1)$, and we conclude that 
+		$f^{-1}(B_0 \cap B_1) \subseteq f^{-1}(B_0) \cap f^{-1}(B_1)$.
+		
+		Let $a \in f^{-1}(B_0) \cap f^{-1}(B_1)$. Then, it must be that $a \in f^{-1}(B_0)$
+		and $a \in f^{-1}(B_1)$. In particular, we have that $f(a) \in B_0$ and 
+		$f(a) \in B_1$. Therefore, $f(a) \in B_0 \cap B_1$ which implies that 
+		$a \in f^{-1}(B_0 \cap B_1)$. Hence, we conclude that
+		$f^{-1}(B_0 \cap B_1) = f^{-1}(B_0) \cap f^{-1}(B_1)$. 
+	\end{proof}
+	\item $f^{-1}(B_0 - B_1) = f^{-1}(B_0) - f^{-1}(B_1)$.
+	\begin{proof}
+		If $f^{-1}(B_0 - B_1)$ is empty, then there exists no $a \in A$ such that 
+		$a$ is an element of $f^{-1}(B_0 - B_1)$. This implies that $f(a) \notin B_0 - B_1$
+		for all $a \in A$. Since $f(a) \notin B_0 - B_1$, it must be that either
+		$f(a) \notin B_0$ or $f(a) \in B_0 \cap B_1$. Note that if $f(a) \notin B_0$,
+		then $a \notin f^{-1}(B_0)$ and thus $a \notin f^{-1}(B_0) - f^{-1}(B_1)$
+		for all $a \in A$. Thus, $f^{-1}(B_0) - f^{-1}(B_1)$ must be empty, and therefore
+		the equality in our claim holds. If $f(a) \in B_0 \cap B_1$, note 
+		that $a \in f^{-1}(B_0 \cap B_1)$. In particular, this implies that 
+		$a \notin f^{-1}(B_0) - f^{-1}(B_1)$ by definition. Hence, $f^{-1}(B_0) -
+		f^{-1}(B_1)$ is empty and our claim holds.
+		
+		If $f^{-1}(B_0) - f^{-1}(B_1)$ is empty, then there exists no $a \in A$ such that
+		$a$ is an element of $f^{-1}(B_0) - f^{-1}(B_1)$. In particular, since 
+		$a \notin f^{-1}(B_0) - f^{-1}(B_1)$, it must be that either 
+		$a \notin f^{-1}(B_0)$ or $a \in f^{-1}(B_0) \cap f^{-1}(B_1)$. If $a \notin
+		f^{-1}(B_0)$, then $f(a) \notin B_0$. In particular, $f(a) \notin B_0 - B_1$.
+		Hence, $a \notin f^{-1}(B_0 - B_1)$. Since this is true for all $a \in A$,
+		it must be that $f^{-1}(B_0 - B_1)$ is empty and thus our claim holds.
+		If $a \in f^{-1}(B_0) \cap f^{-1}(B_1)$, then note that $a \notin f^{-1}(B_0 \cap B_1)$
+		by problem (c). As such, $f(a) \in B_0 \cap B_1$, and therefore,
+		$f(a) \notin B_0 - B_1$. Thus, for all $a \in A$, $a \notin f^{-1}(B_0 - B_1$.
+		As such $f^{-1}(B_0 - B_1)$ is empty and our claim holds.
+		
+		Since our property holds if either of the sets is empty, we will now assume that
+		both sets are non-empty.
+		
+		Let $a \in f^{-1}(B_0 - B_1)$. By definition, $f(a) \in B_0 - B_1$. This implies
+		that $f(a) \in B_0$ and $f(a) \notin B_1$. As such, $a \in f^{-1}(B_0)$ and 
+		$a \notin f^{-1}(B_1)$. Therefore, $a \in f^{-1}(B_0) - f^{-1}(B_1)$ and we
+		conclude that $f^{-1}(B_0 - B_1) \subseteq f^{-1}(B_0) - f^{-1}(B_1)$.
+		
+		Let $a \in f^{-1}(B_0) - f^{-1}(B_1)$. By definition, $a \in f^{-1}(B_0)$
+		and $a \notin f^{-1}(B_1)$. Since $a \in f^{-1}(B_0)$ we have that 
+		$f(a) \in B_0$. Similarly, since $a \notin f^{-1}(B_1)$ we have that 
+		$f(a) \notin B_1$. Therefore, since $f(a) \in B_0$ and $f(a) \notin B_1$
+		we have that $f(a) \in B_0 - B_1$. Hence, $a \in B_0 - B_1$. Therefore,
+		$f^{-1}(B_0) - f^{-1}(B_1) \subseteq f^{-1}(B_0 - B_1)$,
+		Thus, we conclude that $f^{-1}(B_0 - B_1) = f^{-1}(B_0) - f^{-1}(B_1)$.
+	\end{proof}
+\end{enumerate}
+Show that $f$ preserves inclusions and unions only:
+\begin{enumerate}
+	\item[(e)] $A_0 \subset A_1 \implies f(A_0) \subset f(A_1)$.
+	\begin{proof}
+		Let $A_0 \subseteq A_1$. Note that if either $f(A_0)$ or $f(A_1)$ are empty our 
+		claim will hold. As such, we will assume that both $A_0$ and $A_1$ are non-empty.
+		
+		Let $b \in f(A_0)$. This implies that there exists at least one $a \in A_0$
+		such that $f(a) = b$. By assumption, $A_0 \subseteq A_1$ and thus it must
+		be that $a \in A_1$. Therefore, $f(a) \in A_1$. Since $f(a) = b$ it must
+		be that $b \in A_1$. Therefore, $f(A_0) \subseteq f(A_1)$.
+	\end{proof}
+	\item[(f)] $f(A_0 \cup A_1) = f(A_0) \cup f(A_1)$.
+	\begin{proof}
+		If $f(A_0 \cup A_1)$ is empty, then it implies that $A_0 \cup A_1$ is empty.
+		In particular, this means $A_0$ and $A_1$ are empty and thus 
+		$f(A_0)$ and $f(A_1)$ are empty. Hence, our claim holds. 
+		If $f(A_0) \cup f(A_1)$ is empty, then it must be that $f(A_0)$ and $f(A_1)$
+		are both empty. Hence, $A_0$ and $A_1$ must be empty. Therefore,
+		$f(A_0 \cup A_1)$ is empty and our property holds.
+		
+		Since our property hold if either of the sets are empty, we will assume that 
+		both of the sets are non-empty.
+		
+		Let $x \in f(A_0 \cup A_1)$. By definition, it must be that $x = f(a)$ for 
+		some $a \in A_0 \cup A_1$. Thus, it must be that either $a \in A_0$, $a \in A_1$,
+		or both. If $a \in A_0$, it implies that $f(a) \in f(A_0)$, i.e., $x \in f(A_0)$.
+		In particular, since $x \in f(A_0)$, we have that $x \in f(A_0) \cup f(A_1)$.
+		Thus, we conclude that $f(A_0 \cup A_1) \subseteq f(A_0) \cup f(A_1)$.
+		
+		Let $x \in f(A_0) \cup f(A_1)$. Thus, either $x \in f(A_0)$, $x \in f(A_1)$,
+		or both. If $x \in f(A_0)$ we have that there exists at least one $a \in A_0$
+		such that $f(a) = x$. In particular, since $a \in A_0$ it is also true that
+		$a \in A_0 \cup A_1$. Therefore, $f(a) = x \in f(A_0 \cup A_1)$. Thus,
+		we conclude that $f(A_0) \cup f(A_1) \subseteq f(A_0 \cup A_1)$. We arrive
+		at the same conclusion by following an analogous argument for the other cases.
+		Therefore, we conclude that $f(A_0 \cup A_1) = f(A_0) \cup f(A_1)$.
+	\end{proof}
+	\pagebreak
+	\item[(g)] $f(A_0 \cap A_1) \subset f(A_0) \cap f(A_1)$; show that equality holds
+	if $f$ is injective.
+	\begin{proof}
+		If $f(A_0 \cap A_1)$ is empty, then it is trivial to note that our claim hold
+		wether $f(A_0) \cap f(A_1)$ is empty or not.
+		
+		If $f(A_0) \cap f(A_1)$ is empty, it implies that there is no $a \in A$
+		such that $f(a) \in f(A_0)$, or $f(a) \in f(A_1)$, or both. Since $f$ may not be
+		injective, it could be that $a \in A$ is an element of either 
+		$A_0$, $A_1$, or both. In the case $a$ is an element of both we note that 
+		$a \in A_0 \cap A_1$ and therefore $f(a) \in f(A_0 \cap A_1)$. Thus,
+		we cannot conclude that $f(A_0) \cap f(A_1) \subset f(A_0 \cap A_1)$
+		for general $f$. Thus, let $f$ be injective. Recall either $f(a) \notin f(A_0)$,
+		$f(a) \notin f(A_1)$, or both. If $f(a) \notin f(A_0)$ but $f(a) \in f(A_1)$,
+		then $a \notin A_0$ and $a \in A_1$ by definition, i.e., $a \notin A_0 \cap A_1$. 
+		Since $f$ is injective, there are no other $a' \in A$ distinct from $a$ such that
+		$f(a') = f(a)$. Hence, since $a \notin A_0 \cap A_1$, $f(a) \notin f(A_0 \cap A_1)$. 
+		Since this is true for any $a \in A$ we conclude that $f(A_0 \cap A_1)$ must 
+		be empty and thus our claim holds.
+		
+		We've shown that our claim holds if either empty is set. Furthermore, we also
+		showed that equality holds if $f$ is injective when either set is empty.
+		Thus, we need only show our claim holds for the case where both sets are 
+		non-empty.
+		
+		Let $x \in f(A_0 \cap A_1)$. By definition, there exists at least one 
+		$a \in A_0 \cap A_1$ such that $f(a) = x$. In particular, for such $a$ we
+		have that $a \in A_0$ and $a \in A_1$. We note that $f(a) \in A_0$ and 
+		$f(a) \in A_1$ by definition. Since $f(a) = x$ we conclude that 
+		$x \in f(A_0) \cap A_1$. Therefore, $f(A_0 \cap A_1) \subseteq f(A_0) \cap f(A_1)$.
+		
+		Let $x \in f(A_0) \cap f(A_1)$. Thus, $x \in f(A_0)$ and $x \in f(A_1)$.
+		As such, there exists at least one $a_0 \in A_0$ such that $f(a_0) = x$
+		and at least one $a_1 \in A_1$ such that $f(a_1) = x$. Since $f$ is not injective,
+		it may be that $a_0 \neq a_1$. Therefore, it may be that $a_0, a_1 \notin A_0 \cap A_1$.
+		This can be true for any $a \in A$ such that $f(a) = x$. Hence, it may be
+		that $x \notin f(A_0 \cap A_1)$ for general $f$. If $f$ is injective,
+		note that it must be that $a = a_0 = a_1$ as such, since $a_0 \in A_0$ and 
+		$a_1 \in A_1$, we have that $a \in A_0 \cap A_1$ (where $a$ stands for any $a \in A$
+		that could have mapped onto $x$ through $f$). Therefore, $f(a) \in f(A_0 \cap A_1)$,
+		and since $x = f(a)$ we can conclude that $x \in f(A_0 \cap A_1)$. Hence,
+		$f(A_0) \cap f(A_1) \subseteq f(A_0 \cap A_1)$, and we can conclude that
+		$f(A_0 \cap A_1) = f(A_0) \cap f(A_1)$ for $f$ injective.
+	\end{proof}
+	\item[(h)] $f(A_0 - A_1) \supset f(A_0) - f(A_1)$; show that equality holds if 
+	$f$ is injective.
+	\begin{proof}
+		Consider the case where $f(A_0 - A_1)$ is empty. Then, it must be that
+		$A_0 - A_1$ is empty. Since $A_0 - A_1$ is empty, either $A_0$ is empty
+		or $A_0 \subseteq A_1$. If $A_0$ is empty, note that $f(A_0)$ must also be empty.
+		As such, $f(A_0) - f(A_1)$ will also be empty, showing that our claim holds.
+		If $A_0 \subseteq A_1$, by problem (e) we have that $f(A_0) \subseteq f(A_1)$.
+		Therefore, $f(A_0) - f(A_1)$ must be empty. Hence, our claim holds. 
+		
+		Consider now the case where $f(A_0) - f(A_1)$ is empty. This implies that
+		either $f(A_0)$ is empty or $f(A_0) \subseteq f(A_1)$ where $f(A_0)$ is non-empty. 
+		If $f(A_0)$ is empty, note that it implies that $A_0$ is empty. Hence, $A_0 - A_1$
+		must also be empty. Therefore, $f(A_0 - A_1)$ is empty and our property holds. 
+		Thus, assume that $f(A_0) \subseteq f(A_1)$ where $f(A_0)$ is non-empty. Consider
+		$x \in f(A_0)$, and note that there exists at least one $a_0 \in A_0$ such
+		that $f(a_0) = x$. Furthermore, since $f(A_0) \subseteq f(A_1)$ we note that
+		$x \in f(A_1)$. In particular, there exists at least one $a_1 \in A_1$ such
+		that $f(a_1) = x$. Since $f$ may not be injective, it could be that $a_0 \neq a_1$
+		and as such it may be that $a_0 \in A_0 - A_1$. Therefore, we may have that
+		$x = f(a_0) \in f(A_0 - A_1)$ implying this set is non-empty. Thus, our claim
+		still holds for general $f$. Note, however, if $f$ were injective then
+		$a_0 = a_1$ must be true since $f(a_0) = x = f(a_1)$. Therefore, it must be 
+		that $a_0 \notin A_0 - A_1$. Therefore, it must be that $A_0 - A_1$ is empty, 
+		and therefore $f(A_0 - A_1)$ is also empty, showing that equality holds if $f$
+		is injective.
+		
+		We've shown that our claim holds when either of the sets is empty. Thus, we 
+		will now assume that both sets are non-empty.
+		
+		Let $x \in f(A_0) - f(A_1)$. This implies that $x \in f(A_0)$ and $x \notin f(A_1)$.
+		Therefore, there exists at least one $a_0 \in A_0$ such that $f(a_0) = x$
+		and that there exists no $a_1 \in A_1$ such that $f(a_1) = x$. In particular,
+		this implies that $a_0 \neq a_1$ since the element they are mapped onto by $f$
+		is different. In particular, $a_0 \in A_0$ and $a_0 \notin A_1$. Therefore,
+		$a_0 \in A_0 - A_1$. By definition, $x = f(a_0) \in f(A_0 - A_1)$. Thus,
+		we conclude that $f(A_0) - f(A_1) \subseteq f(A_0 - A_1)$.
+		
+		Let $x \in f(A_0 - A_1)$. This implies that there exists at least one 
+		$a \in A_0 - A_1$ such that $f(a) = x$. In particular, we have that $a \in A_0$
+		and $a \notin A_1$. Note that since $f$ is not injective, it could be that
+		there exists some $a' \in A_1$ such that $a' \notin A_0$ and $f(a') = x$.
+		As such, it would imply that $x \in f(A_0)$ and $x \in f(A_1)$. Therefore,
+		it would not be possible for $x$ to be an element of $f(A_0) - f(A_1)$.
+		If $f$ were injective, then it must be that $a = a'$ since they both map onto $x$.
+		In particular, it must be that $a' \in A_0$ and $a' \in A_1$ since that 
+		is how we defined $a$. As such, $x \in f(A_0)$ and $x \notin f(A_1)$,
+		and we conclude that $x \in f(A_0) - f(A_1)$. Hence, if $f$ is injective
+		we also have that $f(A_0 - A_1) \subseteq f(A_0) - f(A_1)$ and thus
+		$f(A_0 - A_1) = f(A_0) - f(A_1)$.
 	\end{proof}
 \end{enumerate}
 
-\exnumber{10.} Let $\RR$ denote the set of real numbers. For each of the following 
-subsets of $\RR \times \RR$, determine wether it is equal to the cartesian product
-of two subsets of $\RR$.
-\begin{enumerate}[label=(\alph*)]
-	\item $\{(x, y) \mid x \text{ is an integer}\}$. 
-	
-	Note that if $(x, y)$ is in this set, then it must be that $x \in \RR$ and 
-	$y \in \ZZ$. Both of these sets are subsets of $\RR$.
-	\item $\{(x, y) \mid 0 \leq y \leq 1\}$.
-	
-	Note that if $(x, y)$ are in the set, then $x \in \RR$ and $y \in [0, 1]$. Both of 
-	these sets are subsets of $\RR$.
-	\item $\{(x, y) \mid y > x\}$.
-	
-	Note that this set is not made up of two distinct subsets of $\RR$. This is because
-	both $x, y \in \RR$ but the set is not equivalent to $\RR^2$.
-	\item $\{(x, y) \mid x \text{ is not an integer and } y \text{ is an integer}\}$.
-	
-	Note that if $(x, y)$ is in the set, then $x \in \RR - \ZZ$ and $y \in \ZZ$. Both of 
-	which are subsets of $\RR$.
-	\item $\{(x, y) \mid x^2 + y^2 < 1\}$.
-	
-	Note that this set is not made up of two distinct subset of $\RR$. This is because
-	both $x, y \in (0, 1)$ but the set is not equivalent to $(0, 1) \times (0, 1)$.
+\exnumber{3.} Show that (b), (c), (f), and (g) of Exercise 2 hold for arbitrary unions 
+and intersections.
+\begin{enumerate}
+	\item[(b)] $f^{-1} \big(\bigcup_{B \in \mathcal{B}} B\big) = 
+	\bigcup_{B \in \mathcal{B}} f^{-1}(B)$.
+	\begin{proof}
+		Let $f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$ be empty. By definition,
+		we have that there exists no $a \in A$ such that 
+		$f(a) \in \big(\bigcup_{B \in \mathcal{B}} B\big)$. As such, it must be 
+		that $f(a)$ is not an element of $B$ for all $B \in \mathcal{B}$. In particular,
+		this implies that $a \notin f^{-1}(B)$ for all $B \in \mathcal{B}$. Thus, note
+		that this allows us to conclude that $a \notin \bigcup_{B \in \mathcal{B}} f^{-1}(B)$.
+		Since this is true for all $a \in A$, we conclude that 
+		$\bigcup_{B \in \mathcal{B}} f^{-1}(B)$ is empty and therefore our claim holds.
+		
+		Let $\bigcup_{B \in \mathcal{B}} f^{-1}(B)$ be empty. This implies that 
+		$f^{-1}(B)$ is empty for all $B \in \mathcal{B}$. By definition, this means 
+		that there exists no $a \in A$ such that $f(a) \in B$ for all $B \in \mathcal{B}$.
+		In particular, we note that $f(a) \notin \bigcup_{B \in \mathcal{B}} B$.
+		Therefore, it must be that $a \notin f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$.
+		Since this is true for all $a \in A$, we conclude that 
+		$f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$ is empty, and thus our claim holds.
+		
+		Thus, we've shown that if either of the sets is empty our property will hold. We
+		need only check for the case where both sets are non-empty.
+		
+		Let $a \in f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$. By definition,
+		$f(a) \in \bigcup_{B \in \mathcal{B}} B$. This implies that 
+		${f(a) \in B}$ for at least one $B \in \mathcal{B}$. In particular, note that
+		$a \in f^{-1}(B)$. Thus, it must be that ${f(a) \in \bigcup_{B \in \mathcal{B}} B}$.
+		Hence, we conclude that $a \in \bigcup_{B \in \mathcal{B}} f^{-1}(B)$.
+		Therefore, $f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big) \subseteq 
+		\bigcup_{B \in \mathcal{B}} f^{-1}(B)$.
+		
+		Let $a \in \bigcup_{B \in \mathcal{B}} f^{-1}(B)$. This implies that 
+		${a \in f^{-1}(B)}$ for at least one $B \in \mathcal{B}$. Therefore,
+		$f(a) \in B$ for at least one $B \in \mathcal{B}$. In particular, 
+		$f(a) \in \bigcup_{B \in \mathcal{B}} B$. Thus, we can conclude that
+		$a \in f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$. Hence,
+		$\bigcup_{B \in \mathcal{B}} f^{-1}(B) = f^{-1}\big(\bigcup_{B \in \mathcal{B}} B\big)$.
+	\end{proof}
+	\item[(c)] $f^{-1} \big(\bigcap_{B \in \mathcal{B}} B\big) = 
+	\bigcap_{B \in \mathcal{B}} f^{-1}(B)$.
+	\begin{proof}
+		Let $f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big)$ be empty. This implies
+		that there exists no $a \in A$ such that $f(a) \in \bigcap_{B \in \mathcal{B}} B$.
+		By definition, it must be that $f(a) \notin B$ for at least one ${B \in \mathcal{B}}$.
+		Thus, $a \notin f^{-1}(B)$ for at least one $B \in \mathcal{B}$. In particular, 
+		it must be that $a \notin \bigcap_{B \in \mathcal{B}} f^{-1}(B)$. Since this is 
+		true for all $a \in A$, we conclude that $\bigcap_{B \in \mathcal{B}} f^{-1}(B)$
+		must be empty, thus our claim holds.
+		
+		Let $\bigcap_{B \in \mathcal{B}} f^{-1}(B)$ be empty. This implies that
+		$f^{-1}(B)$ is empty for at least one $B \in \mathcal{B}$ or that 
+		$f^{-1}(B) \cap f^{-1}(B') = \emptyset$ for all $B, B' \in \mathcal{B}$.
+		If at least one $f^{-1}(B)$ is empty, then it implies that there exists no
+		$a \in A$ such that $f(a) \in B$. In particular, since $f(a) \notin B$,
+		it must be that $f(a) \notin \bigcap_{B \in \mathcal{B}} B$. Therefore,
+		$a \notin f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big)$ and thus this set must
+		be empty which allows our claim to hold. If $f^{-1}(B) \cap f^{-1}(B') = \emptyset$ 
+		for all $B, B' \in \mathcal{B}$, note if $a \in f^{-1}(B)$, then it must be
+		that $a \notin f^{-1}(B')$. In particular, this implies that 
+		$f(a) \in B$ and $f(a) \notin B'$, as such $f(a) \notin B \cap B'$.
+		Since $B, B' \in \mathcal{B}$, we conclude that 
+		$f(a) \notin \bigcap_{B \in \mathcal{B}} B$. Therefore,
+		$a \notin f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big)$. Since this is true
+		for all $a \in A$, we conclude that $f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big)$
+		must be empty, thus our claim holds.
+		
+		Since we have shown our property holds when either of the sets is empty, we need
+		only show that our property holds when both sets are non-empty.
+		
+		Let $a \in f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big)$. By definition,
+		$f(a) \in \bigcap_{B \in \mathcal{B}} B$. Thus, we have that 
+		$f(a) \in B$ for all $B \in \mathcal{B}$. In particular, it must be that 
+		$a \in f^{-1}(B)$ for all $B \in \mathcal{B}$. Hence, 
+		$a \in \bigcap_{B \in \mathcal{B}} f^{-1}(B)$ by definition. Therefore we 
+		conclude that $f^{-1}\big(\bigcap_{B \in \mathcal{B}} B\big) \subseteq
+		\bigcap_{B \in \mathcal{B}} f^{-1}(B)$.
+		
+		Let $a \in \bigcap_{B \in \mathcal{B}} f^{-1}(B)$. By definition,
+		$a \in f^{-1}(B)$ for all $B \in \mathcal{B}$. This implies that 
+		$f(a) \in B$ for all $B \in \mathcal{B}$. By definition, it must be 
+		that $f(a) \in \bigcap_{B \in \mathcal{B}} B$. Therefore, we conclude 
+		that $a \in f^{-1} \big(\bigcap_{B \in \mathcal{B}} B\big)$.
+		Hence we have that $f^{-1} \big(\bigcap_{B \in \mathcal{B}} B\big) = 
+		\bigcap_{B \in \mathcal{B}} f^{-1}(B)$.
+	\end{proof}
+	\item[(f)] $f\big(\bigcup_{A \in \mathcal{A}} A\big) = 
+	\bigcup_{A \in \mathcal{A}} f(A)$.
+	\begin{proof}
+		Let $f\big(\bigcup_{A \in \mathcal{A}} A\big)$ be empty. This can only be true
+		if $\bigcup_{A \in \mathcal{A}} A$ is empty itself. Thus it must be that 
+		$A = \emptyset$ for all $A \in \mathcal{A}$. As such, $f(A)$ is empty 
+		for all $A \in \mathcal{A}$. Therefore, $\bigcup_{A \in \mathcal{A}} f(A)$
+		is empty and our property holds.
+		
+		Let $\bigcup_{A \in \mathcal{A}} f(A)$ be empty. This implies that 
+		$f(A)$ is empty for all $A \in \mathcal{A}$. Note that $f(A)$ can only 
+		be empty if $A$ itself is empty. Therefore, $A = \emptyset$ for all 
+		$A \in \mathcal{A}$, and as such $\bigcup_{A \in \mathcal{A}} A$ must also
+		be empty. Thus, $f\big(\bigcup_{A \in \mathcal{A}} A\big)$ is empty and our 
+		property holds.
+		
+		We have shown that our property holds when either of the sets is empty. Thus,
+		we need only show that the claim holds when both sets are non-empty.
+		
+		Let $x \in f\big(\bigcup_{A \in \mathcal{A}} A\big)$. Thus, there exists
+		at least one $a \in \bigcup_{A \in \mathcal{A}} A$ such that ${f(a) = x}$.
+		By definition, $a \in A$ for at least one $A \in \mathcal{A}$. As such,
+		$f(a) \in f(A)$ for at least one $A \in \mathcal{A}$. In particular, this 
+		implies that $f(a) \in \bigcup_{A \in \mathcal{A}} f(A)$. Since 
+		$f(a) = x$ we note that $x \in \bigcup_{A \in \mathcal{A}} f(A)$.
+		Therefore, $f\big(\bigcup_{A \in \mathcal{A}} A\big) \subseteq 
+		\bigcup_{A \in \mathcal{A}} f(A)$.
+		
+		Let $x \in \bigcup_{A \in \mathcal{A}} f(A)$. By definition, 
+		$x \in f(A)$ for at least one $A \in \mathcal{A}$, let $A$ be such set.
+		Thus, there exists at least one $a \in A$ such that $f(a) = x$.
+		Note that since $a \in A$ and $A \in \mathcal{A}$, it must be that 
+		$a \in \bigcup_{A \in \mathcal{A}} A$. Therefore, 
+		$x = f(a) \in f\big(\bigcup_{A \in \mathcal{A}} A\big)$.
+		Thus, we conclude that $f\big(\bigcup_{A \in \mathcal{A}} A\big) = 
+		\bigcup_{A \in \mathcal{A}} f(A)$.
+	\end{proof}
+	\item[(g)] $f\big(\bigcap_{A \in \mathcal{A}} A\big) \subseteq 
+	\bigcap_{A \in \mathcal{A}} f(A)$; show that equality holds if $f$ is injective.
+	\begin{proof}
+		Let $f\big(\bigcap_{A \in \mathcal{A}} A\big)$ be empty. This can only be
+		true if $\bigcap_{A \in \mathcal{A}} A$ is itself empty. Thus, it must be 
+		that at least one $A \in \mathcal{A}$ is empty, or $A \cap A' = \emptyset$
+		for all $A, A' \in \mathcal{A}$. If at least one $A \in \mathcal{A}$ is empty,
+		note that $f(A)$ is empty for such $A$. Note that this implies that 
+		$\bigcap_{A \in \mathcal{A}} f(A)$ is empty and thus our property holds.
+		If $A \cap A' = \emptyset$ for all $A, A' \in \mathcal{A}$, note that we 
+		cannot say anything about $f(A) \cap f(A')$. This is because $f$ is not 
+		necessarily injective, as such there may exist $a \in A$ and $a' \in A'$
+		such that $f(a) = f(a')$. Thus, it could be that $f(A) \cap f(A')$ is non-empty.
+		Thus, at most we can only conclude that $f\big(\bigcap_{A \in \mathcal{A}} A\big)
+		\subseteq \bigcap_{A \in \mathcal{A}} f(A)$. If $f$ was injective,
+		note that such $a$ and $a'$ cannot exists since $f(a) = f(a')$ only if 
+		$a = a'$. Thus, we note that $f(A) \cap f(A')$ must be empty for 
+		all $A, A' \in \mathcal{A}$. Therefore, $\bigcap_{A \in \mathcal{A}} f(A)$
+		must be empty and equality holds.
+		
+		Let $\bigcap_{A \in \mathcal{A}} f(A)$ be empty. This implies that 
+		either $f(A)$ is empty for at least one $A \in \mathcal{A}$ or 
+		$f(A) \cap f(A') = \emptyset$ for all $A, A' \in \mathcal{A}$.
+		If $f(A)$ is empty for at least one $A \in \mathcal{A}$ note that 
+		$A$ must be empty. Thus, $\bigcap_{A \in \mathcal{A}} A$ must also be empty,
+		and therefore $f\big(\bigcap_{A \in \mathcal{A}} A\big)$ is empty and 
+		our property holds. If $f(A) \cap f(A') = \emptyset$ for all $A, A' \in \mathcal{A}$,
+		then for any $a$ such that $f(a) \in f(A)$ it must be that $f(a) \notin f(A')$.
+		Thus, it must be that $a \in A$ and $a \notin A'$ by definition. Since 
+		$A, A' \in \mathcal{A}$ we note that $a \notin \bigcap_{A \in \mathcal{A}} A$.
+		Therefore, $f(a) \notin f\big(\bigcap_{A \in \mathcal{A}} A\big)$. Since this 
+		is true for all $a$ we conclude that $f\big(\bigcap_{A \in \mathcal{A}} A\big)$
+		must be empty and our property holds.
+		
+		Since we have shown that our claim holds when either of the sets is empty,
+		and furthermore that equality holds when $f$ is injective, we need only show
+		that our claim holds when both sets are non-empty.
+		
+		Let $x \in f\big(\bigcap_{A \in \mathcal{A}} A\big)$. By definition,
+		there exists at least one $a \in \bigcap_{A \in \mathcal{A}} A$ such that
+		$f(a) = x$. Since $a \in \bigcap_{A \in \mathcal{A}} A$, it must be that 
+		$a \in A$ for all $A \in \mathcal{A}$. In particular, $f(a) \in f(A)$
+		for all $A \in \mathcal{A}$. By definition, 
+		$x = f(a) \in \bigcap_{A \in \mathcal{A}} f(A)$. Thus, we conclude that 
+		$f\big(\bigcap_{A \in \mathcal{A}} A\big) \subseteq \bigcap_{A \in \mathcal{A}} f(A)$.
+		
+		Let $x \in \bigcap_{A \in \mathcal{A}} f(A)$. By definition, 
+		$x \in f(A)$ for all $A \in \mathcal{A}$. Consider $A, A' \in \mathcal{A}$.
+		Note that there exists at least one $a \in A$ and one $a' \in A'$ such that 
+		$f(a) = x = f(a')$. Since it may not be true that $f$ is injective, we may 
+		have that $a \neq a'$. In particular, note that $a, a' \notin A \cap A'$.
+		Thus, we cannot conclude that there exists some $a'' \in \bigcap_{A \in \mathcal{A}} A$
+		such that $f(a'') = x$ since it could be that all $a \in A$ for all $A \in \mathcal{A}$
+		such that $f(a) = x$ are distinct. If, however, $f$ is injective, note it must 
+		be that $a = a'$ since $f(a) = x = f(a')$. Since this is true for all
+		$A, A' \in \mathcal{A}$ we conclude that $a \in \bigcap_{A \in \mathcal{A}} A$.
+		Thus, $x = f(a) = f\big(\bigcap_{A \in \mathcal{A}} A\big)$.
+		Therefore, $f\big(\bigcap_{A \in \mathcal{A}} A\big) \subseteq 
+		\bigcap_{A \in \mathcal{A}} f(A)$ if $f$ is injective.
+		
+	\end{proof}
 \end{enumerate}
+
+\exnumber{4.} Let $f: A \to B$ and $g: B \to C$.
+\begin{enumerate}[label=(\alph*)]
+	\item If $C_0 \subset C$, show that $(g \circ f)^{-1}(C_0) = f^{-1}(g^{-1}(C_0))$.
+	\item If $f$ and $g$ are injective, show that $g \circ f$ is injective.
+	\item If $g \circ f$ is injective, what can you say about the injectivity of 
+	$f$ and $g$?
+	\item If $f$ and $g$ are surjective, show that $g \circ f$ is surjective.
+	\item If $g \circ f$ is surjective, what can you say about the surjectivity of 
+	$f$ and $g$?
+	\item Summarize your answers to (b)-(c) in the form of a theorem.
+\end{enumerate}
+
+\exnumber{5.} In general, let us denote the \textbf{\textit{identity function}} for a 
+set $C$ by $i_C$. That is, define $i_C: C \to C$ to be the function given by the rule 
+$i_C(x) = x$ for all $x \in C$. Given $f: A \to B$, we say that $h: B \to A$ is a 
+\textbf{\textit{right inverse}} for $f$ if $f \circ h = i_B$.
+\begin{enumerate}[label=(\alph*)]
+	\item Show that if $f$ has a left inverse, $f$ is injective; and if $f$ has a right
+	inverse, $f$ is surjective.
+	\item Give an example of a function that has a left inverse but no right inverse.
+	\item Give an example of a function that has a right inverse but no left inverse.
+	\item Can a function have more than one left inverse? More than one right inverse?
+	\item Show that if $f$ has both a left inverse $g$ and a right inverse $h$, then
+	$f$ is bijective and $g = h = f^{1}$.
+\end{enumerate}
+
+\exnumber{6.} Let $f: \RR \to \RR$ be the function $f(x) = x^3 - x$. By restricting the domain
+and range of $f$ appropriately, obtain from $f$ a bijective function $g$. Draw the graphs 
+of $g$ and $g^{-1}$. (There are several possible choices for $g$.)
+ 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

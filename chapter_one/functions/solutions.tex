@@ -65,6 +65,9 @@
 \newcommand\minus{\smallsetminus}
 \newcommand\goesto{\rightsquigarrow}
 
+% theorem environment
+\newtheorem*{theorem}{Theorem}
+
 %redefined math symbols taking no arguments
 \newcommand\<{\langle}
 \renewcommand\>{\rangle}
@@ -606,13 +609,103 @@ and intersections.
 \exnumber{4.} Let $f: A \to B$ and $g: B \to C$.
 \begin{enumerate}[label=(\alph*)]
 	\item If $C_0 \subset C$, show that $(g \circ f)^{-1}(C_0) = f^{-1}(g^{-1}(C_0))$.
+	\begin{proof}
+		Let $C_0 \subseteq C$. If $(g \circ f)^{-1}(C_0)$ is empty, then by definition
+		there exists no $a \in A$ such that $(g \circ f)(a) \in C_0$. In particular,
+		we have that $g(f(a)) \notin C_0$. Furthermore, $f(a) \notin g^{-1}(C_0)$ by definition.
+		Note $g^{-1}(C_0) \subseteq B$, and thus $a \notin f^{-1}(g^{-1}(C_0)$ by definition.
+		Since this is true for all $a \in A$, it must be that $f^{-1}(g^{-1}(C_0))$ is empty
+		and our claim holds.
+		
+		Let $f^{-1}(g^{-1}(C_0))$ be empty.	By definition, there exists no $a \in A$
+		such that ${f(a) \in g^{-1}(C_0)}$. Furthermore, this implies that 
+		$g(f(a)) = (g \circ f)(a) \notin C_0$. Therefore, it must be that $a \notin (g \circ f)^{-1}(C_0)$.
+		Since this is true for all $a \in A$, we conclude that $(g \circ f)^{-1}(C_0)$ is empty
+		and our claim holds.
+		
+		Since we have shown that our claim holds when either of the sets is empty, we need only 
+		show that it also holds when both sets are non-empty.
+		
+		Let $a \in (g \circ f)^{-1}(C_0)$. By definition, $(g \circ f)(a) \in C_0$, and thus
+		$g(f(a)) \in C_0$. Note $f(a) \in g^{-1}(C_0)$. Furthermore, $a \in f^{-1}(g^{-1}(C_0))$.
+		Therefore, we can conclude ${(g \circ f)^{-1}(C_0) \subseteq f^{-1}(g^{-1}(C_0))}$.
+		
+		Let $a \in f^{-1}(g^{-1}(C_0))$. By definition, it must be that $f(a) \in g^{-1}(C_0)$.
+		Furthermore, note $g(f(a)) \in C_0$. Thus, $(g \circ f)(a) \in C_0$. As such,
+		we have that ${a \in (g \circ f)^{-1}(C_0)}$. Therefore, 
+		$f^{-1}(g^{-1}(C_0)) \subseteq (g \circ f)^{-1}(C_0)$. Hence, we have shown that 
+		our claim holds in the case both sets are non-empty, i.e., 
+		${(g \circ f)^{-1}(C_0) = f^{-1}(g^{-1}(C_0))}$.
+	\end{proof}
 	\item If $f$ and $g$ are injective, show that $g \circ f$ is injective.
+	\begin{proof}
+		Let $f$ and $g$ be injective. Let $a, a' \in A$ such that 
+		$(g \circ f)(a) = (g \circ f)(a') = c$. Thus, we have that 
+		$g(f(a)) = g(f(a')) = c$ by definition. Since $g$ is injective
+		it must be that $f(a) = f(a')$ since they both map under $g$ onto $c$.
+		Furthermore, since $f$ is injective, it must be that $a = a'$.
+		Therefore, we conclude that $g \circ f$ is injective, since 
+		$(g \circ f)(a) = (g \circ f)(a')$ implies that $a = a'$.
+	\end{proof}
+	\pagebreak
 	\item If $g \circ f$ is injective, what can you say about the injectivity of 
 	$f$ and $g$?
+	\begin{proof}
+		Let $g \circ f$ be injective. Assume for contradiction that $f$ is not injective.
+		Consider $g(f(a))$ and $g(f(a'))$ such that $g(f(a)) = g(f(a''))$ where 
+		$a, a' \in A$. Since $f$ is not injective, it may be that 
+		$f(a) = f(a')$. Thus, it still holds that $g(f(a)) = g(f(a'))$. This is a 
+		contradiction since $g \circ f$ is injective. Therefore, we conclude that 
+		$f$ must be injective if $g \circ f$ is injective.
+		
+		Note that $g$ can either be injective or non-injective. If $g$ is injective it 
+		still holds that $g \circ f$ is injective by problem (b). Thus, assume $g$ is 
+		non-injective. Consider $g(f(a))$ and $g(f(a'))$ such that 
+		$g(f(a)) = g(f(a'))$ for $a, a' \in A$. Since $f$ is injective, if $a = a'$ 
+		we have that $f(a) = f(a')$ and therefore injectivity of $g \circ f$ still holds.
+		If $a \neq a'$, it must be that $f(a) \neq f(a')$. Since $g$ is non-injective
+		it is possible for $g(f(a)) = g(f(a'))$. Thus, the injectivity of $g \circ f$
+		will still hold. Therefore, since $g \circ f$ can be injective when $g$ is either
+		injective or non-injective, we conclude that the injectivity of $g \circ f$
+		does not allow us to say anything about the injectivity of $g$.
+	\end{proof}
 	\item If $f$ and $g$ are surjective, show that $g \circ f$ is surjective.
+	\begin{proof}
+		Let $f$ and $g$ be surjective. Consider $c \in C$. Since $g$ is surjective, there
+		exists some $b \in B$ such that $g(b) = c$. Similarly, since $f$ is surjective
+		there exists some $a \in A$ such that $f(a) = b$. In particular, since $f(a) = b$
+		and $g(b) = c$, we conclude that $g(f(a)) = c$. Thus, $(g \circ f)(a) = c$.
+		Since this is true for any $c \in C$, we conclude that $g \circ f$ must be 
+		surjective.
+	\end{proof}
 	\item If $g \circ f$ is surjective, what can you say about the surjectivity of 
 	$f$ and $g$?
+	\begin{proof}
+		Let $g \circ f$ be surjective. Assume for contradiction that $g$ is not 
+		surjective. Then, there exists at least one $c \in C$ such that $g(b) \neq c$
+		for all $b \in B$. Note this is a contradiction since $g \circ f$ is surjective.
+		Therefore, it must be that $g$ is surjective if $g \circ f$ is surjective.
+		
+		Note that $f$ need not be surjective. Consider the example where
+		$A = \{1, 2, 3\}$, $B = \{1, 2, 3, 4\}$, and $C = \{1, 2, 3\}$.
+		Define $f: A \to B$ such that $f(a) = a$, that is $f(1) = 1$, $f(2) = 2$ and 
+		$f(3) = 3$. Define $g: B \to C$ such that $g(1) = 1$, $g(2) = 2$, $g(3) = 3$,
+		and $g(4) = 3$. Note that $f$ is not surjective, $g$ is surjective,
+		and that $g \circ f$ is surjective. Thus, the surjectivity of $g \circ f$
+		does not allow us to make any claims about the surjectivity of $f$.
+	\end{proof}
+	\pagebreak
 	\item Summarize your answers to (b)-(c) in the form of a theorem.
+	\begin{theorem}
+		Let $A, B$, and $C$ be sets. Define $f: A \to B$ and $g: B \to C$. The following
+		statements can be said about $f$, $g$, and $g \circ f$:
+		\begin{enumerate}
+			\item If $f$ and $g$ are surjective, then $g \circ f$ is surjective.
+			\item If $g \circ f$ is surjective, then $g$ is surjective.
+			\item If $f$ and $g$ are injective, then $g \circ f$ is injective.
+			\item If $g \circ f$ is injective, then $f$ is injective.
+		\end{enumerate}
+	\end{theorem}
 \end{enumerate}
 
 \exnumber{5.} In general, let us denote the \textbf{\textit{identity function}} for a 
@@ -622,16 +715,84 @@ $i_C(x) = x$ for all $x \in C$. Given $f: A \to B$, we say that $h: B \to A$ is 
 \begin{enumerate}[label=(\alph*)]
 	\item Show that if $f$ has a left inverse, $f$ is injective; and if $f$ has a right
 	inverse, $f$ is surjective.
+	\begin{proof}
+		Let $f$ have a left inverse, call it $h: B \to A$. Thus, $h \circ f = i_A$ by 
+		definition. Note that $i_A$ is an injective function, since $i_A(x) = i_A(x')$
+		it implies that $x = x'$ since $i_A(x) = x$ and $i_A(x')$. By our theorem in
+		Exercise 4 part (f), $f$ must be injective.
+		
+		Let $f$ have a right inverse, call it $h: B \to A$. Thus, $f \circ g = i_B$ by definition.
+		Note $i_B$ is surjective. This is because for any $b \in B$ there exists some $b' \in B$
+		such that $i_B(b') = b$, namely $b' = b$ by definition. Thus, by Exercise 4 part (f)
+		we conclude that $f$ must be surjective.
+	\end{proof}
 	\item Give an example of a function that has a left inverse but no right inverse.
+	
+	Define $A = \{1, 2, 3\}$, $B = \{a, b, c, d\}$, and $f: A \to B$ such that 
+	$f(1) = a$, $f(2) = b$, and $f(3) = c$. Note $f$ has the left inverse
+	$h: B \to A$ defined by $h(a) = 1$, $h(b) = 2$, $h(3) = c$, and $h(d) = 3$.
+	Note it is a left inverse since $(h \circ f)(A) = h(f(A)) = A$ and 
+	$h \circ f$ is equivalent to $i_A$ by construction. If $f$ had a right inverse,
+	then by (a) $f$ should be surjective. Note by construction $f$ is not surjective,
+	therefore, $f$ does not have a right inverse.
+	 
 	\item Give an example of a function that has a right inverse but no left inverse.
+	
+	Define $A = \{1, 2, 3, 4\}$, $B = \{a, b, c\}$, and $f: A \to B$ by the rule
+	$f(1) = a$, $f(2) = b$, $f(3) = c$, and $f(4) = c$. Note $f$ has a right inverse
+	$h: B \to A$ defined by $h(a) = 1$, $h(b) = 2$, and $h(c) = 3$. We know $h$ is a 
+	right inverse because $(f \circ h)(B) = f(h(B)) = B$ and $(f \circ h)(x) = x$ for 
+	all $x \in B$ by construction. If $f$ had a left inverse, then by (a) $f$ should
+	be injective. Note by construction $f$ is not surjective, therefore $f$ does not 
+	have a left inverse.
+	
 	\item Can a function have more than one left inverse? More than one right inverse?
+	
+	Yes, a function can have more than one left inverse and more than one right inverse.
+	To see this, consider the examples given in parts (b) and (c). In part (b) note that
+	if we had defined $h: B \to A$ such that $h(d) = 1$ instead of $h(d) = 3$ it is 
+	still true that $h \circ f = i_A$.
+	Similarly, in (c) if we had defined $h: B \to A$ such that $h(c) = 4$ instead of 
+	$h(c) = 3$ it is still true that $h \circ f = i_B$. In both of these cases
+	we defined a new function $h$ since it had a different rule than our original
+	function $h$, and as such both are different inverses for $f$ in each example.
+	
 	\item Show that if $f$ has both a left inverse $g$ and a right inverse $h$, then
-	$f$ is bijective and $g = h = f^{1}$.
+	$f$ is bijective and $g = h = f^{-1}$.
+	\begin{proof}
+		Let $f$ have both a left inverse $g: B \to A$ and a right inverse $h: B \to A$.
+		By problem (a), since $f$ has a left inverse it must be that $f$ is injective.
+		Similarly, by problem (a) since $f$ has a right inverse it must be that $f$ is surjective.
+		Since $f$ is both injective and surjective we conclude that $f$ is bijective. 
+		
+		Let $b \in B$ and consider $g(b)$. Since $f$ is bijective, it is also surjective and thus 
+		there exists some $a \in A$ such that $f(a) = b$. As such, $g(b) = g(f(a))$. Since $g$ is 
+		the left inverse of $f$ note it must be that $g(f(a)) = a$. Similarly, since $b \in B$ we have 
+		that $h(b)$ exists. In particular, since $h$ is the right inverse of $f$, it must be that 
+		$f(h(b)) = b$. Since $f$ is bijective it is also injective. Therefore, since 
+		$f(a) = b$ and $f(h(b)) = b$ it must be that $h(b) = a$. Since $g(b) = a$ and 
+		$h(b) = a$ for arbitrary $b \in B$ we note that $g$ and $h$ map the same elements in $B$
+		to the same element in $A$ and therefore, since $g$ and $h$ have the same rule for
+		mapping and they are defined on the same sets it must be that $g = h$.
+		
+		In particular, since $f^{-1}: B \to A$ is defined as the function that maps $f^{-1}(b) = a$
+		such that $f(a) = b$ where $a$ in the unique element that $f$ maps onto $b$. it must
+		be that $f^{-1} = g = h$. This is because, as we showed earlier, both $g$ and $h$ map
+		an element $b$ onto the element $a$ such that $f(a) = b$ where $a$ exists and is 
+		unique by the fact $f$ is bijective.   
+	\end{proof}
 \end{enumerate}
 
 \exnumber{6.} Let $f: \RR \to \RR$ be the function $f(x) = x^3 - x$. By restricting the domain
 and range of $f$ appropriately, obtain from $f$ a bijective function $g$. Draw the graphs 
 of $g$ and $g^{-1}$. (There are several possible choices for $g$.)
+
+We begin by noting that $f$ as defined is not bijective. This is because we have $f$ is not injective
+since ${f(1) = f(0) = f(-1) = 0}$. A very simple bijective function $g$ we can create by 
+restricting the domain and range of $f$ is $g: \{1\} \to \{0\}$ such that $g(x) = x^3 - x$.
+We note that $g^{-1}: \{0\} \to \{1\}$ can be simply defined as $g^{-1}(x) = 1$.
+We omit including the graphs of $g$ and $g^{-1}$ since they are just the single element
+of $\{1\} \times \{0\}$ and $\{0\} \times \{1\}$ respectively.
  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

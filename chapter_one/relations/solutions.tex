@@ -1,0 +1,490 @@
+\documentclass[11pt]{article}
+
+\oddsidemargin=17pt \evensidemargin=17pt
+\headheight=9pt     \topmargin=26pt
+\textheight=564pt   \textwidth=433.8pt
+
+\usepackage{amsmath, amsthm, amssymb,graphicx,color,enumitem}%,mathrsfs}%,hyperref
+\setlist[enumerate]{parsep=0pt plus 4pt,topsep=3pt plus 4pt}
+\setlist[itemize]{parsep=0pt plus 4pt,topsep=3pt plus 4pt,itemsep=.5ex}
+
+\leftmargini=5.5ex
+\leftmarginii=3.5ex
+
+%for \marginpar to fit optimally
+%hoffset=-1.02in
+\setlength\marginparwidth{2.2in}
+\setlength\marginparsep{1mm}
+\newcommand\red[1]{\marginpar{\linespread{.85}\sf%
+	\vspace{-1.4ex}\footnotesize{\color{red}#1}}}
+	%newcommand\score[1]{\marginpar{\colorbox{yellow}{#1/3}}\hspace{-1ex}}
+	\newcommand\score[1]{\marginpar{\vspace{-2ex}\color{blue}{#1/3}}\hspace{-1ex}}
+	\newcommand\extra[1]{\marginpar{\color{blue}{#1/1}}\hspace{-1ex}}
+	\newcommand\total[2]{\marginpar{\colorbox{yellow}{\huge #1/#2}}}
+	\newcommand\collab[1]{\marginpar{\vspace{-11ex}\colorbox{yellow}{#1/3}}\hspace{-1ex}}
+	\newcommand\magenta[1]{\colorbox{magenta}{\!\!#1\!\!}}
+	\newcommand\yellow[1]{\colorbox{yellow}{\!\!#1\!\!}}
+	\newcommand\green[1]{\colorbox{green}{\!\!#1\!\!}}
+	\newcommand\cyan[1]{\colorbox{cyan}{\!\!#1\!\!}}
+	\newcommand\rmagenta[2][\vspace{0ex}]{\red{#1\magenta{\phantom{:}}\,: #2}}
+	\newcommand\ryellow[2][\vspace{0ex}]{\red{#1\yellow{\phantom{:}}\,: #2}}
+	\newcommand\rgreen[2][\vspace{0ex}]{\red{#1\green{\phantom{:}}\,: #2}}
+	\newcommand\rcyan[2][\vspace{0ex}]{\red{#1\cyan{\phantom{:}}\,: #2}}
+	
+	%For separated lists with consecutive numbering
+	\newcounter{separated}
+	
+	\newcommand{\excise}[1]{}
+	\newcommand{\comment}[1]{{$\star$\sf\textbf{#1}$\star$}}
+	\newcommand{\exnumber}[1]{\noindent\textbf{#1}}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%                                                 %
+	% TO ENABLE GRADING, DO NOT ALTER ABOVE THIS LINE %
+	%                                                 %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	%new math symbols taking no arguments
+	\newcommand\0{\mathbf{0}}
+	\newcommand\CC{\mathbb{C}}
+	\newcommand\FF{\mathbb{F}}
+	\newcommand\NN{\mathbb{N}}
+	\newcommand\QQ{\mathbb{Q}}
+	\newcommand\RR{\mathbb{R}}
+	\newcommand\ZZ{\mathbb{Z}}
+	\newcommand\bb{\mathbf{b}}
+	\newcommand\kk{\Bbbk}
+	\newcommand\mm{\mathfrak{m}}
+	\newcommand\xx{\mathbf{x}}
+	\newcommand\yy{\mathbf{y}}
+	\newcommand\GL{\mathit{GL}}
+	\newcommand\pset{\mathcal{P}}
+	\newcommand\into{\hookrightarrow}
+	\newcommand\nsub{\trianglelefteq}
+	\newcommand\onto{\twoheadrightarrow}
+	\newcommand\minus{\smallsetminus}
+	\newcommand\goesto{\rightsquigarrow}
+	
+	% theorem environment
+	\newtheorem*{theorem}{Theorem}
+	
+	%redefined math symbols taking no arguments
+	\newcommand\<{\langle}
+	\renewcommand\>{\rangle}
+	\renewcommand\iff{\Leftrightarrow}
+	\renewcommand\phi{\varphi}
+	\renewcommand\implies{\Rightarrow}
+	
+	%new math symbols taking arguments
+	\newcommand\ol[1]{{\overline{#1}}}
+	
+	%redefined math symbols taking arguments
+	\renewcommand\mod[1]{\ (\mathrm{mod}\ #1)}
+	
+	%roman font math operators
+	\DeclareMathOperator\im{im}
+	
+	%for easy 2 x 2 matrices
+	\newcommand\twobytwo[1]{\left[\begin{array}{@{}cc@{}}#1\end{array}\right]}
+	
+	%for easy column vectors of size 2
+	\newcommand\tworow[1]{\left[\begin{array}{@{}c@{}}#1\end{array}\right]}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{\mbox{}\\[-8ex]Relations Solutions\normalsize
+	\\[-2.5ex]}
+\author{Solutions by: Raindrops\_drop \\[1ex]
+	\\[-1ex]}
+\date{February 20, 2026} 
+\maketitle
+
+\vspace{-3ex}%
+\noindent
+
+\exnumber{Exercises}
+
+\exnumber{1.} Define two points $(x_0, y_0)$ and $(x_1, y_1)$ of the plane to be equivalent
+if $y_0 - x_0^2 = y_1 - x_1^2$. Check that this is an equivalence relation and describe
+the equivalence classes.
+\begin{proof}
+	For the relation described in this problem to be an equivalence relation, it must
+	be reflexive, symmetric, and transitive. Let $(x, y) \in \RR^2$, and note 
+	$y - x^2 = y - x^2$ since $x$ and $y$ are the same. Therefore, the relation is
+	reflexive. Let $(x_0, y_0), (x_1, y_1) \in \RR^2$ such that $(x_0, y_0) = (x_1, y_1)$, thus
+	$y_0 - x_0^2 = y_1 - x_1^2$. Note that "=" as used in this equality for 
+	real numbers is symmetric and therefore $y_1 - x_1^2 = y_0 - x_0^2$. Hence,
+	$(x_1, y_1) = (x_0, y_0)$ and we can conclude our relation is symmetric. 
+	Let $(x_0, y_0), (x_1, y_1), (x_2, y_2) \in \RR^2$ such that 
+	$y_0 - x_0^2 = y_1 - x_1^2$ and $y_1 - x_1^2 = y_2 - x_2^2$. Since "=" as used
+	here is the usual equality for real numbers, we note that it is transitive.
+	As such, $y_0 - x_0^2 = y_2 - x_2^2$ and we conclude $(x_0, y_0) = (x_2, y_2)$.
+	Therefore, our relation is transitive and we can conclude that the relation
+	described in this problem is an equivalence relation.
+	
+	We now examine what the equivalence classes are: They are parabolas. The points on
+	a parabola will all be equivalent to each other under this equivalence relation. 
+	In particular, the parabola must be of the form $f(x) = x^2 + c$ for some
+	constant $c \in \RR$. Note these classes cover all points on the plane and are
+	disjoint of each other. Further, that points on parabolas of forms other than 
+	this one, are already in some parabola $f(x) = x^2 + c$ and that 
+	also have a difference that is dependent on $x$ in some way, i.e. $y - x^2 = a^2 + bx$
+	in such case each point on the parabola will have a difference that is
+	not equal to another point in the parabola except possibly its reflection across the
+	$y$-axis if $b = 0$ and $a \neq 1$, but in such case this pair of points is already
+	in another equivalence class, mainly $f(x) = x^2 + c$.
+\end{proof}
+
+\exnumber{2.} Let $C$ be a relation on a set $A$. If $A_0 \subseteq A$, define the 
+\textbf{\textit{restriction}} of $C$ to $A_0$ to be $C \cap (A_0 \times A_0)$.
+Show that the restriction of an equivalence relation is an equivalence relation.
+
+\begin{proof}
+	Let $C_0 = C \cap (A_0 \times A_0)$. If $A_0 = \emptyset$, then $C_0 = \emptyset$ also.
+	Note if $A$ is a non-empty set, then $C_0$ is not an equivalence relation on $A$ since it 
+	is not reflexive. If, however, $A$ is empty, then $C_0$ is vacuously an equivalence relation on
+	$A$. Thus, we will assume that $A_0$ is non-empty. We begin by showing that $C_0$ must be reflexive.
+	Let $x \in A_0$, then $(x, x) \in A_0 \times A_0$. Since $C$ is an equivalence relation on $A$
+	we have that $(x, x) \in C$ by definition. Thus, $(x, x) \in C_0$ and we can conclude that 
+	$C_0$ is an reflexive on $A_0$. To show that $C_0$ is symmetric, let $(x, y) \in C_0$. 
+	Thus, $(x, y) \in C$ and $(x, y) \in A_0 \times A_0$. This implies that $x, y \in A_0$ and thus
+	$(y, x) \in A_0 \times A_0$ also. Furthermore, since $C$ is a relation on $A$, $(y, x) \in C$.
+	Thus, $(y, x) \in C_0$ if $(x, y) \in C_0$, showing that $C_0$ is symmetric. Finally, to show that
+	$C_0$ is transitive, let $(x,y), (y, z) \in C_0$. Note that $x, y, z \in A_0$ 
+	by construction. Hence, $(x, z) \in A_0 \times A_0$. Since $C$ is a relation on $A$, it must 
+	be that $(x, z) \in C$. Therefore, $(x, z) \in C_0$, showing that $C_0$ is transitive and thus 
+	is an equivalence relation on $A_0$.
+\end{proof}
+
+\exnumber{3.} Here is a "proof" that every relation $C$ that is both symmetric and 
+transitive is also reflexive: "Since $C$ is symmetric, $aCb$ implies $bCa$. Since 
+$C$ is transitive, $aCb$ and $bCa$ together imply $aCa$, as desired." Find the flaw in
+this argument.
+
+The main flaw with this argument is that reflexivity requires all elements in a set to be included in the 
+relation, i.e., $(x, x) \in R$ for all $x \in A$, while symmetry and transitivity do not have this 
+requirement. In particular, say you have the set $A = \{a, b, c, d\}$
+with the relation $R = \{(a, b), (b, a), (b, c), (c, b), (a, c), (c, a), (a, a), (b, b), (c, c)\}$.
+Note that $R$ is symmetric and transitive; however, it is not reflexive since $(d, d) \notin R$.
+
+
+\exnumber{4.} Let $f: A \to B$ be a surjective function. Let us define a relation on $A$ 
+by setting $a_0 \sim a_1$ if 
+$$
+f(a_0) = f(a_1).
+$$ 
+\begin{enumerate}[label=(\alph*)]
+	\item Show that this is an equivalence relation.
+	\begin{proof}
+		Note that for $a \in A$, $f(a) = f(a)$, thus $a \sim a$ for all $a \in A$.
+		Let $x, y \in A$ such that $f(x) = f(y)$. Since $=$ is assumed to be an equivalence
+		relation on $B$, it must be that $f(y) = f(x)$, thus showing that $y \sim x$ if $x \sim y$.
+		Let $x, y, z \in A$ such that $x \sim y$ and $y \sim z$. By definition, we have 
+		that $f(x) = f(y)$ and $f(y) = f(z)$. Since $=$ is an equivalence relation on $B$ we have
+		that $f(x) = f(z)$. Therefore, $x \sim z$, and we conclude that $\sim$ is an equivalence
+		relation on $A$.
+	\end{proof}
+	\item Let $A^*$ be the set of equivalence classes. Show that there is a bijective 
+	correspondence of $A^*$ with $B$.
+	\begin{proof}
+		Let $g: A^* \to B$ be a function such that $g(a^*) = b$ where $a^*$ is an equivalence
+		class in $A$ determined by $a$, and $b = f(a)$. We claim that $g$ is bijective. 
+		Consider $b \in B$, since $f$ is surjective, there exists some $a \in A$ such
+		that $f(a) = b$. Hence, $f(a*) = b$ by construction and we can conclude that 
+		$g$ is surjective. Let $g(x^*) = b$ and $g(y^*) = b$. By construction, $f(x) = b$
+		and $f(y) = b$. Note this implies that $x \sim y$ and thus both are elements of the 
+		same equivalence class, i.e., $x^* = y^*$ since equivalence classes are either disjoint 
+		or equal. Therefore, $g$ is injective, and we can conclude that $g$ is bijective. 
+	\end{proof}
+\end{enumerate}
+
+\pagebreak
+
+\exnumber{5.} Let $S$ and $S'$ be the following subsets of the plane:
+$$
+S = \{(x, y) \mid y = x + 1 \text{ and } 0 < x < 2\},
+$$
+$$
+S' = \{(x, y) \mid y - x \text{ is an integer}\}.
+$$
+\begin{enumerate}[label=(\alph*)]
+	\item Show that $S'$ is an equivalence relation on the real line and $S' \supseteq S$.
+	Describe the equivalence classes of $S'$.
+	
+	\begin{proof}
+		Let $x \in \RR$ and note that $x - x = 0$ which is an integer. Thus, $xS'x$ for all
+		$x \in \RR$. Let $xS'y$, this implies that $y - x = n$ for some integer $n$.Note
+		we can rewrite this equation as $x - y = -n$ where $-n$ is still an integer, and thus,
+		$yS'x$. Let $xS'y$ and $yS'z$, then $y - x = n$ and $z - y = m$ for integers $n$ and $m$.
+		Note these equations imply $z - x = m + n$. Since $n + m$ is an integer, we conclude that 
+		$xS'z$. Therefore, $S'$ is an equivalence relation on the real line.
+		
+		Let $(x, y) \in S$, then $y - x = 1$ where $0 < x <2$. Since $y - x$ is equal to an
+		integer, they belong to an equivalence class in $S'$. Thus, $(x, y) \in S'$, and we 
+		can therefore conclude that $S \subseteq S'$. 
+		
+		In regard to the equivalence classes of $S'$, note that all the integers are in the 
+		same equivalence class as $0$, since their difference with zero is always an integer. 
+		Every rational number between zero and one are in their own distinct equivalence class,
+		since rational numbers between zero and one are all less than one away from each other.
+		This is also true for the irrational numbers that are between zero and one. In particular,
+		the numbers between zero and one, including zero also, can determine the equivalence classes
+		of this equivalence relation. As such, we could represent the equivalence classes of 
+		this equivalence relation as $[0,1)$. 
+	\end{proof}
+	
+	\item Show that given any collection of equivalence relations on a set $A$, their 
+	intersection is an equivalence relation on $A$.
+	
+	\begin{proof}
+		Let $R = \bigcap_{i \in I} R_i$ where $R_i$ are equivalence relations on $A$ and 
+		$I$ is some indexing set. Let $x \in A$, since every $R_i$ is an equivalence relation
+		it must be that $(x, x) \in R_i$ for all $i \in I$. Thus, $(x, x) \in R$ by definition.
+		Let $(x, y) \in R$, this implies that $(x, y) \in R_i$ for all $i$. Since each $R_i$
+		is an equivalence relation, $(y, x) \in R_i$ for all $i$. Hence, $(y, x) \in R$.
+		Let $(x, y), (y, z) \in R$. This implies that $(x, y), (y, z) \in R_i$ for all $i$.
+		Since each $R_i$ is an equivalence relation, it must be that $(x, z) \in R_i$ for all $i$.
+		Therefore, $(x, z) \in R$ and we can thus conclude that $R$ is an equivalence relation on
+		$A$.
+	\end{proof}
+	
+	\item Describe the equivalence relation $T$ on the real line that is the intersection
+	of all equivalence relations on the real line that contain $S$. Describe the 
+	equivalence classes of $T$.
+	
+	\begin{proof}
+		One way to find $T$ is to start with the set $S$, and construct an equivalence class around
+		$S$. As a first step, we will have that $S \subseteq T$. This is not an equivalence class
+		since $S$ is not reflexive, transitive, nor symmetric. Thus, we must include the set
+		$S_R = \{(x, x) \mid x \in \RR\}$. Note $S \cup S_R \subseteq T$ is now reflexive.
+		To make this relation symmetric, we can look back at the definition of $S$ and construct
+		a set that is symmetric to $S$. Recall $S = \{(x, y) \mid y = x + 1 \text{ and } 0 < x < 2\}$.
+		A set that is symmetric to $S$ can be defined as $S_S = \{(x, y) \mid y = x - 1 \text{ and }
+		1 < x < 3\}$. Thus, the set $S \cup S_R \cup S_S \subseteq T$ is now reflexive and symmetric.
+		We need only make this set transitive to truly make it an equivalence relation.
+		Note there are elements in $S$ that should provide other points to be included through transitivity,
+		like $(0.5, 1.5)$ and $(1.5, 2.5)$. These points should imply that $(0.5, 1.5)$ to also be 
+		included. Note that this can be accomplished by including the set $S_{T_1} = \{(x, y)
+		\mid y = x + 2 \text{ and } 0 < x < 1\}$. Since we included this set, we must include
+		a set symmetric to it, $S_{T_2} = \{(x, y) \mid y = x - 2 \text{ and } 2 < x < 3\}$.
+		Thus, note that $S \cup S_R \cup S_S \cup S_{T_1} \cup S_{T_2} = T$ is a reflexive, symmetric,
+		and transitive subset of $\RR \times \RR$, and is therefore an equivalence relation. Note $T$
+		must be the intersection of all equivalence relations that include $S$ since it is the 
+		smallest equivalence relation that includes $S$ by construction.
+		
+		In regard to the equivalence classes of $T$, note that if $x < 0$ or $x > 0$, its equivalence
+		class is the set $\{x\}$ since it is only equivalent to itself by construction. If 
+		$0 < x < 1$, then its equivalence class is the set $\{x, x+1, x+2\}$ by construction.
+		If $1 < x < 1$, then its equivalence class is the set $\{x-1, x, x+1\}$ by construction.
+		Finally, if $2 < x < 3$, then its equivalence class is the set $\{x-2, x-1, x\}$ by construction.
+	\end{proof}
+	
+\end{enumerate}
+
+\exnumber{6.} Define a relation on the plane by setting
+$$
+(x_0, y_0) < (x_1, y_1)
+$$
+if either $y_0 - x_0^2 < y_1 - x_1^2$, or $y_0 - x_0^2 = y_1 - x_1^2$ and $x_0 < x_1$. Show
+that this is an order relation, and describe it geometrically. 
+
+\begin{proof}
+	Let $(x, y), (n, m)$ be distinct points on the plane. This implies that either $x \neq n$, 
+	$y \neq m$, or both. If $x \neq n$, either $x^2 < n^2$ or $x^2> n^2$ or $x^2 = n^2$.
+	Without loss of generality let $x^2 < n^2$. Since $y = m$, we note that $y - x^2 > m - n^2$.
+	Hence $(x, y) > (n, m)$. If $y \neq m$, then either $y < m$ or $y > m$. Without loss of generality
+	let $y < m$. Since $x = n$, this implies that $y - x^2 < m - n^2$. Hence, $(x, y) < (n, m)$.
+	If both $x = n$ and $y = m$ it may be that $y - x^2 = m - n^2$. Note then that $x \neq n$ and
+	thus either $x < n$ or $x > n$, in either case we can still compare both points of the plane.
+	Therefore, the relation in this exercise is comparable.
+	
+	Let $(x, y)$ be a point on the plane. Note that $y - x^2 = y - x^2$ and that $x = x$. Hence,
+	our relation for this exercise does not hold for this point and itself. In particular, it implies
+	that a point is not comparable with itself. Therefore, our relation is non-reflexive. 
+	
+	Let $(x, y) < (u, v)$ and $(u, v) < (s, t)$. Then, by definition, $y - x^2 < v - u^2$ or 
+	$y - x^2 = v - u^2$ and $x < u$. Similarly, $v - u^2 < t - s^2$ or $v - u^2 = t - s^2$ and 
+	$u < s$. Without loss of generality let $y - x^2 < v - u^2$ and $v - u^2 < t - s^2$.
+	This implies that $y - x^2 < t - s^2$, showing that $(x, y) < (s, t)$ as desired. Therefore,
+	this relation is transitive and we can conclude that this is an order relation.
+	
+	Geometrically, we note that every point on the plane will lie in exactly one parabola of 
+	the form $y = x^2 + c$ for some $c \in \RR$. In particular, by our choice of relation we have
+	made it so that if one point lies in a parabola higher up than another, then that point will be
+	greater than the other. If two points lie on the same parabola, then the point most to the right will
+	be the greater of the two.   
+\end{proof}
+
+\exnumber{7.} Show that the restriction of an order relation is an order relation.
+
+\begin{proof}
+	Let $C$ be an order relation on the set $A$, and $A_0 \subseteq A$ be a subset of $A$. Consider the 
+	relation $C_0 = C \cap (A_0 \times A_0)$. If $A_0 = \emptyset$ note that $C_0 = \emptyset$. It is 
+	vacuously true that $C_0$ is an order relation on $A_0$. Thus, we will assume that $A_0$ is non-empty.
+	Let $x, y \in A_0$ such that $x \neq y$. Since $A_0 \subseteq A$ it must be that $x, y \in A$.
+	Therefore, either $xCy$ or $yCx$ since $C$ is an order relation. 
+	Note that $(x, y), (y, x) \in A_0 \times A_0$ and thus $C$ will contain either $(x, y)$ or 
+	$(y, x)$ depending on whichever element $C$ contains. In either case, we can conclude that 
+	$C_0$ is comparable in $A_0$. Now, let $x \in A_0$, which implies that $x \in A$. Since $C$ is an order
+	relation on $A$, this implies that $(x, x) \notin C$. Hence, $(x, x) \notin C_0$ by construction.
+	Therefore, $C_0$ must be non-reflexive. Let $(x, y), (s, t) \in C_0$. This implies 
+	that $(x, y), (s, t) \in C$. Since $C$ is an order relation on $A$, $(x, t) \in C$ must be true.
+	Since $x, t \in A_0$, $(x, t) \in A_0 \times A_0$ and therefore $(x, t) \in C_0$. Thus we conclude
+	that $C_0$ is transitive and therefore an order relation.
+\end{proof}
+
+\exnumber{8.} Check that the relation defined in Example 7 is an order relation.
+
+\begin{proof}
+	The order relation in Example 7 is the following: For the set of real numbers, define $xCy$
+	if $x^2 < y^2$, or if $x^2 = y^2$ and $x < y$.
+	
+	We begin by showing that this relation is comparable. Let $x, y \in \RR$ such that 
+	$x \neq y$. Since Note either $x^2 < y^2$, $x^2 > y^2$ or $x^2 = y^2$. In the first
+	two cases we can conclude that either $xCy$ or $yCx$ showing our relation is comparable. In
+	the third case, we then check if $x < y$ or $x > y$ since $x \neq y$. Note that in either case
+	we can conclude that $xCy$ or $yCx$ showing or relation is comparable. Hence, we conclude
+	that this relation is comparable on the real numbers.
+	
+	Now we demonstrate that the relation is non-reflexive. Let $x \in \RR$, then $x^2 = x^2$ and 
+	$x = x$. Note that based on our definition for our relation we cannot relate $x$ to itself. Thus,
+	our relation does not compare elements to themselves and we can conclude that it is non-reflexive.
+	
+	To show that the relation is transitive, let $xCy$ and $yCz$. By definition,
+	this implies that either $x^2 < y^2,$ or $x^2 = y^2$ and $x < y$. Similarly, we have that 
+	$y^2 < z^2$, or $y^2 = z^2$ and $y < z$. If $x^2 < y^2$ and $y^2 < z^2$ note that $x^2 < z^2$
+	must be true and we conclude that $xCz$. If $x^2 = y^2$ and $y^2 < z^2$, note that
+	$x^2 < z^2$ must be true and we conclude that $xCz$. If $x^2 = y^2$ and $y^2 = z^2$, then note
+	$x < y$ and $y < z$. This implies that $x < z$, so we conclude that $xCz$. The remaining case 
+	is analogous to the one we did earlier but the signs are swapped. Hence, we conclude that
+	our relation is transitive. Therefore, $C$ is an order relation on the real numbers.
+\end{proof}
+
+\exnumber{9.} Check that the dictionary order is an order relation. 
+
+\begin{proof}
+	Let $A$ and $B$ be sets such that $<_A$ and $<_B$ are order relations in their respective sets.
+	We define the dictionary order on $A \times B$ as the relation where $(a, b) < (c, d)$
+	if $a <_A c$, or if $a = c$ and $b <_B d.$ To show that the dictionary order is an
+	order relation we must show that it has comparability, non-reflexivity, and transitivity.
+	
+	We begin by showing that this relation is comparable. Let $(a, b), (c, d) \in A \times B$
+	such that $(a, b) \neq (c, d)$.
+	If $a <_A c$, then $(a, b) < (c, d)$, and if $c <_A a$ then $(c, d) < (a, b)$. If 
+	$a = c$, it must be that $b \neq c$ by construction. Thus, either $b <_B d$ or $d <_B b$.
+	In either case we can compare both elements of $A \times B$. Therefore, we conclude that
+	the dictionary order is an order relation.
+	
+	We now demonstrate that the dictionary order is non-reflexive. Let $(x, y) \in A \times B$.
+	Then, $x = x$ and $y = y$. Note that since $y = y$, we cannot compare $(x, y)$ to itself
+	by the definition of the dictionary order. Hence, an element in $A \times B$ is not comparable
+	to itself under this relation. Therefore, we conclude that the dictionary order is 
+	non-reflexive.
+	
+	Finally, to show that the dictionary order is transitive let $(a, b) < (c, d)$ and 
+	$(c, d) < (n, m)$. By definition, either $a <_A c$ or $a = c$ and $b <_B d$. Similarly.
+	either $c <_A n$ or $c = n$ and $d <_B m $. If $a <_A c$ and $c <_A n$, then 
+	$a <_A n$ by the fact $<_A$ is an order relation in $A$. Thus we conclude that 
+	$(a, b) < (n, m)$. If $a = c$ and $c = n$, it must be that $b <_B d$ and $d <_B m$. Since
+	$<_B$ is an order relation in $B$ it must be that $b <_B m$. Thus, $(a, b) < (n, m)$. 
+	If $a = c$ and $d <_B m$ it must be that $b <_B d$. This implies that $(a, b) < (n, m)$.
+	If $a <_A c$ and $c = n$, we conclude that $a <_A n$, showing that $(a, b) < (n, m)$.
+	Therefore, the dictionary order is transitive and we further conclude that it is an order 
+	relation on $A \times B$.
+\end{proof}
+
+\exnumber{10.}
+\begin{enumerate}[label=(\alph*)]
+	\item Show that the map $f: (-1, 1) \to \RR$ of Example 9 is order preserving.
+	
+	\begin{proof}
+		The function in Example 9 is the following: $f: (-1, 1) \to \RR$ such that 
+		$$
+		f(x) = \frac{x}{1 - x^2}.
+		$$
+		To show that $f$ is order preserving, we must demonstrate that for $x, y \in (-1, 1)$
+		such that $x < y$, it must be that $f(x) < f(y)$. Thus, assume that $x, y \in (-1, 1)$
+		such that $x < y$. Consider
+		$$
+		\frac{y}{1 - y^2} - \frac{x}{1 - x^2}.
+		$$
+		We need only show that this value is greater than zero. Note that it is equivalent to
+		$$
+		\frac{y(1 - x^2) - x(1 - y^2)}{(1 - y^2)(1 - x^2)}.
+		$$
+		The denominator of this fraction is always positive due to the values $x$ and $y$ are allowed
+		to take. As such, we must show that the numerator must also be positive given $x < y$.
+	\end{proof}
+	 
+	\item Show that the equation $g(y) = 2y/[1 + (1 + 4y^2)^{1/2}]$ defines a function
+	$g: \RR \to (-1, 1)$ that is both a left and a right inverse for $f$.
+\end{enumerate}
+
+\exnumber{11.} Show that an element in an ordered set has at most one immediate successor 
+and at most one immediate predecessor. Show that a subset of an ordered set has at most
+one smallest element and at most one largest element.
+
+\exnumber{12.} Let $\ZZ_+$ denote the set of positive integers. Consider the following 
+order relations on $\ZZ_+ \times \ZZ_+$:
+\begin{enumerate}[label=(\roman*)]
+	\item The dictionary order.
+	\item $(x_0, y_0) < (x_1, y_1)$ if either $x_0 - y_0 < x_1 - y_1$, or 
+	$x_0 - y_0 = x_1 - y_1$ and $y_0 < y_1$.
+	\item $(x_0, y_0) < (x_1, y_1)$ if either $x_0 + y_0 < x_1 - y_1$, or 
+	$x_0 + y_0 = x_1 + y_1$ and $y_0 < y_1$.
+\end{enumerate}
+In these order relations, which elements have immediate predecessors? Does the set have 
+a smallest element? Show that all three order types are different. 
+
+\exnumber{13.} Prove the following:
+\begin{theorem}
+	If an ordered set $A$ has the least upper bound property, then it has the 
+	greatest lower bound property.
+\end{theorem}
+
+\exnumber{14.} If $C$ is a relation on a set $A$, define a new relation $D$ on $A$ 
+by letting $(b, a) \in D$ if $(a, b) \in C$.
+\begin{enumerate}[label=(\alph*)]
+	\item Show that $C$ is symmetric if and only if $C = D$.
+	\item Show that if $C$ is an order relation, $D$ is also an order relation.
+	\item Prove the converse of the theorem in Exercise 13.
+\end{enumerate}
+
+\exnumber{15.} Assume that the real line has the least upper bound property.
+\begin{enumerate}[label=(\alph*)]
+	\item Show that the sets
+	$$
+	[0, 1] = \{x \mid 0 \leq x \leq 1\},
+	$$
+	$$
+	[0, 1) = \{x \mid 0 \leq x < 1\}
+	$$
+	have the least upper bound property. 
+	\item Does $[0,1] \times [0, 1]$ in the dictionary order have the least upper
+	bound property? What about $[0,1] \times [0,1)$?
+	What about $[0,1) \times [0, 1]$?
+\end{enumerate} 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Various Emacs customizations:
+%%% Local Variables:
+%%% mode: latex
+%%% mode: LaTeX-math
+%%% mode: reftex
+%%% mode: Tex-PDF
+%%% fill-column: 70
+%%% indent-tabs-mode: t
+%%% TeX-electric-sub-and-superscript: nil
+%%% TeX-brace-indent-level: 0
+%%% LaTeX-indent-level: 0
+%%% LaTeX-item-indent: 0
+%%% TeX-master: t
+%%% End:

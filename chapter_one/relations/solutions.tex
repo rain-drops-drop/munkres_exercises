@@ -74,7 +74,7 @@
 	\\[-2.5ex]}
 \author{Solutions by: Raindrops\_drop \\[1ex]
 	\\[-1ex]}
-\date{February 20, 2026} 
+\date{September 12, 2026} 
 \maketitle
 
 \vspace{-3ex}%
@@ -382,25 +382,163 @@ that this is an order relation, and describe it geometrically.
 		$$
 		To show that $f$ is order preserving, we must demonstrate that for $x, y \in (-1, 1)$
 		such that $x < y$, it must be that $f(x) < f(y)$. Thus, assume that $x, y \in (-1, 1)$
-		such that $x < y$. Consider
+		such that $x < y$. We will break our analysis into cases, the first of which is 
+		when $x \geq 0$ and $y > 0$. Consider the difference $y^2 - x^2$ which factors into
+		$(y - x)(y + x)$. Since $y > x$, we have that $y - x > 0$. Given that $x \geq 0$ and $y > 0$
+		we also have that $y + x > 0$. Therefore, $y^2 - x^2 > 0$ and we can conclude that 
+		$y^2 > x^2$. This implies that $-y^2 < -x^2$, and furthermore $1 - y^2 < 1 - x^2$.
+		Finally, note that
 		$$
-		\frac{y}{1 - y^2} - \frac{x}{1 - x^2}.
+		\frac{1}{1 - y^2} > \frac{1}{1 - x^2}.
 		$$
-		We need only show that this value is greater than zero. Note that it is equivalent to
+		Thus, we have the following statements:
 		$$
-		\frac{y(1 - x^2) - x(1 - y^2)}{(1 - y^2)(1 - x^2)}.
+		\frac{x}{1 - x^2} < \frac{y}{1 - x^2}
 		$$
-		The denominator of this fraction is always positive due to the values $x$ and $y$ are allowed
-		to take. As such, we must show that the numerator must also be positive given $x < y$.
+		since $x < y$, and 
+		$$
+		\frac{y}{1 - x^2} < \frac{y}{1 - y^2}
+		$$
+		due to our previous work. Therefore,
+		$$
+		\frac{x}{1 - x^2} < \frac{y}{1 - y^2},
+		$$
+		implying $f(x) < f(y)$ just as we want.
+		
+		Now, consider the case $x < 0$, $y \leq 0$. Then, note that $-x > 0$, $-y \geq 0$, and $-x > -y$.
+		Such that $f(-x) > f(-y)$ by our previous work. Furthermore.
+		$$
+		f(-x) = \frac{-x}{1- x^2} = -f(x)
+		$$
+		$$
+		f(-y) = \frac{-y}{1 - y^2} = -f(y).
+		$$
+		Thus, $-f(x) = f(-x) > f(-y) = -f(y)$ which implies $f(x) < f(y)$.
+		
+		Finally, now consider $x < 0$ and $y > 0$. Note that $f(x) < 0$ and $f(y) > 0$ by definition, and
+		thus we conclude that $f(x) < f(y)$. Since we showed that $f(x) < f(y)$ when $x < y$ for 
+		all of our cases we can conclude that $f$ is order preserving.
 	\end{proof}
 	 
 	\item Show that the equation $g(y) = 2y/[1 + (1 + 4y^2)^{1/2}]$ defines a function
 	$g: \RR \to (-1, 1)$ that is both a left and a right inverse for $f$.
+	\begin{proof}
+		We first show that $g$ is a left inverse, i.e., that $g(f(x)): (-1, 1) \to (-1, 1)$ is the identity
+		map on $(-1, 1)$.
+		We first have that 
+		$$
+		g(f(x)) = \frac{2f(x)}{1 + \big(1 + 4f(x)^2\big)^{1/2}}
+		$$  
+		by definition of $g$. Using the definition of $f$ we now have
+		$$
+		g(f(x)) = \frac{2x}{1 - x^2} \cdot \frac{1}{1 + \left(1 + 4\left(\frac{x}{1 - x^2}\right)^2\right)^{1/2}}
+		$$
+		$$
+		g(f(x)) = \frac{2x}{1 - x^2} \cdot 
+		\frac{1}{1 + \left(\frac{(1-x^2)^2 + 4x^2}{(1-x^2)^2}\right)^{1/2}}
+		$$
+		$$
+		g(f(x)) = \frac{2x}{1 - x^2} \cdot \frac{1}{1 + \frac{x^2 - 1}{1 - x^2}}
+		$$
+		$$
+		g(f(x)) = \frac{2x}{1 - x^2} \cdot \frac{1}{\frac{(1 - x^2) + x^2 + 1}{1 - x^2}} = 
+		\frac{2x}{1 - x^2} \cdot \frac{1 - x^2}{2}
+		$$
+		$$
+		g(f(x)) = x
+		$$
+		Thus we conclude that $g$ is a right inverse for $f$.
+		
+		Now, we will check that $g$ is a right inverse of $f$, i.e., that $f(g(y)): \RR \to \RR$ is the identity
+		map on $\RR$.
+		
+		We first have that 
+		$$
+		f(g(y)) = \frac{g(y)}{1 - g(y)^2}
+		$$
+		by the definition of $f$, and using the definition of $g$ we get
+		$$
+		f(g(y)) = \frac{\frac{2y} {1 + (1 + 4y^2)^{1/2}}}{1 - \left(\frac{2y}{1 + (1 + 4y^2)^{1/2}}\right)^2}
+		$$
+		$$
+		f(g(y)) = \frac{2y}{1 + (1 + 4y^2)^{1/2}} \cdot \frac{1}{1 - \frac{4y^2}{4y^2 + 2 + 
+		2(1 + 4y^2)^{1/2}}}
+		$$
+		$$
+		f(g(y)) = g(y) \cdot 
+		\frac{1} {\frac{4y^2 + 2 + 2(1 + 4y^2)^{1/2} - 4y^2} {4y^2 + 2 + 2(1 + 4y^2)^{1/2}}}
+		$$
+		$$
+		f(g(y)) = g(y) \cdot 
+		\frac{4y^2 + 2 + 2(1 + 4y^2)^{1/2}}{2 + 2(1 + 4y^2)^{1/2}}
+		$$
+		$$
+		f(g(y)) = g(y) \cdot 
+		\frac{2y^2 + 1 + (1 + 4y^2)^{1/2}}{1 + (1 + 4y^2)^{1/2}}
+		$$
+		$$
+		f(g(y)) = g(y) \cdot \left(\frac{2y^2}{1 + (1 + 4y^2)^{1/2}} + 1 \right)
+		$$
+		$$
+		f(g(y)) = g(y) \cdot \left(yg(y) + 1\right) = yg(y)^2 + g(y)
+		$$
+		$$
+		f(g(y)) = \frac{4y^3}{1 + 2(1 + 4y^2)^{1/2} + (1 + 4y^2)} + \frac{2y}{1 + (1 + 4y^2)^{1/2}}
+		$$
+		$$
+		f(g(y)) = \frac{4y^3 + 2y(1 + (1 + 4y^2)^{1/2})}{1 + 2(1 + 4x^2)^{1/2} + (1 + 4y^2)}
+		$$
+		$$
+		f(g(y)) = \frac{2\left(2y^3 + y + y(1 + 4y^2)^{1/2}\right)}{2 \left(1 + (1 + 4y^2)^{1/2} + 2y^2\right)}
+		$$
+		$$
+		f(g(y)) = \frac{y\left(2y^2 + (1 + (1 + 4y^2)^{1/2})\right)}{2y^2 + (1 + (1 + 4y^2)^{1/2})}
+		$$
+		$$
+		f(g(y)) = y
+		$$
+		Thus, we conclude that $g$ is also a right inverse of $f$.
+	\end{proof}
 \end{enumerate}
 
 \exnumber{11.} Show that an element in an ordered set has at most one immediate successor 
 and at most one immediate predecessor. Show that a subset of an ordered set has at most
 one smallest element and at most one largest element.
+
+\begin{proof}
+	Let $S$ be a non-empty ordered set and $a \in S$ be an element of $S$. If $b \in S$ is an immediate
+	successor of $a$, then by definition the set $B = \{x \in S \mid a < x < b\}$ is empty. Assume that
+	$c$ is another immediate successor of $a$. Then, similarly, the set $C = \{x \in S \mid a < x < c\}$
+	is empty. Since $S$ is an ordered set, if $b \neq c$, then either $b < c$ or $c < b$. Note that 
+	if $b < c$, then $b \in C$ which is a contradiction of $c$ being an immediate successor of $a$.
+	Similarly, if $c < b$ it implies that $c \in B$ which is a contradiction of $b$ being an immediate
+	successor of $a$. Therefore, it must be that $b = c$. As such, $a$ can have at most one
+	immediate successor. 
+	
+	As with the case of the immediate successor of $a$, we can show in an analogous argument that 
+	$a$ can have at most one immediate predecessor. As such, let $b$ and $c$ be immediate predecessors
+	of $a$. By definition, we have that the sets $B = \{x \in S \mid b < x < a\}$ and 
+	$\{C = x \in S \mid c < x < a\}$ are empty. Given $S$ is an ordered set, if $b \neq c$ it must
+	be that either $b < c$ or $c < b$. If $b < c$ then $c \in B$ which is a contradiction to $c$
+	being an immediate predecessor of $a$. If $c < b$ then $b \in C$ which is a contradiction to
+	$b$ being an immediate predecessor of $a$. Therefore, it must be that $b = c$, showing that 
+	$a$ can have at most one immediate predecessor. 
+	
+	Let $A \subseteq S$ be a subset of $S$. If $A$ is empty, then it has no smallest or 
+	largest element, given it has no elements at all. By \exnumber{7} we have that 
+	the restriction of the order relation on $S$ in respect to $A$ is also an order relation.
+	Let $a \in A$ be a largest element of $S$, this implies that for any $c \in A$ we must 
+	have that $c < a$. If $b \in A$ were another largest element of $A$ we would have that 
+	$b < a$ and $a < b$ are both true, which is a contradiction to $A$ being an ordered set.
+	Therefore, if both $a$ and $b$ are the largest element of $A$ it must be that $a = b$.
+	Thus, $A$ can have at most one largest element.
+	
+	Similar with the case of a largest element, we can show that $A$ can have at most one smallest 
+	element. Let $a \in A$ be a smallest element, then for any $c \in A$ it must be true 
+	that $a < c$. If $b \in A$ were another smallest element of $A$, then both $a < b$ and 
+	$b < a$ are true, which contradicts $A$ being an ordered set. Therefore, $a = b$ which implies
+	that $A$ can have at most one smallest element. 
+\end{proof}
 
 \exnumber{12.} Let $\ZZ_+$ denote the set of positive integers. Consider the following 
 order relations on $\ZZ_+ \times \ZZ_+$:
@@ -414,18 +552,146 @@ order relations on $\ZZ_+ \times \ZZ_+$:
 In these order relations, which elements have immediate predecessors? Does the set have 
 a smallest element? Show that all three order types are different. 
 
+As an addendum I noticed late into this that $\ZZ_+$ does not include $0$. However, this 
+doesn't change much other than what are the smallest elements, e.g. $(1,1)$ instead of $(0,0)$,
+or that the elements with no immediate predecessor are actually of the form $(1, y)$ instead
+of $(0, y)$. However, the analysis of each order relation on the set is the same, with the core
+facts remaining intact so I rather not rewrite this and risk causing an error along the way. So, 
+for the purpose of this exercise simply assume I'm talking about the set
+$\ZZ_{\geq 0} \times \ZZ_{\geq 0}$.
+
+We first consider the dictionary order. Under this order, note that there is a smallest
+element in $\ZZ_+ \times \ZZ_+$, which is $(0,0)$. This is due to the fact that for
+any $(x, y)$ if $x \neq 0$ then $0 < x$, so $(0,0) < (x, y)$. If $x = 0$, then $y \neq 0$ which implies
+that $0 < y$ making $(0, 0) < (x, y)$. Therefore, $(0,0) < (x, y)$ for all $(x, y)$ in this set.
+When it comes to which elements have an immediate predecessor and which don't under this order
+relation, consider the following:
+
+Elements of the form $(x, 0)$ cannot have an immediate predecessor. To show this, consider the kinds
+of elements that are smaller than $(x, 0)$. If $(y,z)$ is smaller that $(x, 0)$ either 
+$y < x$ or $y = x$ and $z < 0$. Note that $z$ cannot be smaller than $0$ which implies
+that $(y, z)$ can only be smaller than $(x, 0)$ if $y < x$. In particular, any point of the form
+$(x - 1, z)$ will be smaller than $(x, 0)$. As such, if $(x - 1, z)$ were the immediate predecessor 
+of $(x, 0)$ then the set $\{(a, b) \mid (x - 1, z) < (a, b) < (x, 0)\}$ is empty. But, note that 
+$(x - 1, z) < (x - 1, z + 1)$ and $(x - 1, z + 1) < (x, 0)$. Since this is true for any $z$ we 
+conclude that $(x, 0)$ cannot have an immediate predecessor under the dictionary order.
+Any other element of this set (except the smallest element $(0,0)$ also) does have an immediate 
+predecessor. In particular for the element $(x, y)$ where $y \neq 0$, the element $(x, y - 1)$
+is its immediate predecessor. 
+
+Now, we consider the order relation in (ii). We first note that there can be no smallest
+element with this order. To show this, assume that $(x, y)$ was the smallest element 
+under this order. Thus, for any $(a, b)$ we have that $(x, y) < (a, b)$. If $x \neq 0$,
+note that the element $(x - 1, y) < (x, y)$ by how we defined our order. Thus, it must be 
+that $x = 0$. However, note that for any $y$, we have $y + 1$ such that $(0, y) < (0, y+1)$ by 
+definition of this order relation. As such, it cannot be that $(x, y)$ is the smallest element.
+
+In regard to immediate predecessors, we note that under this order relation, elements of the 
+form $(x, 0)$ and $(0, y)$ do not have an immediate predecessor. To see this, consider 
+$(x, 0)$ where $x \neq 0$, and assume that $(a, b)$ is its immediate predecessor. Then, either
+$a - b < x$ or $a - b = x$ and $b < 0$. Since $b$ cannot be less than $0$ it must 
+be that $a - b < x$. In particular, it must be that $a - b = x - 1$ as it were smaller it could not
+be the immediate predecessor of $(x, 0)$. Note then, that any element of the form $(a + n, b + n)$
+where $n$ is any positive integer will have both a difference of $x - 1$ and a component such that 
+$b < b + n$. As such, $(a, b) < (a + n, b + n) < (x, 0)$ which is a contradiction to
+$(a, b)$ being the immediate predecessor of $(x, 0)$. For elements of the form $(0, y)$ we can 
+construct an analogous argument as to why they also do not have an immediate predecessor, including 
+the element $(0, 0)$. However, every other element does have an immediate predecessor. In particular
+for an element $(x, y)$ where $x, y \neq 0$ its immediate predecessor is $(x - 1, y - 1)$.
+ 
+For (iii) we note that under this order relation there is a smallest element, namely $(0,0)$, 
+and every other element will have an immediate predecessor. 
+To show this, simply note that $0 + 0 = 0$, and that for an element $(x, y)$ if either
+$x$ or $y$ is non-zero then their sum will be greater than $0$, as such $(0,0)$ must be 
+the smallest element. In regard to immediate predecessors, consider the element $(x, y)$ such
+that it is not $(0,0)$. If $y = 0$ then  note $x + y = x$. Since $y = 0$, it must be that $(x, y)$
+is the smallest element whose component sum equals $x$, thus the element $(0, x - 1)$ will be its 
+immediate predecessor, given it is the greatest element whose sum is one less than $x$.
+For the case where $y \neq 0$, note that the immediate predecessor of $(x, y)$ will be 
+the element $(x + 1, y - 1)$. 
+
+From our analysis, we note that under the dictionary order there is a smallest element $(0,0)$
+but elements of the form $(x, 0)$ will have no immediate predecessor. Under the order relation
+in (ii) there will be no smallest element and elements of the form $(x, 0)$ and $(0, y)$ will
+have no immediate predecessor. Finally, under the order relation of (iii) there will be a smallest element
+$(0,0)$ and every other element will have an immediate predecessor. As such, all of these order
+relationships must be different relations which can be easily seen by the different kinds of 
+ordered pairs that are not included in each relation due to their difference in which elements
+have or don't have an immediate predecessor. 
+
 \exnumber{13.} Prove the following:
 \begin{theorem}
 	If an ordered set $A$ has the least upper bound property, then it has the 
 	greatest lower bound property.
 \end{theorem}
 
+\begin{proof}
+	Let $A$ be an ordered set with the least upper bound property. Consider the subset
+	$B_0 \subseteq A$ which is bounded below. Since $B_0$ is bounded below there exists
+	some $a \in A$ such that for all $b \in B_0$ we have that $a \leq b$. Thus, consider 
+	the set of all lower bounds of $B$, and call it $A_0$. Note that $A_0$ is bounded
+	above, since for all $a \in A$ we have that $a \leq b$ for some $b \in B_0$.
+	In particular, given that $A$ has the least upper bound property, it must be 
+	that $A_0$ has a least upper bound, say $a_0$. If $a_0 \notin A_0$, then 
+	there exists some $b \in B_0$ such that $b < a_0$, but note that $b$ is an upper
+	bound of $A_0$ which contradicts the fact that $a_0$ is the least upper bound of 
+	$A_0$. Therefore, $a_0$ must be an element of $A_0$. In particular, this implies
+	that $a_0$ is a lower bound of $B_0$. Furthermore, since $a_0$ is the largest element of 
+	$A_0$ it is also the greatest lower bound of $B_0$. Since $B_0$ was an arbitrary 
+	set in $A$ that was bounded below we conclude that $A$ has the greatest lower bound property
+	also.
+\end{proof}
+
 \exnumber{14.} If $C$ is a relation on a set $A$, define a new relation $D$ on $A$ 
 by letting $(b, a) \in D$ if $(a, b) \in C$.
 \begin{enumerate}[label=(\alph*)]
 	\item Show that $C$ is symmetric if and only if $C = D$.
+	\begin{proof}
+		Let $C$ be symmetric, then if $(x, y) \in C$ we also have that $(y, x) \in C$.
+		Given we defined $D$ such that $(y, x) \in D$ if $(x, y) \in C$ we note that 
+		$C = D$. This is because since $(x, y), (y, x) \in C$, we also have that 
+		$(x,y), (y, x) \in D$.
+		
+		Now, let $C = D$.
+		Let $(x, y) \in C$, by our definition of $D$ we have that $(y, x) \in D$.
+		Since $C = D$, we have that $(y, x) \in C$. Since $(x, y) \in C$ was arbitrary,
+		we note that $C$ is symmetric.
+	\end{proof}
 	\item Show that if $C$ is an order relation, $D$ is also an order relation.
+	\begin{proof}
+		Let $C$ be an order relation. This means that $C$ is comparable, non-reflexive, and transitive.
+		Since $C$ is comparable, we have that for any $x, y \in A$ such that $x \neq y$, either
+		$xCy$ or $yCx$. In either case, due to how we defined $D$ we have $yDx$ or $xDy$ respectively.
+		As such, we conclude that $D$ is comparable. Since $C$ is non-reflexive we have that 
+		for any $x \in A$, the relation $xCx$ does not hold. Similarly, this implies that 
+		$xDx$ also does not hold. As such, $D$ is non-reflexive. Given that $C$ is transitive,
+		if $xCy$ and $yCz$, then $xCy$. Based on our definition of $D$, if $xCy$ and $yCz$
+		we have $yDx$ and $zDy$, and similarly if $xCz$, then $zDx$. Thus, $D$ is also transitive.
+		Therefore, $D$ is also an order relation.
+	\end{proof}
 	\item Prove the converse of the theorem in Exercise 13.
+	\begin{proof}
+		The converse of the theorem in Exercise 13, would be:
+		
+		\begin{theorem}
+			If an ordered set $A$ has the greatest lower bound property, then it has the least
+			upper bound property.
+		\end{theorem}
+		
+		The proof will be similar to that of Exercise \exnumber{13}. Let $(S,<)$ be an ordered set
+		with the greatest lower bound property. Consider $A \subseteq S$ that us bounded above.
+		Since $A$ is bounded above, there exists $b \in S$ such that $a \leq b$ for all $a \in A$.
+		Let $B$ be the set of all upper bounds of $A$, and note it is not empty since $b$ exists.
+		In particular, $B$ is bounded below since for any $a \in A$ we have that $a \leq b$.
+		Given that $S$ has the greatest lower bound property, $B$ has a greatest lower bound,
+		namely $b_0$. If $b_0$ is not an element of $B$, then $b_0$ is not an upper bound of $A$. 
+		Thus, there exists some $a \in A$ such that $b_0 < a$. This, however, is 
+		a contradiction since any $b \in B$ is defined such that $a \leq b$ for all $a \in A$. 
+		Therefore, $b_0 \in B$ and we conclude that $b_0$ is an upper bound of $A$. Furthermore, given
+		$b_0$ is the greatest lower bound of $B$, we have that $b_0 \leq b$ for all $b \in B$ and thus
+		is also the least upper bound of $A$. Since $A$ was any subset of $S$ that is bounded
+		above we conclude that $S$ has the least upper bound property.
+	\end{proof}
 \end{enumerate}
 
 \exnumber{15.} Assume that the real line has the least upper bound property.
@@ -438,10 +704,84 @@ by letting $(b, a) \in D$ if $(a, b) \in C$.
 	[0, 1) = \{x \mid 0 \leq x < 1\}
 	$$
 	have the least upper bound property. 
+	\begin{proof}
+		Consider the subsets $(a, b) \subseteq [0,1]$. Note that $b$ is the least upper bound
+		of $(a, b)$, which would be the same if the subset was $(a,b]$. For subsets of the 
+		form $[a, b]$ and $[a, b)$ we are still left with $b$ being the least upper bound.
+		Since every subset that is bounded above has a least upper bound we conclude the set 
+		$[0, 1]$ has the least upper bound property. 
+		
+		Thus, consider subsets of $[0, 1)$. In particular, subsets of the form $[a, b]$ or
+		$(a, b]$ note 
+		that $b$ cannot equal $1$ as that is not included as an element of the set. Given this 
+		restriction on $b$ we note that $b$ will remain the least upper bound of the subset. 
+		For subsets of the form $(a, b)$ and $[a, b)$ we first note that if $b = 1$ then the 
+		subset is not bounded above, as such those do not have a least upper bound given they have
+		no upper bound at all. If $b \neq 1$ then one simply notices that $b$ will be the least 
+		upper bound of the subset. Thus, since every subset that is bounded above has a least
+		upper bound the set $[0, 1)$ has the least upper bound property. 
+ 	\end{proof}
 	\item Does $[0,1] \times [0, 1]$ in the dictionary order have the least upper
 	bound property? What about $[0,1] \times [0,1)$?
 	What about $[0,1) \times [0, 1]$?
-\end{enumerate} 
+	
+	We begin by first showing that $[0, 1] \times [0, 1)$ does not have the least upper bound
+	property. Consider the non-empty subset $\{0\} \times [0, 1)$. Note that is is bounded above
+	since the point $(1, 0)$ is greater than any point on the subset by our dictionary order relation.
+	As such, $\{0\} \times [0, 1)$ is a non-empty subset of our set that is also bounded above. Assume for 
+	contradiction that the point $(x_0, x_1)$ is the least upper bound of the subset. If $x_0 = 0$, then
+	it must be that $x_1 \geq b$ for $b \in [0, 1)$ such that $(0, b) \in \{0\} \times [0, 1)$. Note, however,
+	that this cannot be, since $x_1 \in [0, 1)$ and thus we can define $b$ as $\frac{1 + x}{2}$ and see that
+	$b < 1$ and $b > x$, as such $(0, b) \in \{0\} \times [0, 1)$ and $(0, x_1) < (0, b)$ which is a contradiction.
+	Thus, it must be that $x_0 \neq 0$. However, if $x_0 = a$ for $a > 0$, we can define $c = \frac{a}{2} > 0$
+	which is smaller than $a$, and have that $(c, 0)$ is an upper bound on our subset, and also that 
+	$(c, 0) < (a, x_1)$ which is a contradiction to the fact $(x_0, x_1)$ is the least upper bound 
+	on out subset. Therefore, it cannot be that $(x_0, x_1)$ is a least upper bound, and thus
+	our subset has no least upper bound, preventing this ordered set from having the least upper bound
+	property. 
+	
+	We claim that the ordered set $[0, 1] \times [0,1]$ does have the least upper bound property under 
+	the dictionary order relation. To show this, consider a subset $S \subseteq [0, 1] \times [0,1]$ that 
+	is non-empty and bounded above. Then, there must exist a point $(x_0, x_1) \in [0, 1] \times [0,1]$
+	such that $(x_0, x_1) \geq (a, b)$ for any $(a, b) \in S$. Let $S_x$ be defined as
+	$\{x \in [0, 1] \mid (x, y) \in S, y \in [0, 1]\}$, i.e., $S_x$ is the set of all $x \in [0, 1]$
+	such that $(x, y) \in S$ for at least some $y \in [0, 1]$. Then, note that since $(x_0, x_1)$ is an 
+	upper bound on $S$, that $x_1$ is also an upper bound on $S_x$, since by definition $x_1 \geq x$ for 
+	all $x \in S_x$. Thus, $S_x$ is a non-empty bounded above subset of $[0,1]$ and therefore must have 
+	a least upper bound on $[0, 1]$ by part (a). Let $\alpha$ be such least upper bound. If $\alpha \notin S_x$,
+	then note $(\alpha, 0)$ is the least upper bound of $S$. We know that $(\alpha, 0)$ is an upper bound of 
+	$S$ since $\alpha > x$ for all $x \in S_x$. Furthermore, it is also a least upper bound, since for any 
+	element less than $(\alpha, 0)$, it must be that their first component, say $x_0$ is less than $\alpha$.
+	So, if $(x_0, x_1)$ is an upper bound of $S$ such that $x_0 < \alpha$ we land on a contradiction, since 
+	$\alpha$ is the least upper bound of $S_x$, it must be that there exists at least some $(x, y) \in S$
+	such that $x > x_0$. Thus, $(\alpha, 0)$ is the least upper bound of $S$.
+	
+	If $\alpha \in S_x$, then consider the analogous set $S_y$ defined as the set of all $y \in [0, 1]$
+	such that $(\alpha, y) \in S$ for at least some $x \in [0, 1]$. Since $\alpha \in S_x$, we note that 
+	there must exists at least one $(\alpha, y) \in S$, and thus we conclude that $S_y$ is non-empty.
+	Furthermore, given that $S_y$ is a subset of $[0, 1]$ we note that it is bounded above by $1$, therefore,
+	$S_y$ is a non-empty bounded above subset of $[0, 1]$. Thus, $S_y$ has a least upper bound in $[0, 1]$
+	by part (a), call it $\beta$. We claim that $(\alpha, \beta)$ is the least upper bound of $S$.
+	Firstly, we can see that $(\alpha, \beta)$ is an upper bound of $S$ by our construction of the point, thus
+	we only need to examine if it is the least upper bound. To see it is the least upper bound, consider
+	the point $(c, d)$ and say it is an upper bound of $S$ such that $(c, d) < (\alpha, \beta)$. Note
+	it cannot be that $c < \alpha$, since $\alpha$ is the least upper bound of $S_x$ which implies that 
+	any point smaller that $\alpha$, including $c$, must be smaller that at least one $x \in S_x$, implying that 
+	$(c, d) < (x, y)$ for some $(x, y) \in S$. Thus, $c = \alpha$. Then, it must be that 
+	$d < \beta$ which implies that $\beta \neq 0$ and thus that $\alpha \in S_x$ by our previous work. In particular,
+	since $\beta$ is the least upper bound of $S_y$, it must be that $d$ is not an upper bound of $S_y$.
+	Thus, there exists some $(\alpha, y) \in S$ such that $(\alpha, y) > (\alpha, d)$. Hence, we conclude
+	that $(c, d)$ cannot be an upper bound of $S$ if it is smaller than $(\alpha, \beta)$. Thus, we 
+	have that $(\alpha, \beta)$ is the least upper bound of $S$. Given that $S$ was an arbitrary non-empty
+	and bounded above subset of $[0, 1] \times [0, 1]$ we conclude that $[0, 1] \times [0,1]$ has the
+	least upper bound property.
+	
+	In regard to $[0,1) \times [0,1]$ we also claim that it has the least upper bound property. The proof
+	of this claim is analogous to the one we just made for $[0, 1] \times [0,1]$. In fact, the logic
+	of our proof for that set is the exact same one used for this set. The only reason this logic fails
+	for $[0,1] \times [0,1)$ is because the set $[0,1)$ for the second component prevents us from 
+	asserting definitively that a subset $S_y$ is bounded above, as in the case of our counter-example. 
+	\end{enumerate} 
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

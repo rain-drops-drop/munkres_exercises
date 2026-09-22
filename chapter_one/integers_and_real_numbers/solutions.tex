@@ -1,0 +1,811 @@
+\documentclass[11pt]{article}
+
+\oddsidemargin=17pt \evensidemargin=17pt
+\headheight=9pt     \topmargin=26pt
+\textheight=564pt   \textwidth=433.8pt
+
+\usepackage{amsmath, amsthm, amssymb,enumitem}
+\setlist[enumerate]{parsep=0pt plus 4pt,topsep=3pt plus 4pt}
+\setlist[itemize]{parsep=0pt plus 4pt,topsep=3pt plus 4pt,itemsep=.5ex}
+
+\leftmargini=5.5ex
+\leftmarginii=3.5ex
+
+%For separated lists with consecutive numbering
+\newcounter{separated}
+
+\newcommand{\excise}[1]{}
+\newcommand{\comment}[1]{{$\star$\sf\textbf{#1}$\star$}}
+\newcommand{\exnumber}[1]{\noindent\textbf{#1}}
+
+%new math symbols taking no arguments
+\newcommand\0{\mathbf{0}}
+\newcommand\CC{\mathbb{C}}
+\newcommand\FF{\mathbb{F}}
+\newcommand\NN{\mathbb{N}}
+\newcommand\QQ{\mathbb{Q}}
+\newcommand\RR{\mathbb{R}}
+\newcommand\ZZ{\mathbb{Z}}
+\newcommand\bb{\mathbf{b}}
+\newcommand\kk{\Bbbk}
+\newcommand\mm{\mathfrak{m}}
+\newcommand\xx{\mathbf{x}}
+\newcommand\yy{\mathbf{y}}
+\newcommand\GL{\mathit{GL}}
+\newcommand\pset{\mathcal{P}}
+\newcommand\into{\hookrightarrow}
+\newcommand\nsub{\trianglelefteq}
+\newcommand\onto{\twoheadrightarrow}
+\newcommand\minus{\smallsetminus}
+\newcommand\goesto{\rightsquigarrow}
+
+% theorem environment
+\newtheorem*{theorem}{Theorem}
+
+%redefined math symbols taking no arguments
+\newcommand\<{\langle}
+\renewcommand\>{\rangle}
+\renewcommand\iff{\Leftrightarrow}
+\renewcommand\phi{\varphi}
+\renewcommand\implies{\Rightarrow}
+
+%new math symbols taking arguments
+\newcommand\ol[1]{{\overline{#1}}}
+
+%redefined math symbols taking arguments
+\renewcommand\mod[1]{\ (\mathrm{mod}\ #1)}
+
+%roman font math operators
+\DeclareMathOperator\im{im}
+
+%for easy 2 x 2 matrices
+\newcommand\twobytwo[1]{\left[\begin{array}{@{}cc@{}}#1\end{array}\right]}
+
+%for easy column vectors of size 2
+\newcommand\tworow[1]{\left[\begin{array}{@{}c@{}}#1\end{array}\right]}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\title{\mbox{}\\[-8ex]The Integers and the Real Numbers Solutions\normalsize
+		\\[-2.5ex]}
+	\author{Solutions by: Raindrops\_drop \\[1ex]
+		\\[-1ex]}
+	\date{September 13, 2026} 
+	\maketitle
+	
+	\vspace{-3ex}%
+	\noindent
+	
+	\exnumber{Exercises} 
+	
+	\exnumber{1.} Prove the following "laws of algebra" for $\RR$, using only axioms (1)-(5):
+	\begin{enumerate}[label=(\alph*)]
+		\item If $x + y = x$, then $y = 0$.
+		\begin{proof}
+			By axiom (3) we have that there exists a unique element of $\RR$ called zero denoted by $0$,
+			such that $x + 0 = x$ for all $x \in \RR$. Given that $x + y = x$ and that $0$ is unique, 
+			we conclude that $y = 0$ must be true.
+		\end{proof}
+		\item $0 \cdot x = 0$. [Hint: Compute $(x + 0) \cdot x$.]
+		\begin{proof}
+			Consider the product $(x + 0) \cdot x$. By axiom (5) we have that this product is equivalent
+			to $x \cdot x + 0 \cdot x$. To show that the identity we aim to prove holds we need only show that 
+			$x \cdot x + 0\cdot x = x \cdot x$.
+			$$
+			x \cdot x + 0 \cdot x = (x + 0) \cdot x + 0 \cdot x
+			$$
+			$$
+			x \cdot x + 0 \cdot x = x \cdot x + 0 \cdot x + 0 \cdot x
+			$$
+			$$
+			x \cdot x = x \cdot x + 0 \cdot x
+			$$
+			Thus, by part (a) we conclude that $0 \cdot x$ must be $0$.
+		\end{proof}
+		\item $-0 = 0$.
+		\begin{proof}
+			Recall that due to notation $-0$ is the element in $\RR$ such that $0 + (-0) = 0$.
+			Thus, by (a), we conclude that $-0 = 0$.
+		\end{proof}
+		\item $-(-x) = x$.
+		\begin{proof}
+			Due to notation, note that $-x$ is the number in $\RR$ such that $x + (-x) = 0$.
+			Furthermore, we also have that $(-x) + (-(-x)) = 0$. By axiom (4) the negative of a number
+			in $\RR$ is unique. Thus, it must be that $x = -(-x)$.
+		\end{proof}
+		\item $x(-y) = -(xy) = (-x)y$.
+		\begin{proof}
+			To prove the first equality, $x(-y) = -(xy)$, consider the following expression: $xy + x(-y)$.
+			By axiom (5), we have that the expression is equal to $x(y + (-y))$. Similarly, note
+			that $y + (-y) = 0$ by axiom (4), showing that $xy + x(-y) = x \cdot 0$. By part (b),
+			we conclude that $xy + x(-y) = 0$. Therefore, it must be that $x(-y) = -(xy)$.
+			
+			For the second equality, $-(xy) = (-x)y$, we follow an analogous argument by looking at
+			the expression $xy + (-x)y$ and note that it is equivalent to $0$. Thus, we conclude 
+			that $-(xy) = (-x)y$.
+		\end{proof}
+		\item $(-1)x = -x.$
+		\begin{proof}
+			By part (e) we have that $(-1)x = -(1x)$. By axiom (3), we have that $1 \cdot x = x$.
+			Thus, we have that $(-1)x = -(1x) = -x$.
+		\end{proof}
+		\item $x(y - z) = xy - xz$.
+		\begin{proof}
+			Note that $x(y - z) = x(y + (-z))$. Thus, by axiom (5), $x(y - z) = xy + x(-z)$.
+			In part (e) we proved that $x(-z) = -(xz)$ and thus, $x(y - z) = xy - xz$.
+		\end{proof}
+		\item $-(x + y) = -x -y; -(x - y) = -x + y$.
+		\begin{proof}
+			Note $-(x + y) = -1 \cdot (x + y)$. Hence, by axiom (5), $-(x + y) = (-1)x + (-1)y$. In
+			part (f) we proved $(-1)x = x$, thus we conclude $-(x + y) = -x - y$.
+			
+			Similarly, $-(x - y) = -1 \cdot (x + (-y))$, which analogously expands as $(-1)x + (-1)(-y)$.
+			By part (f) $(-1)x = -x$ and $(-1)(-y) = -(-y)$. Furthermore, in part (d) we proved $-(-y) = y$.
+			Thus, we conclude $-(x - y) = -x + y$. 
+		\end{proof}
+		\item If $x \neq 0$ and $x \cdot y = x$, then $y = 1$.
+		\begin{proof}
+			Since $x \neq 0$, by axiom (4) we have that $1/x$ exists such that $x(1/x) = 1$. 
+			Thus, consider the expression $(1/x)(xy)$ which is equivalent to $(1/x)x$ since $xy = x$.
+			By axiom (1) we have that $(1/x)(xy) = (1/x \cdot x)y = 1\cdot y = y$. Since this expression
+			is equivalent to $1/x \cdot x = 1$, we conclude that $y = 1$.
+		\end{proof}
+		\item $x/x = 1$ if $x \neq 0$.
+		\begin{proof}
+			Let $x \neq 0$ and recall the notation that $1/x$ is the unique element from axiom (4) such
+			that $x \cdot (1/x) = 1$. Furthermore, that $x/x$ is another notation for $x \cdot (1/x)$.
+			Therefore, it is a consequence of axiom (4) that $x/x = 1$ for $x \neq 0$.
+		\end{proof}
+		\item $x/1 = x$.
+		\begin{proof}
+			Note the notation can be expressed as $x/1 = x(1/1)$ where $(1/1)$ is the unique element in
+			$\RR$ such that $1 \cdot (1/1) = 1$. By part (j) we conclude that $1/1 = 1$. Hence, 
+			$x/1 = x \cdot 1 = x$.
+		\end{proof}
+		\item $x \neq 0$ and $y \neq 0$ implies $xy \neq 0$.
+		\begin{proof}
+			Let $x, y \neq 0$. Assume for contradiction that $xy = 0$. Recall in part (b) we proved
+			that $0 \cdot x = 0$, thus $xy = 0 \cdot x$. As such, $(1/x)(xy) = (1/x \cdot x)y = y$
+			by axiom (1). Similarly, $(0 \cdot x) \cdot (1/x) = 0 \cdot (x \cdot 1/x) = 0 \cdot 1 = 0$.
+			Thus, we conclude that $y = 0$, which is a contradiction to our initial condition on $y$.
+			Therefore, $xy \neq 0$.
+		\end{proof}
+		\item $(1/y)(1/z) = 1/(yz)$ if $y,z \neq 0$.
+		\begin{proof}
+			Let $y, z \neq 0$. Consider the product $yz \cdot [(1/y)(1/z)]$. By axiom (1) we have
+			that this expression is equivalent to $z \cdot [y (1/y)] \cdot (1/z)$. By axiom (4)
+			the expression is equal to $z \cdot (1/z) = 1$. Thus, by axiom (4) it must be 
+			that $(1/y)(1/z) = 1/(yz)$.
+		\end{proof}
+		\item $(x/y) (w/z) = (xy)/)(yz)$ if $y,z \neq 0$.
+		\begin{proof}
+			Recall by notation that $x/y = x(1/y)$ and $w/z = w(1/z)$. Thus, we have
+			$(x/y)(w/z) = [x(1/y)][w(1/z)]$. Using axiom (2) 
+			$[x(1/y)][w(1/z)] = [xw][(1/y)(1/z)]$. By part (m) $(1/y)(1/z) = 1/(yz)$. 
+			Hence, $(x/y)(w/z) = (xw)[1/(yz)] = (xw)/(yz)$.
+		\end{proof}
+		\item $(x/y) + (w/z) = (xz + wy)/(yz)$ if $y,z \neq 0$.
+		\begin{proof}
+			Recall from notation that we can rewrite our initial expression as $x(1/y) + w(1/z)$.
+			Note that $(yz)/(yz) = 1$, and thus
+			$$
+			x(1/y) + w(1/z) = [(yz)/(yz)][x(1/y) + w(1/z)]
+			$$
+			Using axiom (2) we have that 
+			$$
+			x(1/y) + w(1/z) = (yz)[x(1/y) + w(1/z)][1/(yz)]
+			$$
+			By axiom (5) 
+			$$
+			x(1/y) + w(1/z) = [(yz)x(1/y) + (yz)w(1/z)][1/(yz)]
+			$$
+			Using both axioms (1), (2), and (4)
+			$$
+			x(1/y) + w(1/z) = [zx + yw][1/(yz)] = (xz + wy)/(yz)
+			$$
+		\end{proof}
+		\item $x \neq 0$ implies $1/x \neq 0$.
+		\begin{proof}
+			Let $x \neq 0$. If $1/x = 0$, then by part (b) $x \cdot 1/x = 0$. But, by axiom (4) it
+			must be that $x \cdot 1/x = 1$. Thus, it cannot be that $1/x = 0$.
+		\end{proof}
+		\item $1/(w/z) = z/w$ if $w,z \neq 0$.
+		\begin{proof}
+			Let $z, w \neq 0$. First note that $1/(w/z) = 1/[z(1/w)]$. Thus, by part (m) we have
+			$1/(w/z) = 1/w \cdot [1/(1/z)]$. Now, note by notation that $1/(1/z)$ is the element 
+			in $\RR$ such that $(1/z) \cdot 1/(1/z) = 1$. In particular, by axiom (4) this element is
+			unique. Thus, it must be that $z = 1/(1/z)$. Hence, $1/(w/z) = 1/w \cdot z = z/w$.
+		\end{proof}
+		\item $(x/y)/(w/z) = (xz)/(yw)$ if $y,w,z \neq 0$.
+		\begin{proof}
+			Let $y, w, z \neq 0$. First note $(x/y)/(w/z) = (x/y) \cdot [1/(w/z)]$. Using part
+			(q), $(x/y)/(w/z) = (x/y)(z/w)$. Finally, using part (n), $(x/y)/(w/z) = (xz)/(yw)$.
+		\end{proof}
+		\item $(ax)/y = a(x/y)$ if $y \neq 0$.
+		\begin{proof}
+			Let $y \neq 0$. Note $(ax)/y = (ax) \cdot (1/y)$. Using axiom (1), this expression 
+			is equivalent to $a(x \cdot 1/y) = a(x/y)$.
+		\end{proof}
+		\item $(-x)/y = x/(-y) = -(x/y)$ if $y \neq 0$.  
+		\begin{proof}
+			Let $y \neq 0$. Note $(-x)/y = [-1 \cdot x] \cdot 1/y$. Using axiom (1) we 
+			have the equivalent expression $-1 \cdot (x \cdot 1/y) = -1 \cdot (x/y) = -(x/y)$ [We used part
+			(f) for the final step]. Going back to the expression $-1 \cdot (x \cdot 1/y)$, using both
+			axiom (2), (1), and part (f) we get the equivalent expression 
+			$x \cdot (-1 \cdot 1/y) = x \cdot [-(1/y)]$. In particular, note $-(1/y)$ is the element in
+			$\RR$ such that $-y \cdot -(1/y) = 1$. Thus, $-(1/y) = 1/(-y)$ by axiom (4).
+			Therefore, $x \cdot [-(1/y)] = x \cdot 1/(-y) = x/(-y)$.
+		\end{proof}
+	\end{enumerate}
+	
+	\exnumber{2.} Prove the following "laws of inequalities" for $\RR$, using axioms (1)-(6) along
+	with the results from \exnumber{1.}
+	\begin{enumerate}[label=(\alph*)]
+		\item $x > y$ and $w > z \implies x + w > y + z.$
+		\begin{proof}
+			Let $x > y$ and $w > z$. By axiom (6), $x + w > y + w$ and $w + y > z + y$.
+			Therefore, $x + w > z + y$.
+		\end{proof}
+		\item $x> 0$ and $y > 0 \implies x + y > 0$ and $x \cdot y > 0$.
+		\begin{proof}
+			Let $x > 0$ and $y > 0$. To prove $x + y > 0$, note that by part (a) we have $x + y > 0 + y = y$.
+			Since $y > 0$, $x + y > 0$. 
+			
+			To prove $x \cdot y > 0$, we make use of axiom (6). Since $x > 0$ and $y > 0$, by axiom (6)
+			$x \cdot y > 0 \cdot y$. Using part (b) from \textbf{Exercise 1},
+			$x \cdot y > 0$.
+		\end{proof}
+		\item $x > 0 \iff -x < 0$.
+		\begin{proof}
+			Let $x > 0$. Then, by axiom (6), $x + (-x) > 0 + (-x)$. This expression is equivalent to
+			$0 > -x$ by axioms (3) and (4).
+			
+			Let $0 > -x$. Then, by axiom (6) $0 + x > -x + x$, which is equivalent to the expression
+			$x > 0$ by both axioms (3) and (4).
+		\end{proof}
+		\item $x > y \iff -x < -y$.
+		\begin{proof}
+			Let $x > y$. Consider the case $x = 0$, implying $y < 0$. By part (c), $-y > 0$ and 
+			since \textbf{Exercise 1 (c)} shows $0 = -0$ we have $-x = 0$. Thus, $-x < -y$.
+			
+			Now consider the case $x < 0$. Since $y < x$, it must be $y < 0$. By part (c), $-x > 0$ 
+			and $-y > 0$. Using axiom (6), we note $x + (-x) > y + (-x)$, which is equivalent 
+			to the expression $0 > y + (-x)$. Using axiom (6) once more we obtain the 
+			equivalent expression $0 + (-y) > y + (-x) + (-y)$. Simplifying, we obtain the 
+			equivalent expression $-y > -x$. 
+			
+			Finally, we consider the case $x > 0$. If $y = 0$, we find a case analogous to when $x = 0$,
+			under which by following it's logic we once again land that $-y > -x$. If $y < 0$, we note
+			that $-y > 0$ and that $-x < 0$, and thus $-y > -x$. If $y > 0$, we make use of axiom (6)
+			to obtain the expression $x - x > y - x$, which is equivalent to $0 > y - x$. Using axiom
+			(6) once more we obtain the expression $0 - y > y - x - y$, which is equivalent
+			to $-y > -x$.
+		\end{proof}
+		\item $x > y$ and $z < 0 \implies xz < yz$.
+		\begin{proof}
+			Let $x > y$ and $z < 0$. By part (c) $-z > 0$. Using axiom (6) we have $x(-z) > y(-z)$.
+			By part (e) in \textbf{Exercise 1} we have the equivalent expression $-(xz) > -(yz)$.
+			Finally, by part (d) $xz < yz$.
+		\end{proof}
+		\item $x \neq 0 \implies x^2 > 0$, where $x^2 = x \cdot x$.
+		\begin{proof}
+			Let $x \neq 0$, and denote $x^2 = x \cdot x$. If $x > 0$, by axiom (6) we have that 
+			$x^2 > 0$. 
+			
+			Let $x < 0$. Then, by part (e) we note $0 \cdot x < x \cdot x$, which is equivalent to
+			the expression $0 < x^2$.
+		\end{proof}
+		\item $-1 < 0 < 1$.
+		\begin{proof}
+			We first note $1 \cdot 1 = 1$ by axiom (3). Thus, by part $(f)$ it must be that $1 > 0$
+			since $1 = 1^2$. Since $1 > 0$, by part (c) it must be $-1 < 0$. Therefore, $-1 < 0 < 1$.
+		\end{proof}
+		\item $xy > 0 \iff$ $x$ and $y$ are both positive or both negative.
+		\begin{proof}
+			Let $x > 0$ and $y > 0$. Then, by part (b) $xy > 0$. Let $x < 0$ and $y < 0$.
+			Then, by part (c) $-x > 0$ and $-y > 0$. Thus, by part (b) $(-x)(-y) > 0$.
+			Using part (e) in \textbf{Exercise 1} we have the equivalent expression $-[x(-y)] > 0$,
+			using the same result we obtain the equivalent expression $-[-(xy)] > 0$ By part
+			(d) in \textbf{Exercise 1} we obtain the equivalent expression $xy > 0$.
+			Thus, we have shown that if $x$ and $y$ are both positive or both negative, then
+			$xy > 0$.
+			
+			Let $xy > 0$. Assume for contradiction $x > 0$ and $y < 0$. Then, by part 
+			(c) it must be that $-y > 0$. By axiom (6), $x(-y) > 0$. By part (e) in 
+			\textbf{Exercise 1} we obtain the equivalent expression $-(xy) > 0$. By 
+			part (c) we have that $xy < 0$. This is a contradiction since $xy > 0$. Therefore,
+			it cannot be that $x > 0$ and $y < 0$. We can use this argument of contradiction with
+			the case $x < 0$ and $y > 0$ to show that this is also not possible. If either
+			$x$ or $y$ is zero, then their product is zero, which also contradicts the fact
+			$xy > 0$. Thus, the only cases that remain is that $x$ and $y$ are both positive
+			or both negative, which as proven earlier does not cause a contradiction. Therefore,
+			if $xy > 0$, then it must be that $x$ and $y$ are both positive or both negative.
+		\end{proof}
+		\item $x > 0 \implies 1/x >0$.
+		\begin{proof}
+			Let $x > 0$. Note $x \cdot (1/x) = 1$ by axiom (4). Furthermore, by part (g) we have
+			$1 > 0$. Thus, $x \cdot (1/x) > 0$. By part (h) this implies that $x$ and 
+			$1/x$ are both positive or both negative. Since $x > 0$ it must be that 
+			$1/x > 0$.
+		\end{proof}
+		\item $x > y > 0 \implies 1/x < 1/y$.
+		\begin{proof}
+			Let $x > y > 0$. By part (i) $1/x > 0$ and $1/y > 0$. Thus, by axiom (6)
+			$x \cdot (1/x) > y \cdot (1/x)$, which is equivalent to $1 > y \cdot (1/x)$.
+			Similarly, by axiom (6) we have $1 \cdot (1/y) > y \cdot (1/x) \cdot (1/y)$.
+			This last expression, using axioms (1), (2), and (3), can be simplified 
+			into the expression $1/x < 1/y$.
+		\end{proof}
+		\item $x < y \implies x < (x + y)/2 < y$. 
+		\begin{proof}
+			Let $x < y$. By axiom (6) we have $x + y < y + y$. Using axiom (5) we obtain
+			the equivalent expression $x + y < y(1 + 1) = y \cdot 2$. Since $1 + 1 = 2 > 0$,
+			we note $1/2 > 0$ by part (i). Furthermore, by axiom (6)
+			we obtain the expression $(x + y)(1/2) < y \cdot 2 \cdot (1/2) = y$.
+			We can use these same steps to show $x < (x + y) \cdot (1/2)$, where the only
+			change comes from the initial step, instead of adding $y$ we add $x$.
+			Therefore, we have $x < (x + y)/2 < y$.
+		\end{proof}
+	\end{enumerate}
+	
+	\exnumber{3.}
+	\begin{enumerate}[label=(\alph*)]
+		\item Show that if $\mathcal{A}$ is a collection of inductive sets, then the intersection of the
+		elements of $\mathcal{A}$ is an inductive set.
+		\begin{proof}
+			Let $\mathcal{A}$ be a collection of inductive sets. Consider $\bigcap_{A \in \mathcal{A}} A$.
+			By definition, if $A$ is inductive, then $A$ contains $1$. Since $\mathcal{A}$ is a collection
+			of inductive sets, it must be that if $A \in \mathcal{A}$ then $1 \in A$. Thus, we conclude
+			$1 \in \bigcap_{A \in \mathcal{A}} A$. Let $a \in \bigcap_{A \in \mathcal{A}} A$, this
+			implies $a \in A$ for all $A \in \mathcal{A}$. Since $A \in \mathcal{A}$ is inductive,
+			and $a \in A$, it must be that $a + 1 \in A$ also. Since this is true for all $A$ containing
+			$a$, we conclude $a+1 \in \bigcap_{A \in \mathcal{A}} A$. Therefore, $\bigcap_{A \in \mathcal{A}} A$
+			is an inductive set.  
+		\end{proof}
+		\item Prove the basic properties (1) and (2) of $\ZZ_+$.
+		\begin{proof}
+			The basic properties of $\ZZ_{+}$ are: (1) $\ZZ_{+}$ is inductive, (2) if $A$ is an inductive set
+			of positive integers, then $A = \ZZ_{+}$. For (1) we note that $\ZZ_{+}$ is defined as 
+			$\ZZ_{+} = \bigcap_{A \in \mathcal{A}} A$ where $\mathcal{A}$ is the collection of all 
+			inductive sets in $\RR$. By part (a) we conclude $\ZZ_{+}$ is an inductive set.
+			
+			Let $A$ be an inductive set of positive integers. Since $A$ is inductive, we note $1 \in A$.
+			Furthermore, given that $A$ is a set of positive integers, if $a \in A$ then $a$ is a positive
+			integer. Thus, $a \in \ZZ_{+}$. Therefore, $A \subseteq \ZZ_{+}$. Now, consider the 
+			set $\ZZ_{+}$, which is an inductive set of positive integers. As such, $1 \in \ZZ_{+}$, and 
+			if $a \in \ZZ_{+}$ then $a$ is a positive integer. Thus, $a \in A$ and $\ZZ_{+} \subseteq A$.
+			Therefore, we conclude $\ZZ_{+} = A$.
+		\end{proof}
+	\end{enumerate}
+	
+	\exnumber{4.}
+	\begin{enumerate}[label=(\alph*)]
+		\item Prove by induction that given $n \in \ZZ_{+}$, every non-empty subset of $\{1, 2, \ldots, n\}$
+		has a largest element.
+		\begin{proof}
+			If $n = 1$, then every  non-empty subset of $\{1\}$ has a largest element, since it is a 
+			set of one element. Assume that for $n \in \ZZ_{+}$, every non-empty subset of $\{1, \ldots, n\}$
+			has a largest element. Consider now $n + 1 \in \ZZ_{+}$ and the set $\{1, \cdots, n + 1\}$.
+			The subset $\{n + 1\}$ is a set of one element, and its largest element is $n + 1$. Thus, consider
+			a non-empty subset that is not $\{n + 1\}$, call it $A$. Note $A \cap \{1, \ldots, n\}$ is a subset
+			of $\{1, \ldots, n\}$ and therefore has a largest element, say $a$. If $n + 1 \in A$, we note
+			$a < n + 1$ and thus $n + 1$ is the largest element of $A$. If $n+1 \notin A$, then 
+			$a$ is the largest element of $A$. Thus, we've shown that every non-empty subset of 
+			$\{1, \ldots, n+1\}$ has a largest element. Hence, by the induction principle, for $n \in \ZZ_{+}$
+			we have proven that every non-empty subset of $\{1, \ldots, n\}$ has a largest element.
+		\end{proof}
+		\item Explain why you cannot conclude from (a) that every non-empty subset of $\ZZ_{+}$ has a 
+		largest element.
+		\begin{proof}
+			In (a) we only considered finite non-empty subsets of $\ZZ_{+}$. In particular, note that the 
+			non-empty subset of $\ZZ_{+}$, $\ZZ_{+}$ itself, has no largest element. This is due to the fact
+			$\ZZ_{+}$ is an inductive set and for any $a \in \ZZ_{+}$ we have $a + 1 \in \ZZ_{+}$.			
+		\end{proof}
+	\end{enumerate}
+	
+	\exnumber{5.} Prove the following properties of $\ZZ$ and $\ZZ_{+}$:
+	\begin{enumerate}[label=(\alph*)]
+		\item $a, b \in \ZZ_{+} \implies a + b \in \ZZ_{+}$. [Hint: Show that given $a \in \ZZ_{+}$, the set 
+		$X = \{x \mid x \in \RR \text{ and } a + x \in \ZZ_{+}\}$ is inductive.]
+		\begin{proof}
+			Let $a \in \ZZ_{+}$ and consider the set $X = \{x \mid x \in \RR \text{ and } a + x \in \ZZ_{+}\}$.
+			Note since $a \in \ZZ_{+}$ it must also be that $a + 1 \in \ZZ_{+}$. Hence, $1 \in X$.
+			Let $x \in X$, this implies $a + x \in \ZZ_{+}$. Consider $x + 1$ and note 
+			$a + (x + 1) = (a + x) + 1$. Since $a + x \in \ZZ_{+}$, it must also be that $(a + x) + 1 \in \ZZ_{+}$.
+			Therefore, $x + 1 \in X$. Thus, $X$ is an inductive set. Since $X$ is inductive, we note
+			$\ZZ_{+} \subseteq X$. Hence, if $b \in \ZZ_{+}$ then $b \in X$. Therefore, 
+			$a + b \in \ZZ_{+}$ when $a,b \in \ZZ_{+}$. 
+		\end{proof}
+		\item $a, b \in \ZZ_{+} \implies a \cdot b \in \ZZ_{+}$.
+		\begin{proof}
+			Let $a, b \in \ZZ_{+}$. By definition, $a \cdot b = a + a + \ldots + a$ where we add $b$ many
+			times $a$ to itself. If $b = 1$, we have $a \cdot 1 = a \in \ZZ_{+}$. Assume that 
+			$a \cdot n \in \ZZ_{+}$ for some $n \in \ZZ_{+}$. Consider $n + 1$, and note 
+			$a \cdot (n + 1) = (a \cdot n) + a$. Since $a, na \in \ZZ_{+}$, we have by part (a) that
+			$a + na \in \ZZ_{+}$. Therefore, $(n + 1)a \in \ZZ_{+}$. Hence, by the principle of induction
+			we have shown that if $a, b \in \ZZ_{+}$ then $a \cdot b \in \ZZ_{+}$.
+		\end{proof}
+		\item Show that $a \in \ZZ_{+} \implies a - 1 \in \ZZ_{+} \cup \{0\}$. 
+		[Hint: Let $X = \{x \mid x \in \RR \text{ and } x - 1 \in \ZZ_{+}\cup\{0\}\}$; show that $X$ is inductive].
+		\begin{proof}
+			Let $a \in \ZZ_{+}$. Define $X = \{x \mid x \in \RR \text{ and } x - 1 \in \ZZ_{+}\cup\{0\}\}$.
+			If $x = 1$, note $x - 1 = 0$ and thus $x \in \ZZ_{+} \cup \{0\}$. Let $x \neq 1$ be an element of
+			$X$. Consider $x + 1$. Note $(x + 1) - 1 = x$. Since $x \in X$, $x - 1 \in \ZZ_{+} \cup \{0\}$.
+			Given that $x \neq 1$, we conclude $x - 1 \in \ZZ_{+}$. Since $\ZZ_{+}$ is an inductive set,
+			$x \in \ZZ_{+}$. Therefore, $x \in \ZZ_{+} \cup \{0\}$ which implies $x + 1 \in X$. Hence,
+			$X$ is an inductive set. Since $X$ is an inductive set, we note $\ZZ_{+} \subseteq X$.
+			Therefore, if $a \in \ZZ_{+}$, it must be $a \in X$. Thus, for $a \in \ZZ_{+}$ we conclude
+			$a - 1 \in \ZZ_{+} \cup \{0\}$. 
+		\end{proof}
+		\item $c, d \in \ZZ \implies c + d \in \ZZ$ and $c - d \in \ZZ$. [Hint: Prove it first for $d = 1$.]
+		\begin{proof}
+			Let $c \in \ZZ$. This implies either $c = 0$, $c \in \ZZ_{+}$ or $-c \in \ZZ_{+}$.
+			Consider then $c + 1$. If $c = 0$, then $c + 1 = 1 \in \ZZ$ and $c - 1 = -1 \in \ZZ$. 
+			If $c \in \ZZ_{+}$, by part (c) $c - 1 \in \ZZ_{+} \cup \{0\} \subset \ZZ$. Furthermore, by the 
+			fact $\ZZ_{+}$ is an inductive set, $c + 1 \in \ZZ_{+} \subset \ZZ$. Finally, if $-c \in \ZZ_{+}$,
+			consider $c - 1$, and note $-(c - 1) = (-c) + 1 \in \ZZ_{+}$ since $\ZZ_{+}$ is an inductive
+			set. Similarly, consider $c + 1$, and note $-(c + 1) = -c - 1 \in \ZZ_{+} \cup \{0\} \subset \ZZ$
+			by part (c). This implies that both $c + 1$ and $c - 1$ are elements of $\ZZ$.
+			Therefore, we conclude that if $c \in \ZZ$, then $c + 1$ and $c - 1$ are also in $\ZZ$.
+			
+			Let $c, d \in \ZZ$. If $d = 0$ we note $c + d = c \in \ZZ$. Thus, assume $d \in \ZZ_{+}$.
+			We already showed that if $d = 1$ then $c + d \in \ZZ$. Assume that if $d = n \in \ZZ_{+}$
+			then $c + d \in \ZZ$. We show that $c + (n + 1)$ is also in $\ZZ$. Simply note 
+			$c + (n + 1) = (c + n) + 1$, by assumption $c + n \in \ZZ$ and by what we already showed
+			we have that $(c + n) + 1 \in \ZZ$. Therefore, if $d \in \ZZ_{+}$ then $c + d \in \ZZ$.
+			Now, consider $c - d$. We note that if $d=1$ we already showed that $c - d \in \ZZ$. Thus,
+			assume that $c - n \in \ZZ$ for some $n \in \ZZ_{+}$. Consider now $n + 1$ and note
+			$c - (n + 1) = (c - n) - 1$. From assumption, $c - n \in \ZZ$ and from what we showed earlier
+			we also have $(c - n) - 1 \in \ZZ$. Therefore, if $d \in \ZZ_{+}$ we have proved 
+			$c + d$ and $c - d$ are both elements of $\ZZ$.
+			
+			Let $c, d \in \ZZ$. Assume $-d \in \ZZ_{+}$. Consider then $c + d$, if $d = -1$ we note 
+			$c - 1 \in \ZZ$. Assume then that $c + n \in \ZZ$ for some $n$ such that $-n \in \ZZ_{+}$.
+			Then note $c + (n + 1) = (c + n) + 1$. From assumption $c + n \in \ZZ$ and since we are 
+			adding $1$ we further conclude $(c + n) + 1 \in \ZZ$ also. Thus, we have shown that 
+			$c + d \in \ZZ$ if $-d \in \ZZ_{+}$.
+			Now consider $c - d$. If $d = -1$, we note $c - d = c + 1 \in \ZZ$. Assume then that 
+			$c - n \in \ZZ$ for some $n$ such that $-n \in \ZZ_{+}$. Note then $c - (n + 1) = 
+			c + (-n - 1) = (c - n) - 1$. By assumption, $c - n \in \ZZ$, and thus we conclude
+			$(c - n) - 1 \in \ZZ$. Therefore, we have shown that if $-d \in \ZZ$, then 
+			$c + d$ and $c - d$ are elements of $\ZZ$.
+			
+			Therefore, we have proved that for $c, d \in \ZZ$, then $c + d, c - d \in \ZZ$.  
+		\end{proof}
+		\item $c, d \in \ZZ \implies c \cdot d \in \ZZ$. 
+		\begin{proof}
+			Let $c, d \in \ZZ$. Note $c \cdot d = c + c + \ldots + c$ where we add $c$ to itself $d$ many
+			times. If $d = 1$, then $c \cdot 1 = c \in \ZZ$. Furthermore, if $d = 0$ then $c \cdot 0 = 0 \in \ZZ$.
+			Thus, consider $d \in \ZZ_{+}$. Assume that if $d = n \in \ZZ_{+}$ then $c \cdot d \in \ZZ$.
+			Consider then $d = n +  1$ and note $c \cdot d = c(n + 1) = cn + c$. Since $cn \in \ZZ$ by 
+			assumption, by part (d) $cn + c \in \ZZ$. Therefore, if $d \in \ZZ_{+}$ we conclude that 
+			$c \cdot d \in \ZZ$. Note now if $d = -1$, then $c \cdot d = -c$. It must be that $-c \in \ZZ$
+			(since it is a consequence no matter if $c = 0$, $c \in \ZZ_{+}$ or $-c \in \ZZ_{+}$).
+			Now, let $d = -n$ where $n \in \ZZ_{+}$ and assume $c \cdot d \in \ZZ$. Now consider the 
+			case $d = -(n + 1)$. Then, $c \cdot d = c \cdot (-n - 1) = -cn - c$. By assumption, 
+			$-cn \in \ZZ$ and thus by part (d) we conclude $-cn - c \in \ZZ$.
+			Hence, we have proven that if $c, d \in \ZZ$, then $c \cdot d \in \ZZ$.
+		\end{proof}
+	\end{enumerate}
+	
+	\exnumber{6.} Let $a \in \RR$. Define inductively
+	$$
+	a^1 = a,
+	$$
+	$$
+	a^{n + 1} = a^n \cdot a
+	$$
+	for $n \in \ZZ_{+}$. Show that for $n,m \in \ZZ_{+}$ and $a, b \in \RR$,
+	$$
+	a^n a^m = a^{n + m}, \hspace{5mm} (a^n)^m = a^{nm}, \hspace{5mm} a^mb^m = (ab)^m.
+	$$
+	These are called \textbf{\textit{the laws of exponents}}, [Hint: For fixed $n$, prove the formulas by induction
+	on $m$.]
+	\begin{proof}
+		Let $a \in \RR$ and $n, m \in \ZZ_{+}$. To prove the first identity, $a^n a^m = a^{n + m}$, first 
+		assume $m = 1$. Note $a^n a^m = a^n \cdot a$. By definition, $a^{n + 1} = a^n \cdot a$, thus
+		the identity holds when $m = 1$. Assume that the identity holds for $m = k$, consider now the 
+		case $m = k + 1$. Note the product $a^n \cdot a^{k + 1}$ is equivalent to $a^n \cdot (a^k \cdot a)$.
+		Furthermore, $a^n \cdot (a^k \cdot a) = (a^n \cdot a^k) \cdot a$. From assumption, 
+		$(a^n \cdot a^k) \cdot a = a^{n + k} \cdot a$, and by definition, $a^{n + k} \cdot a = a^{n + (k + 1)}$.
+		Therefore, the identity $a^n \cdot a^m = a^{n + m}$ holds by induction.
+		
+		To prove the second identity, $(a^n)^m = a^{nm}$, first let $m = 1$. Note $(a^n)^1 = a^n$ by definition,
+		and thus the identity holds when $m = 1$. Assume now the identity holds for $m = k$, and consider
+		the case $m = k + 1$. Then, $(a^n)^m = (a^n)^{k + 1}$, which by definition is equivalent to 
+		$(a^n)^k \cdot a^n$. From assumption, note the expression is equivalent to $a^{nk} \cdot a^n$.
+		Using the identity proven already, note $a^{nk} \cdot a^n = a^{nk + n} = a^{n(k + 1)}$.
+		Hence, the identity $(a^n)^m = a^{nm}$ hold by induction.
+		
+		Finally, to prove the third identity, $a^mb^m = (ab)^m$, consider the case $m = 1$. Note
+		$a^mb^m = ab = (ab)^1$ by assumption and definition. Thus, the identity holds when $m = 1$.
+		Assume now the identity holds for $m = k$, and consider now the case $m = k + 1$.
+		Then, the product $a^{k + 1}b^{k+1} = a^k \cdot a \cdot b^k \cdot b$ by the first identity.
+		Reordering, $a^k \cdot a \cdot b^k \cdot b = (a^k \cdot b^k) \cdot ab$, and thus
+		by assumption $(a^k \cdot b^k) \cdot ab = (ab)^k \cdot ab$, which by the first 
+		identity is equivalent to $(ab)^{k + 1}$. Therefore, the third identity holds by induction.
+	\end{proof}
+	
+	\exnumber{7.} Let $a \in \RR$ and $a \neq 0$. Define $a^0 = 1$, and for $n \in \ZZ_{+}$, $a^{-n} = 1/a^{n}$.
+	Show that the laws of exponents hold for $a, b \neq 0$ and $n,m \in \ZZ$.
+	\begin{proof}
+		Let $a, b \in \RR$ such that $a, b \neq 0$, and let $n, m \in \ZZ$. By Exercise 6. the identities
+		hold when $n, m \in \ZZ_{+}$, and thus it need only be shown that they also hold when 
+		$-n, -m$ are elements of $\ZZ_{+} \cup \{0\}$.
+		
+		As such, let $-n, -m \in \ZZ_{+} \cup \{0\}$. To prove the identity $a^na^m = a^{n + m}$ holds
+		first assume $m = 0$. Note $a^na^m = a^n \cdot 1 = a^n$ by definition, and thus the 
+		identity holds when $m = 0$. If $m = -1$, note $a^na^m = a^n a^{-1}$. By definition,
+		$a^n a^{-1} = a^n (1/a)$ and since $a^n$ is defined as $a^{n - 1} \cdot a$,
+		we conclude $a^na^{-1} = a^{n - 1} \cdot (a \cdot 1/a) = a^{n - 1}$. Hence, the 
+		identity also holds when $m = -1$. Assume $m = k$ for some $k$ such that $-k \in \ZZ_{+}$,
+		consider then the case $m = k - 1$. Note $a^na^{k - 1} = a^n (1/a^{-k + 1})$ by definition,
+		furthermore, $a^n a^{k - 1} = a^n \cdot (1/[a^{-k}a]) = (a^n \cdot 1/a^{-k})(1/a)$ by both
+		the identities proven in \exnumber{6.} and the results from $\exnumber{1.}$. By definition,
+		$(a^n \cdot 1/a^{-k}) \cdot (1/a) = (a^n a^{k}) a^{-1}$, and by assumption, 
+		$(a^n a^k) a^{-1} = a^{n + k} a^{-1}$. Since the identity holds when $m = -1$, 
+		$a^{n + 1} a^{-1} = a^{n + (k - 1)}$. Thus, the identity $a^na^m = a^{nm}$ holds
+		when $-n, -m \in \ZZ_{+}\cup\{0\}$ by induction.
+		
+		To prove the second identity, $(a^n)^m = a^{nm}$ holds when $-n, -m \in \ZZ_{+} \cup \{0\}$
+		consider the case $m = 0$. Note then $(a^n)^m = (a^n)^0$, which by definition is equivalent
+		to $1$, and thus the identity holds when $m = 0$. Now assume $m = -1$, and note that by definition
+		$(a^n)^{-1}$ is equivalent to $1/(a^n)^1$. Furthermore, by definition 
+		$1/(a^n)^1 = 1/(a^n) = a^{-n}$, and thus the identity holds when $m = -1$. Assume then 
+		that $m = k$ for some $k$ such that $-k \in \ZZ_{+}$. Consider the case $m = k - 1$,
+		and note $(a^n)^m = (a^n)^{k - 1}$. Using the first identity we proved, note
+		$(a^n)^{k - 1} = (a^n)^k \cdot (a^n)^{-1}$. By assumption, $(a^n)^k = a^{nk}$ and since 
+		the identity holds when $m = -1$, note $(a^n)^k \cdot (a^n)^{-1} = a^{nk} \cdot a^{-n}$. Finally,
+		using the first identity once more, $a^{nk}a^{-n} = a^{nk - n} = a^{n(k - 1)}$. Therefore,
+		the second identity holds even when $-n, -m \in \ZZ_{+} \cup \{0\}$.
+		
+		Finally, to prove the last identity, $a^mb^m = (ab)^m$, first let $m = 0$. Note 
+		$a^0b^0 = 1 \cdot 1 = 1$, and thus the identity holds when $m = 0$. Now consider the 
+		case $m = -1$, and note $a^mb^m = a^{-1}b^{-1} = (1/a)(1/b) = 1/(ab) = (ab)^{-1}$. Thus,
+		the identity also holds when $m = -1$. Assume then that the identity holds when 
+		$m = k$ for some $k$ such that $-k \in \ZZ_{+}$. Then, the product
+		$a^{k - 1}b^{k - 1} = (a^k a^{-1})(b^kb^{-1})$ by the first identity. Reordering the expression,
+		$(a^k a^{-1})(b^kb^{-1}) = (a^kb^k)(a^{-1}b^{-1})$, which is equivalent to 
+		$(ab)^k (a^{-1}b^{-1})$ by assumption. Furthermore, since the identity holds when $m = -1$,
+		$(ab)^k (a^{-1}b^{-1}) = (ab)^k(ab)^{-1}$. By the first identity, $(ab)^k(ab)^{-1} = (ab)^{k - 1}$.
+		Therefore, the third identity also holds when $-n, -m \in \ZZ_{+}\cup\{0\}$.
+		
+		As such, it has been shown that the identities from exercise \exnumber{6.} hold even when $n, m$
+		are allowed to be elements of $\ZZ$.
+	\end{proof}
+
+	\exnumber{8.}
+	\begin{enumerate}[label=(\alph*)]
+		\item Show that $\RR$ has the greatest lower bound property.
+		\begin{proof}
+			From axiom (7) the order relation $<$ has the least upper bound property on $\RR$. By 
+			Exercise \exnumber{13} in the Order Relations solutions $<$ also has the greatest lower
+			bound property on $\RR$.
+		\end{proof}
+		\item Show that $\inf\{1/n \mid n \in \ZZ_{+}\} = 0$.
+		\begin{proof}
+			To show $\inf\{1/n \mid n \in \ZZ_{+}\} = 0$ first note that it is a non-empty subset of 
+			$\RR$, and that is is bounded below thus it has a greatest lower bound. As such, it need only 
+			be shown that $0$ is a lower bound of the set, and that it is the greatest lower bound as well. 
+			By construction, note $1/n > 0$ since $n \in \ZZ_{+}$. Let $a$ be a lower bound of the set,
+			then $a \leq 1/n$ for all $1/n$ in the set. Note if $a$ is an element of the set, then
+			$a = 1/m$ for some $m \in \ZZ_{+}$. Since $m + 1 \in \ZZ_{+}$ given that $\ZZ_{+}$ is 
+			inductive, the element $1/(m + 1)$ is also in the set. Since $m < m + 1$ note 
+			$1/m > 1/(m + 1)$, which implies that $a$ is not the smallest element of the set
+			and therefore not a lower bound for the set. Hence, $a$ is not an element of the 
+			set and the set has no smallest element. Assume for contradiction $a > 0$, then 
+			note $a < 1$ since $1$ is in the set. As such, $0 < a < 1$. Furthermore,
+			since $a > 0$ and $1/n > 0$ for all $n \in \ZZ_{+}$, this implies $1/a > n$ for 
+			all $n \in \ZZ_{+}$. This implies $\ZZ_{+}$ is a bounded above subset of $\RR$ and thus
+			has a least upper bound. Let $b$ be the least upper bound of $\ZZ_{+}$, then
+			$b - 1 < n$ for some $n \in \ZZ_{+}$. Note then this implies $n + 1 > b$ which is a contradiction
+			to $b$ being an upper bound of $\ZZ_{+}$. Therefore, $\ZZ_{+}$ has no least upper bound, implying
+			it is not bounded above. Therefore, $1/a > n$ for all $n \in \ZZ_{+}$ is not true, implying
+			$a > 0$ is not true. As such, for $a$ a lower bound of $A$ it must be that $a < 0$.
+			Hence, we conclude $0$ is the greatest lower bound of the set. 
+		\end{proof}
+		\item Show that given $a$ with $0 < a < 1$, $\inf\{a^n \mid n \in \ZZ_{+}\} = 0$. [Hint: 
+		Let $h = (1 - a)/a$, and show that $(a + h)^n \geq 1 + nh$.]
+		\begin{proof}
+			Let $a \in \RR$ such that $0 < a < 1$ and define $A = \{a^n \mid n \in \ZZ_{+}\}$.
+			Note $A$ is a non-empty subset of $\RR$, given that $a \in A$. Furthermore, $A$
+			is bounded below since $0 < a^n$ for any $n \in \ZZ_{+}$. Therefore, $A$ has a 
+			greatest lower bound in $\RR$, call it $\alpha$. To prove that there exists no
+			positive lower bound on $A$, it will be shown that for $0 < a < 1$ and $x > 0$,
+			$a^{n} < x$ for some $n \in \ZZ_{+}$. Since $0 < a < 1$ note $1/a > 1$. Thus,
+			$1/a - 1 = (1 - a)/a > 0$. Define $h = (1 - a)/a$, and note $1 + h = 1/a$ by construction.
+			
+			Using the hint, it will be proven by induction that $(1 + h)^n \geq 1 + nh$ for $n \in \ZZ_{+}$.
+			Thus, note if $n = 1$ then the identity holds since $1 + h \geq 1 + h$. Now, assume for 
+			induction that the identity holds for some $k \in \ZZ_{+}$, and thus consider $k + 1$.
+			In particular, $(1 + h)^{k + 1} = (1 + h)^k (1 + h) \geq (1 + kh)(1+ h)$ by the induction 
+			hypothesis. Expanding, note $(1 + kh)(1+ h) = 1 + h + kh + kh^2$. Since $h, k \geq 0$,
+			$1 + h + kh + kh^2 \geq 1 + h + kh = 1 + (k + 1)h$. Therefore, $(1 + h)^{k+1} \geq 1 + (k+1)h$
+			and thus the identity holds for $n \in \ZZ_{+}$. 
+			
+			Consider the real number $[(1/x) - 1]/h$, and note there exists some $n \in \ZZ_{+}$ such
+			that $n > [(1/x) - 1]/h$. This implies $nh > (1/x) - 1$, and furthermore that 
+			$1 + nh > 1/x$. By the identity proven, $(1 + h)^n > 1/x$. Using the definition of 
+			$h$, $(1/a)^n > 1/x$. This implies $a^n < x$. Therefore, it has been shown that for any
+			$x > 0$ there exists some $n \in \ZZ_{+}$ such that $a^n < x$ for $0 < a < 1$. Hence,
+			if $x$ is a lower bound of $A$, it cannot be that $x > 0$. Therefore, $\alpha = 0$.
+		\end{proof}
+	\end{enumerate}
+	
+	\exnumber{9.}
+	\begin{enumerate}[label=(\alph*)]
+		\item Show that every non-empty subset of $\ZZ$ that is bounded above has a largest element.
+		\begin{proof}
+			Let $A \subset \ZZ$ be a non-empty and bounded above subset of $\ZZ$. Since $\ZZ$ is a subset
+			of $\RR$, $A \subset \RR$. Furthermore, given that $\RR$ has the least upper bound 
+			property, $A$ must have a least upper bound in $\RR$. Call that least upper bound $\alpha$.
+			Thus, for any $a \in A$, $a \leq \alpha$. If $\alpha \notin A$, then for any $a_0 \in A$
+			there exists some $a_1 \in A$ such that $a_1 > a_0$. Otherwise, if no such $a_1$ exists
+			it implies $a_0 \geq a$ for all $a \in A$, contradicting the fact $\alpha$ is the least upper
+			bound of $A$. Note since $a_1 > a_0$ it must be $a_1 + n = a_0$ for some $n \in \ZZ_{+}$.
+			In particular, since this is true for any $a \in A$, $a_1 + 1 \in A$ also. This contradicts
+			the fact $A$ is bounded above. Therefore, it must be $\alpha \in A$ and thus $A$ has a largest
+			element.
+		\end{proof}
+		\item If $x \notin \ZZ$, show there is exactly one $n \in \ZZ$ such that $n < x < n + 1$.
+		\begin{proof}
+			Let $A \subset \ZZ$ be the set of all integers smaller than $x \notin \ZZ$. Since $A$ is bounded
+			above and is a subset of $\ZZ$ (a) guarantees that $A$ has a largest element. Let 
+			$n$ be the largest element of $A$. Since $n$ is the largest element of $A$, it must be
+			$n + 1 \notin A$, and thus $n + 1 > x$. Given that $n \in A$, $n < x$, and 
+			therefore $n < x < n + 1$.
+		\end{proof}
+		\item If $x - y > 1$, show there is at least one $n \in \ZZ$ such that $y < n < x$.
+		\begin{proof}
+			Let $x, y \in \RR$ such that $x - y > 1$. This implies $y + 1 < x$, note also that $y < y + 1 < x$.
+			Since $y + 1$ is an element of $\RR$, by (b) there exists some $n \in \ZZ$ such that 
+			$n < y + 1 < n + 1$. Furthermore, $n - 1 < y < n$, and thus $y < n < y + 1 < x$.
+			Therefore, $y < n < x$ for some $n \in \ZZ$.
+		\end{proof}
+		\item If $y < x$, show there is a rational number $z$ such that $y < z < x$. 
+		\begin{proof}
+			Let $x, y \in \RR$ such that $y < x$. If $x - y > 1$ by part (c) note there
+			exists some $m \in \ZZ$ such that $y < m < x$ . Thus, assume $x - y \leq 1$.
+			In particular, note $0 < x - y \leq 1$. By Exercise 8 part (b) there exists some 
+			$n \in \ZZ_{+}$ such that $0 < 1/n < x - y$. Since $n > 0$, $n(1/n) < n(x - y)$ which 
+			is equivalent to $1 < n(x - y)$. This implies, $nx - ny > 1$ with $ny < nx$.
+			By part (c) there exists some $t \in \ZZ$ such that $ny < t < nx$. Given that
+			$n > 0$, it must be $y < t/n < x$ for $t/n$ a rational number.
+		\end{proof}
+	\end{enumerate}
+	
+	\exnumber{10.} Show that every positive number $a$ has exactly one positive square root, as follows:
+	\begin{enumerate}[label=(\alph*)]
+		\item Show that if $x > 0$ and $0 \leq h < 1$, then
+		$$
+		(x + h)^2 \leq x^2 + h(2x + 1),
+		$$
+		$$
+		(x - h)^2 \geq x^2 - h(2x).
+		$$
+		\begin{proof}
+			For the second identity, note $(x - h)^2 = x^2 - 2xh + h^2$ and $x^2 - h(2x) = x^2 - 2xh$.
+			Since $0 \leq h < 1$, $h^2 \geq 0$, and thus $(x - h)^2 \geq x^2 - h(2x)$.
+			
+			For the first identity, note $(x + h)^2 = x^2 + 2xh + h^2$ and $x^2 + h(2x + 1) = x^2 + 2xh + h$.
+			Since $0 \leq h < 1$, note $0 \leq h^2 < h$. Therefore, 
+			$(x + h)^2 \leq x^2 + h(2x + 1)$.
+		\end{proof}
+		\item Let $x > 0$. Show that if $x^2 < a$, then $(x + h)^2 < a$ for some $h > 0$; and if
+		$x^2 > a$, then $(x - h)^2 > a$ for some $h > 0$.
+		\begin{proof}
+			Let $x > 0$ such that $x^2 < a$. Then by part (a), $(x + h)^2 \leq x^2 + h(2x + 1)$ for 
+			$0 \leq h < 1$. Let $\epsilon = a - x^2$, and note
+			$$
+			0 < \frac{\epsilon}{2x + 1 + \epsilon} < 1.
+			$$
+			Let $h$ be the above fraction, and note $h(2x + 1) < \epsilon$ since 
+			$$
+			\frac{2x + 1}{2x + 1 + \epsilon} \cdot \epsilon < \epsilon.
+			$$
+			Therefore, $(x + h)^2 < x^2 + \epsilon = x^2 + a - x^2 = a$ for some $h > 0$.
+			
+			Let $x > 0$ such that $x^2 > a$. By part (a), $(x - h)^2 \geq x^2 - h(2x)$ for $0 \leq h < 1$. Define 
+			$\epsilon = x^2 - a$ and note 
+			$$
+			0 < \frac{\epsilon}{2x + \epsilon} < 1.
+			$$
+			Let $h$ be the above fraction, and note $h(2x) < \epsilon$ since
+			$$
+			\frac{2x}{2x + \epsilon} \cdot \epsilon < \epsilon.
+			$$
+			This implies $x^2 - h(2x) > x^2 - \epsilon = x^2 - x^2 + a = a$. Therefore,
+			$(x - h)^2 > a$ for some $h > 0$.
+		\end{proof}
+		\item Given $a > 0$, let $B$ be the set of all real numbers $x$ such that $x^2 < a$. Show 
+		that $B$ is bounded above and contains at least one positive number. Let $b = \sup B$; show
+		that $b^2 = a$.
+		\begin{proof}
+			Let $a > 0$ and $B$ be the set of all real numbers $x$ such that $x^2 < a$. Note 
+			$B$ is bounded above sine for $x \in \RR$, either $x \leq x^2$ or $x > x^2$. If $x \leq x^2$ then
+			$x < a$ and if $x > x^2$ note it must be $x < 1$. Thus, if $a \geq 1$ then $a$ is an upper bound of 
+			$B$, and if $1 > a$ then $1$ is an upper bound of $B$. In either case, there exists an upper bound
+			for $B$ and thus $B$ is bounded above. Since $a > 0$, $0 \in B$. By part (b) there exists 
+			some $h > 0$ such that $(0 + h)^2 < a$ which implies there exists some $h > 0$ such that 
+			$h^2 < a$. Therefore, there exists some positive real number $h$ that is an element of $B$.
+			
+			Since $B \subset \RR$ is bounded above it has a least upper bound, call it $b$. Since $B$ contains
+			at least one positive real number, $b > 0$. Assume for contradiction $b^2 < a$. Then, by 
+			part by part (b) $(b + h)^2 < a$ for some $h > 0$. Thus, $b + h \in B$. This is a contradiction
+			since $b + h > b$ and $b + h \in B$ cannot both be true given $b$ is the least upper bound
+			of $B$. Thus, assume for contradiction $b^2 > a$. Then by part (b) there exists some $h > 0$
+			such that $(b - h)^2 > a$. Thus, $b - h$ is an upper bound of $B$ while also $b - h < b$ which 
+			is a contradiction given that $b$ is the least upper bound of $B$. Therefore, it must be
+			that $b^2 = a$. 
+		\end{proof}
+		\item Show that if $b$ and $c$ are positive and $b^2 = c^2$, then $b = c$.
+		\begin{proof}
+			Let $b, c \in \RR$ such that $b,c > 0$ and $b^2 = c^2$. Therefore, $b^2 - c^2 = 0$.
+			Note $b^2 - c^2 = (b + c)(b - c)$. Thus,
+			$$
+			(b + c)(b - c) = 0.
+			$$
+			This implies either $b + c = 0$ or $b - c = 0$. Since $b, c > 0$ it must be $b + c > 0$.
+			Hence, $b - c = 0$ implying $b = c$.
+		\end{proof}
+	\end{enumerate}
+	
+	\exnumber{11.} Given $m \in \ZZ$, we say that $m$ is \textbf{\textbf{\textit{even}}} if $m/2 \in \ZZ$,
+	and $m$ is \textit{\textbf{odd}} otherwise.
+	\begin{enumerate}[label=(\alph*)]
+		\item Show that if $m$ is odd, $m = 2n + 1$ for some $n \in \ZZ$. [Hint: Choose $n$ so that 
+		$n < m/2 < n + 1$.]
+		\begin{proof}
+			Let $m \in \ZZ$ such that $m$ is odd. Since $m$ is odd, $m/2 \notin \ZZ$. Thus, by Exercise 9 part
+			(b) there exists some $n \in \ZZ$ such that $n < m/2 < n + 1$. This is equivalent to
+			$2n < m < 2n + 2$. Since $m \in \ZZ$, it must be that $m = 2n + 1$.
+		\end{proof}
+		\item Show that if $p$ and $q$ are odd, so are $p \cdot q$ and $p^n$, for any $n \in \ZZ_{+}$.
+		\begin{proof}			
+			Let $p, q \in \ZZ$ be odd. By part (a) $p = 2n + 1$ and $q = 2m + 1$ for some $n, m \in \ZZ$.
+			Thus, $p \cdot q = (2n + 1)(2m + 1) = 4nm + 2n + 2m + 1 = 2(2nm + n + m) + 1$. Since 
+			$2nm + n + m \in \ZZ$, it can be concluded $p \cdot q$ is odd since $p \cdot q = 2t + 1$ for 
+			some $t \in \ZZ$ (which makes evident $(pq)/2 \notin \ZZ$).
+			
+			Let $p \in \ZZ$ be odd. Note $p^1 = p$ which is odd. Assume for induction that $p^k$ is 
+			odd for some $k \in \ZZ_{+}$. Consider then $k + 1$, and note $p^{k + 1} = p^k \cdot p$.
+			By assumption $p^k$ is odd and so is $p$. By what was proven earlier it must be that 
+			$p^k \cdot p$ is odd also. Therefore, $p^{k + 1}$ is odd and it can be concluded from induction
+			that $p^n$ is odd for any $n \in \ZZ_{+}$ given that $p$ is odd.
+		\end{proof}
+		\item Show that if $a > 0$ is rational, then $a = m/n$ for some $m,n \in \ZZ_{+}$ where not both
+		$m$ and $n$ are even. [Hint: Let $n$ be the smallest element of the set 
+		$\{x \mid x \in \ZZ_{+} \text{ and } x\cdot a \in \ZZ_{+}\}$.]
+		\begin{proof}
+			Let $a > 0$ be a rational number. Then, $a = m/n$ for some $m, n \in \ZZ$. Since $a > 0$
+			it cannot be that $m = 0$. Furthermore, $m$ and $n$ must be either both positive or both
+			negative, since otherwise $a < 0$. In either case, $m/n$ is equivalent to $(-m)/(-n)$.
+			As such, $a = m/n$ for some $m,n \in \ZZ_{+}$. Let $S = \{x \in \ZZ_{+} \mid x \cdot a \in \ZZ_{+}\}$,
+			and note it is non-empty since $na = m$ by construction. In particular, by the Well-Ordering
+			property $S$ has a smallest element. Let $n$ be the smallest element of $S$, thus 
+			$an = m$. Assume for contradiction both $n$ and $m$ are even. Then, $n = 2s$ and $m = 2t$
+			for some $s, t \in \ZZ_{+}$ (recall we chose $n, m \in \ZZ_{+}$). 
+			Hence, $na = m$ is equivalent to $2s \cdot a = 2t$. Note this implies $sa = t$ 
+			where $s < 2s = n$ and $t \in \ZZ_{+}$. Therefore, $s \in S$ which is a contradiction 
+			since $s < n$. As such, both $n$ and $m$ cannot be event.
+			
+			Hence, it has been proven that if $a$ is a positive rational number, then $a = m/n$ for 
+			some $n, m \in \ZZ_{+}$ where not both $m$ and $n$ are even.
+		\end{proof}
+		\item \textit{Theorem.} $\sqrt{2}$ \textit{is irrational.}
+		\begin{proof}
+			Assume for contradiction $\sqrt{2}$ is rational. Since $\sqrt{2} > 0$ by part (c) there
+			exists $m, n \in \ZZ_{+}$ that are not both even such that $\sqrt{2} = m/n$.
+			This implies $(m/n)^2 = 2$, which is equivalent to $m^2/n^2 = 2$. Thus, $m^2 = 2n^2$ implies
+			$m^2 $ is even. By part (b) it can be concluded $m^2$ being even implies $m$ is even.
+			Thus, $m = 2s$ for some $s \in \ZZ$. In particular, $m^2 = 4s^2 = 2n^2$. Hence,
+			$n^2 = 2s^2$. Since $s^2 \in \ZZ_{+}$ it must be $n^2$ is even. Therefore,
+			$n$ is even also. This is a contradiction since both $m$ and $n$ cannot be even.
+			Therefore, $\sqrt{2} \neq m/n$, and thus $\sqrt{2}$ is not a rational number.
+		\end{proof}
+	\end{enumerate}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

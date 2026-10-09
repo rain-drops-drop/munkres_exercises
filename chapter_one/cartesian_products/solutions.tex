@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+
+\input{../../preamble.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\title{\mbox{}\\[-8ex]Cartesian Products\normalsize
+		\\[-2.5ex]}
+	\author{Solutions by: Raindrops\_drop \\[1ex]
+		\\[-1ex]}
+	\date{September 21, 2026} 
+	\maketitle
+	
+	\vspace{-3ex}%
+	\noindent
+	
+	\exnumber{Exercises} 
+	
+	\exnumber{1.} Show there is a bijective correspondence of $A \times B$ and $B \times A$.
+	\begin{proof}
+		It is claimed that the function $f: A \times B \to B \times A$
+		defined as $f\left( (a,b)\right) = (b, a)$. To show $f$ is surjective,
+		consider $(b, a) \in B \times A$. Then, by definition $b \in B$ and 
+		$a \in A$. As such, $(a, b) \in A \times B$, and therefore
+		$f((a, b)) = (b, a)$. Thus, since $(b, a)$ was an arbitrary element
+		of $B \times A$ it has been shown that for any element in 
+		$s \in B \times A$ there exists at least one element $ t \in A \times B$
+		such that $f(t) = s$. Hence, $f$ is surjective.
+
+		Consider now $(a, b), (c, d) \in A \times B$ such that 
+		$f((a, b)) = f((c, d)) = (s, t)$. By definition of $f$, note 
+		$a = t$ and $c = t$ implying $a = c$. Similarly, it must be
+		that $b = d$, and thus $(a, b) = (c, d)$. Therefore, $f$ is injective
+		and it can be thus concluded that $f$ is bijective. 
+	\end{proof}
+	\exnumber{2.} 
+	\begin{enumerate}[label=(\alph*)]
+		\item Show that if $n > 1$ there is a bijective correspondence of 
+		$$
+		A_1 \times \cdots \times A_n \hspace{5mm} \text{ with } \hspace{5mm} 
+		(A_1 \times \cdots \times A_{n-1}) \times A_n.
+		$$
+		\begin{proof}
+			If $n = 2$, note $A_1 \times A_2 = (A_1) \times A_2$ and thus
+			there exists a bijective correspondence between both sets, in 
+			particular this bijective map is the identity map. Thus, assume $n > 2$.
+			We claim that $f: A_1 \times \cdot \times A_n \to (A_1 \times \cdot \times A_{n - 1}) \times A_n$
+			defined by $(a_1, \ldots, a_n) \mapsto ((a_1, \ldots, a_{n-1}), a_n)$
+			is bijective. We begin by showing $f$ is injective. Let 
+			$(a_1, \ldots, a_n)$ and $(b_1, \ldots, b_n)$ be elements in the
+			deomain set such that they both map to $((c_1, \ldots, c_{n -1}), c_n)$.
+			By construction, $a_n = c_n$ and $b_n = c_n$ implying $a_n = b_n$.
+			Similarly, $a_1, \ldots, a_{n-1}$ must all equal the corresponding
+			element in $(c_1, \ldots, c_{n -1})$, i.e., $a_1 = c_1$ and so on.
+			In the same way, $b_i = c_i$ for $1 \leq i \leq n - 1$.
+			Therefore, $a_i = b_i$ for $1 \leq i \leq n - 1$, and we thus conclude
+			$(a_1, \ldots, a_n) = (b_1, \ldots, b_n)$ making $f$ injective.
+
+			To show $f$ is surjective, consider the element 
+			$((c_1, \ldots, c_{n - 1}), c_n)$ in the set being mapped onto by
+			$f$. By construction, $c_i \in A_i$ for $1 \leq i \leq n$.
+			Thus, $(c_1, \ldots, c_n) \in A_1 \times \cdots \times A_n$.
+			By definition of $f$, $f(c_1, \ldots, c_n) = ((c_1, \ldots, c_{n - 1}), c_n)$.
+			Thus, we have shown $f$ is also surjective, and therefore we conclude 
+			$f$ is bijective.
+		\end{proof}
+		\item Given the indexed family $\{A_1, A_2, \ldots\}$ let $B_i = A_{2i - 1} \times A_{2i}$ for
+		each positive integer $i$. Show there is a bijective correspondence of $A_1 \times A_2 \times \cdots$
+		with $B_1 \times B_2 \times \cdots$.
+		\begin{proof}
+			Note $B_1 \times B_2 \times \cdots$ is equivelent to the set 
+			$(A_1 \times A_2) \times (A_3 \times A_4) \times \cdots$ by 
+			construction. 
+		\end{proof}
+	\end{enumerate}
+	
+	\exnumber{3.} Let $A = A_1 \times A_2 \times \cdots$ and $B = B_1 \times B_2 \times \cdots$.
+	\begin{enumerate}[label=(\alph*)]
+		\item Show that if $B_i \subset A_i$ for all $i$, then $B \subset A$. (Strictly speaking, if we are
+		given a function mapping the index set $\ZZ_{+}$ into the union of the sets $B_i$, we must change
+		its range before it can be considered as a function mapping $\ZZ_{+}$ into the union of the sets
+		$A_i$. We shall ignore this technicality when dealing with Cartesian products).
+		\item Show the converse of (a) holds if $B$ is non-empty.
+		\item Show that if $A$ is non-empty, each $A_i$ is non-empty. Does the converse hold?
+		\item What is the relation between the set $A \cup B$ and the Cartesian product of the sets
+		$A_i \cup B_i$? What is the relation between the set $A \cap B$ and the Cartesian product of the sets
+		$A_i \cap B_i$?
+	\end{enumerate}
+	
+	\exnumber{4.} Let $n, m \in \ZZ_{+}$. Let $X \neq \varnothing$.
+	\begin{enumerate}[label=(\alph*)]
+		\item If $m \leq n$, find and injective map $f: X^m \to X^m$.
+		\item Find a bijective map $g: X^m \times X^n \to X^{m + n}$.
+		\item Find an injective map $h: X^n \to X^{\omega}$.
+		\item Find a bijective map $k: X^n \times X^{\omega} \to X^{\omega}$.
+		\item Find a bijective map $l: X^{\omega} \times X^{\omega} \to X^{\omega}$.
+		\item If $A \subset B$, find and injective map $m: (A^\omega)^n \to B^{\omega}$.
+	\end{enumerate}
+	
+	\exnumber{5.} Which of the following subsets of $\RR^{\omega}$ can be expressed as the Cartesian product 
+	of subsets of $\RR$?
+	\begin{enumerate}[label=(\alph*)]
+		\item $\{\mathbf{x} \mid x_i \text{ is an integer for all } i\}$.
+		\item $\{\mathbf{x} \mid x_i \geq i \text{ for all } i\}$.
+		\item $\{\mathbf{x} \mid x_i \text{ is an integer for all } i \geq 100\}$.
+		\item $\{\mathbf{x} \mid x_2 = x_3\}$.
+	\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,13 +1,26 @@
-\oddsidemargin=17pt \evensidemargin=17pt
-\headheight=9pt     \topmargin=26pt
-\textheight=564pt   \textwidth=433.8pt
+% setting margins for the document
+\usepackage[letterpaper, margin=1.1in]{geometry}
 
+\usepackage[T1]{fontenc}
+% packages used for the various math commands
 \usepackage{amsmath, amsthm, amssymb,enumitem}
+
+% setting up the font
+\usepackage{libertinus-type1}
+\usepackage{libertinust1math}
+
+% adjusting in-word spacing
+\usepackage{microtype}
+
+\usepackage{parskip}
+
+% setting custom margins for enumerate and itemizaed lists
 \setlist[enumerate]{parsep=0pt plus 4pt,topsep=3pt plus 4pt}
 \setlist[itemize]{parsep=0pt plus 4pt,topsep=3pt plus 4pt,itemsep=.5ex}
 
 \leftmargini=5.5ex
 \leftmarginii=3.5ex
+
 
 %For separated lists with consecutive numbering
 \newcounter{separated}
@@ -60,3 +73,20 @@
 
 %for easy column vectors of size 2
 \newcommand\tworow[1]{\left[\begin{array}{@{}c@{}}#1\end{array}\right]}
+
+% redefining \maketitle so that it has proper spacing
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begingroup
+  \setlength{\parskip}{0pt}   % kills the parskip effect inside the title block
+  \begin{center}
+    {\LARGE\bfseries \@title\par}
+    \vspace{1.5ex}
+    {\large \@author\par}
+    \vspace{0.75ex}
+    {\normalsize \@date\par}
+  \end{center}
+  \endgroup
+  \vspace{2ex}
+}
+\makeatother

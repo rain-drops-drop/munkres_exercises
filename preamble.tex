@@ -13,6 +13,7 @@
 \usepackage{microtype}
 
 \usepackage{parskip}
+\usepackage{etoolbox}
 
 % setting custom margins for enumerate and itemizaed lists
 \setlist[enumerate]{parsep=0pt plus 4pt,topsep=3pt plus 4pt}
@@ -88,5 +89,17 @@
   \end{center}
   \endgroup
   \vspace{2ex}
+}
+\makeatother
+
+% makes sure that proofs within an itemized or enumerate environment 
+% maintain proper spacing between problem statements. 
+\makeatletter
+\BeforeBeginEnvironment{proof}{%
+  \par
+  \ifnum\@listdepth>0 \addvspace{\medskipamount}\fi
+}
+\AfterEndEnvironment{proof}{%
+  \ifnum\@listdepth>0 \addvspace{\medskipamount}\fi
 }
 \makeatother

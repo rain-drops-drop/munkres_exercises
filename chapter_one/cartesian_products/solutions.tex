@@ -7,7 +7,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\title{Cartesian Products}
 	\author{Solutions by: Raindrops\_drop}
-	\date{September 21, 2026}
+	\date{October 10, 2026}
 	\maketitle
 	
 	\section*{Exercises}
@@ -26,7 +26,7 @@
 		Consider now $(a, b), (c, d) \in A \times B$ such that 
 		$f((a, b)) = f((c, d)) = (s, t)$. By definition of $f$, note 
 		$a = t$ and $c = t$ implying $a = c$. Similarly, it must be
-		that $b = d$, and thus $(a, b) = (c, d)$. Therefore, $f$ is injective
+		that $b = d$, and thus $(a, b) = (c, d)$. Therefore, $f$ is injective,
 		and it can be thus concluded that $f$ is bijective. 
 	\end{proof}
 	\exnumber{2.} 
@@ -44,7 +44,7 @@
 			defined by $(a_1, \ldots, a_n) \mapsto ((a_1, \ldots, a_{n-1}), a_n)$
 			is bijective. We begin by showing $f$ is injective. Let 
 			$(a_1, \ldots, a_n)$ and $(b_1, \ldots, b_n)$ be elements in the
-			deomain set such that they both map to $((c_1, \ldots, c_{n -1}), c_n)$.
+			domain set such that they both map to $((c_1, \ldots, c_{n -1}), c_n)$.
 			By construction, $a_n = c_n$ and $b_n = c_n$ implying $a_n = b_n$.
 			Similarly, $a_1, \ldots, a_{n-1}$ must all equal the corresponding
 			element in $(c_1, \ldots, c_{n -1})$, i.e., $a_1 = c_1$ and so on.
@@ -64,9 +64,24 @@
 		each positive integer $i$. Show there is a bijective correspondence of $A_1 \times A_2 \times \cdots$
 		with $B_1 \times B_2 \times \cdots$.
 		\begin{proof}
-			Note $B_1 \times B_2 \times \cdots$ is equivelent to the set 
+			Note $B_1 \times B_2 \times \cdots$ is equivalent to the set 
 			$(A_1 \times A_2) \times (A_3 \times A_4) \times \cdots$ by 
-			construction. 
+			construction. Let $A = A_1 \times A_2 \times \cdots$ and
+			$B = (A_1 \times A_2) \times (A_3 \times A_4) \times \cdots$.
+			Consider then the natural map $f: A \to B$ defined by
+			$(a_1, a_2, a_3, a_4, \ldots) \mapsto ((a_1, a_2), (a_3, a_4), \ldots)$.
+			We claim that $f$ is a bijective correspondence between the two sets.
+			Let $(s_1, s_2, \ldots), (t_1, t_2, \ldots) \in A$ such that 
+			$f$ maps both of these elements of $A$ onto $((m_1, m_2), \ldots) \in B$.
+			Then, by definition of $f$, $s_n = m_n$ and $t_n = m_n$ for all 
+			$n \in \ZZ_{+}$. Thus, $s_n = t_n$ for all $n$ which implies 
+			$(s_1, s_2, \ldots) = (t_1, t_2, \ldots)$. As such, $f$ is an injective
+			function. Consider then $((p_1, p_2), (p_3, p_4), \ldots)$. By definition
+			of $B$, $p_n \in A_n$ for some $A_n \in \{A_1, A_2, \ldots\}$. As such,
+			$(p_1, p_2, p_3, p_4, \ldots) \in A$, and thus $f$ maps this element of
+			$A$ onto $((p_1, p_2), (p_3, p_4), \ldots)$. Therefore, $f$ is surjective, and 
+			it can be concluded that $f$ is a bijective correspondence between 
+			$A$ and $B$. 
 		\end{proof}
 	\end{enumerate}
 	
@@ -76,30 +91,173 @@
 		given a function mapping the index set $\ZZ_{+}$ into the union of the sets $B_i$, we must change
 		its range before it can be considered as a function mapping $\ZZ_{+}$ into the union of the sets
 		$A_i$. We shall ignore this technicality when dealing with Cartesian products).
+		\begin{proof}
+			If $B$ is empty, then it is clearly a subset of $A$ given that the empty set is a subset of all sets.
+			As such, assume $B$ is non-empty and let $(b_1, b_2, \ldots) \in B$. By assumption, $b_i \in B_i \subset A_i$.
+			Thus, each $b_i \in A_i$ for all $i \in \ZZ_{+}$.
+			Therefore, $(b_1, b_2, \ldots) \in A$ implying that $B \subset A$.
+		\end{proof}
 		\item Show the converse of (a) holds if $B$ is non-empty.
+		\begin{proof}
+			Let $B \subset A$ such that $B$ is non-empty. Since $B$ is non-empty,
+			there exists some element $(b_1, b_2, \ldots) \in B$. In particular,
+			each $B_i$ is non-empty since $b_i \in B_i$ where $b_i$ is 
+			from the tuple element guaranteed to be in $B$. Thus, fix some index $k$
+			and let $b_k \in B_k$ be an arbitrary element of $B_k$. Consider then the tuple with the $k$th 
+			coordinate swapped, $(b_1, \ldots, b_k, \ldots) \in B$.
+			Since $B \subset A$, $(b_1, \ldots, b_k, \ldots) \in A$. Therefore,
+			$b_k \in A_k$. Thus, $B_k \subset A_k$, and since this was for 
+			arbitrary $B_k$ we conclude that $B_i \subset A_i$ for all $i \in \ZZ_{+}$.
+		\end{proof}
 		\item Show that if $A$ is non-empty, each $A_i$ is non-empty. Does the converse hold?
+		\begin{proof}
+			Let $A = A_1 \times A_2 \times \cdots$ be non-empty. Thus, there exists an element
+			$(a_1, a_2, a_3, \ldots) \in A$ such that $a_i \in A_i$. Hence,
+			$A_i$ is not empty for all $i \in \ZZ_{+}$ since $a_i \in A_i$.
+			
+			The converse does hold also. Let $A_i$ be non-empty for each $i$,
+			then consider $a_1 \in A_1$, $a_2 \in A_2$, and so on where each $a_i$
+			is an arbitrary element of $A_i$. Then, by definition of $A$,
+			$(a_1, a_2, a_3, \ldots) \in A$ which implies that $A$ is non-empty.
+			[This makes use of the axiom of choice informally through the "and so on"].
+		\end{proof}
 		\item What is the relation between the set $A \cup B$ and the Cartesian product of the sets
 		$A_i \cup B_i$? What is the relation between the set $A \cap B$ and the Cartesian product of the sets
 		$A_i \cap B_i$?
+		\begin{proof}
+			To some degree. the following statements seem correct:
+
+			$A \cup B$ is a subset of $\prod_{i \in \ZZ_{+}} A_i \cup B_i$, whereas 
+			$A \cap B$ is equivalent to $\prod_{i \in \ZZ_{+}} A_i \cap B_i$.
+		\end{proof}
 	\end{enumerate}
 	
 	\exnumber{4.} Let $n, m \in \ZZ_{+}$. Let $X \neq \varnothing$.
 	\begin{enumerate}[label=(\alph*)]
-		\item If $m \leq n$, find and injective map $f: X^m \to X^m$.
+		\item If $m \leq n$, find and injective map $f: X^m \to X^n$.
+		\begin{proof}
+			Define $f: X^m \to X^n$ by the map $(x_1, \ldots, x_m) \mapsto
+			(x_1, \ldots, x_m, 0,\ldots, 0)$ where the remaining trailing zeros
+			are exactly $n - m$. Thus, if $n - m = 0$ there are no trailing zeros,
+			and if $n - m = 3$ there are three trailing zeros. To show that 
+			$f$ is injective let $(p_1, \ldots, p_m)$ and $(t_1, \ldots, t_m)$
+			be elements of $X^m$ such that both are mapped by $f$ onto
+			the element $(s_1, \ldots, s_m, 0, \ldots, 0) \in X^n$. By definition
+			of $f$, $p_i = s_i$ and $t_i = s_i$ for $1 \leq i \leq m$. Thus,
+			$p_i = t_i$ for $1 \leq i \leq m$. Hence, $(p_1, \ldots p_m) = 
+			(t_1, \ldots, t_m)$. Therefore, $f$ is injective.
+		\end{proof}
 		\item Find a bijective map $g: X^m \times X^n \to X^{m + n}$.
+		\begin{proof}
+			Define $g: X^m \times X^n \to X^{m + n}$ to be the map such that 
+			$((p_1, \ldots, p_m), (s_1, \ldots, s_n))$ is mapped to $(p_1, \ldots, p_m, s_1, \ldots, s_n)$.
+			To show that it is surjective, consider the element 
+			$(y_1, \ldots, y_m, r_1, \ldots, r_n)$ of $X^{m + n}$. Note 
+			$(y_1, \ldots, y_m) \in X^m$ and $(r_1, \ldots, r_n) \in X^n$,
+			as such the element $((y_1, \ldots, y_m), (r_1, \ldots, r_n))$ is in $X^m \times X^n$,
+			and $g$ maps this element to $(y_1, \ldots, y_m, r_1, \ldots, r_n)$
+			by construction. Therefore, $g$ is surjective.
+			
+			Now, consider two different elements of $X^m \times X^n$ such
+			that they are both mapped to the same element of $X^{m + n}$ under
+			$g$. Due to how $g$ was constructed, note that the elements of 
+			$X^m \times X^n$ must be equal, and thus $g$ is injective also.
+		\end{proof}
 		\item Find an injective map $h: X^n \to X^{\omega}$.
+		\begin{proof}
+			Define $h: X^n \to X^\omega$ by the map
+			$(x_1, \ldots, x_n) \mapsto (x_1, \ldots, x_n, 0, \ldots)$.
+			Note $h$ must be injective since if $(x_1, \ldots, x_n)$ and 
+			$(y_1, \ldots, y_n)$ are both mapped to the same element in
+			$X^\omega$ then $y_i = x_i$ for $1 \leq i \leq n$.
+			Therefore, $h$ is injective.
+		\end{proof}
 		\item Find a bijective map $k: X^n \times X^{\omega} \to X^{\omega}$.
+		\begin{proof}
+			Define $k: X^n \times X^\omega$ by the map 
+			$((p_1, \ldots, p_n), (x_1, \ldots)) \mapsto (p_1, \ldots, p_n, x_1, \ldots)$.
+			To show that $k$ is surjective, consider the element 
+			$(s_1, \ldots, s_n, s_{n+1}, \ldots) \in X^\omega$, and note 
+			$(s_1, \ldots, s_n)$ is an element of $X^n$. Thus, $((s_1, \ldots, s_n), (s_{n + 1}, \ldots))$
+			is an element of $X^n \times X^\omega$ that is mapped onto 
+			$(s_1, \ldots, s_n, s_{n + 1}, \ldots)$. Thus, $k$ is surjective.
+
+			Now, assume that $((t_1, \ldots, t_n), (x_1, \ldots))$ and 
+			$((v_1, \ldots, v_n), (x_1, \ldots))$ are two elements of 
+			$X^n \times X^\omega$ such that they are both mapped to 
+			$(k_1, \ldots, k_n, x_1, \ldots) \in X^\omega$. Then, by construction
+			of $k$, $t_i = k_i$ and $v_i = k_i$ for $1 \leq i \leq k$, and 
+			$x_i$ are all equal. In particular, this implies
+			$(t_1, \ldots, t_n) = (v_1, \ldots, v_n)$, and thus
+			the two elements of $X^n \times X^\omega$ are also equal. 
+			Therefore, $k$ is also injective, and as such we conclude 
+			$k$ is bijective.
+ 		\end{proof}
 		\item Find a bijective map $l: X^{\omega} \times X^{\omega} \to X^{\omega}$.
-		\item If $A \subset B$, find and injective map $m: (A^\omega)^n \to B^{\omega}$.
+		\begin{proof}
+			Define $l: X^\omega \times X^\omega \to X^\omega$ by the map
+			$((x_1, x_2, \ldots), (y_1, y_2, \ldots)) \mapsto (x_1, y_1, x_2, y_2, \ldots)$.
+			To show that $l$ is surjective, consider the element 
+			$(s_1, s_2, \ldots) \in X^\omega$ and note that 
+			$s_{2i - 1} \in X$ and $s_{2i} \in X$ for all $i \in \ZZ_{+}$. Thus,
+			$(s_1, s_3, \ldots) \in X^\omega$ and $(s_2, s_4) \in X^\omega$.
+			Hence, we note that $((s_1, s_3, \ldots), (s_2, s_4))$ is an element of $X^\omega \times X^\omega$
+			that is mapped onto $(s_1, s_2, \ldots)$ by $k$. Thus,
+			$k$ is surjective.
+
+			To show $k$ is injective, consider two elements in $X^\omega \times X^\omega$,
+			say $x, y$,
+			such that they are both mapped to the same element of $X^\omega$, $z$.
+			This would imply that the elements in the first tuple of $x$ and $y$ are 
+			the odd elements in $z$, and the elements of the second tuple of $x$ and $y$
+			are the even elements of $z$. As such, element wise each tuple of $x$ and $y$
+			are equal, which implies $x$ and $y$ must be the same element of $X^\omega \times X^\omega$
+			since they are element wise the same. As such, $l$ is also injective, and thus
+			we conclude $l$ is bijective.
+		\end{proof}
+		\item If $A \subset B$, find an injective map $m: (A^\omega)^n \to B^{\omega}$.
+		\begin{proof}
+			Define $m: (A^\omega)^n \to B^\omega$ by the map
+			$(\xx_1, \xx_2, \ldots, \xx_n) \mapsto (\xx_{11}, \xx_{21}, \ldots, \xx_{n1}, \xx_{12}, \ldots)$.
+			Where $\xx_{ij}$ refers to the $j$th element of the $i$th tuple. 
+			To show that this map is injective, consider the elements 
+			$(\xx_1, \ldots, \xx_n)$ and $(\yy_1, \ldots, \yy_n)$ of $(A^\omega)^n$ such that 
+			they both are mapped by $m$ onto the element 
+			$(b_1, b_2, \ldots)$ of $B^\omega$. Note 
+			$\xx_{ij}, \yy_{ij} \in B$, and thus by construction of $m$, it must be 
+			that each element of $\xx$ and $\yy$ must be the same, implying that these sequence
+			elements of $(A^\omega)^n$ are element wise equal, which is the same as them
+			being equal. Therefore, $m$ is injective.  
+		\end{proof}
 	\end{enumerate}
 	
 	\exnumber{5.} Which of the following subsets of $\RR^{\omega}$ can be expressed as the Cartesian product 
 	of subsets of $\RR$?
 	\begin{enumerate}[label=(\alph*)]
 		\item $\{\mathbf{x} \mid x_i \text{ is an integer for all } i\}$.
+		\begin{proof}
+			This subset of $\RR^\omega$ can be expressed as the Cartesian
+			product of subsets of $\RR$. In particular, it can be expressed
+			as $\ZZ^\omega$.
+		\end{proof}
 		\item $\{\mathbf{x} \mid x_i \geq i \text{ for all } i\}$.
+		\begin{proof}
+			This subset of $\RR^\omega$ cannot be expressed as the Cartesian
+			product of subsets of $\RR$.
+		\end{proof}
 		\item $\{\mathbf{x} \mid x_i \text{ is an integer for all } i \geq 100\}$.
+		\begin{proof}
+			This subset of $\RR^\omega$ can be expressed as the Cartesian product
+			of subsets of $\RR$. In particular, it could be expressed
+			as $\RR \times \cdots \times \RR \times \ZZ \times \ZZ \times \cdots$,
+			where the first 99 subsets are $\RR$ itself, and the rest will be 
+			$\ZZ$. 
+		\end{proof}
 		\item $\{\mathbf{x} \mid x_2 = x_3\}$.
+		\begin{proof}
+			This subset of $\RR^\omega$ cannot be expressed as the Cartesian
+			product of subsets of $\RR$.
+		\end{proof}
 	\end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

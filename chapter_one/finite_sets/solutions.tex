@@ -1,0 +1,181 @@
+\documentclass[12pt]{article}
+
+\input{../../preamble.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\title{Finite Sets Solutions}
+	\author{Solutions by: Raindrops\_drop}
+	\date{October 11, 2026}
+	\maketitle
+	
+	\section*{Exercises}
+
+    \exnumber{1.} 
+    \begin{enumerate}[label=(\alph*)]
+        \item Make a list of all the injective maps 
+        $$
+        f: \{1, 2, 3\} \to \{1, 2, 3, 4\}.
+        $$
+        Show that none is bijective. (This constitutes a \textit{direct}
+        proof that a set $A$ of cardinality three does not have cardinality
+        four).
+        \begin{proof}
+            Define $f_1$ such that $f_1(i) = i$, note this is not surjective since
+            no $i$ will map onto 4.
+
+            Define $f_2$ such that $f_2(i) = i + 1$, note this is not surjective 
+            since no $i$ will map onto 1.
+
+            Define $f_3$ such that $f_3(1) = 1$, and $f_3(i) = i + 1$ for 
+            the other $i$. Note this is not surjective since no $i$ will map
+            onto 2.
+
+            Define $f_4$ such that $f_4(1) = 1$, $f_4(2) = 2$, and 
+            $f_4(3) = 4$. Note this is not surjective since no $i$ will map onto 3.
+
+            For each $f_i$ we can construct 5 other injective functions by cycling
+            what element each one gets mapped onto. Note, however, that this
+            cycling process does not change what element in the co-domain 
+            remains not covered by $f_i$. As such, we conclude that 
+            there exists no bijective correspondence between these two sets.
+        \end{proof}
+        \item How many injective maps 
+        $$
+        f: \{1, \ldots, 8\} \to \{1, \ldots, 10\}
+        $$
+        are there? (You can see why one would not wish to try to prove 
+        directly that there is no bijective correspondence between these
+        sets).
+        \begin{proof}
+            Note that under an injective map $f$, the element 
+            $1$ has 10 possible choices on what to get mapped onto, the 
+            element 2 then has 9 possible choices on what to get mapped onto.
+            Following this logic, we note that there are 
+            $10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3$
+            possible injective maps, or simply $10!/2$ which is equivalent 
+            to 1,814,400.
+        \end{proof}
+    \end{enumerate}
+
+    \exnumber{2.} Show that if $B$ is not finite and $B \subseteq A$,
+    then $A$ is not finite.
+
+    \begin{proof}
+        Let $B \subseteq A$ such that $B$ is not finite. Assume for contradiction
+        $A$ is finite. Then, there exists an injective function 
+        $f: A \into S_n$ where $S_n$ is a section of the positive integers.
+        Since $B \subseteq A$, note the restriction of $f$, $g: B \into S_n$
+        is also injective. This implies $B$ is finite, which is a contradiction.
+        Therefore, it must be $A$ is not finite. 
+    \end{proof}
+
+    \exnumber{3.} Let $X$ be the two-element set $\{0, 1\}$. Find a bijective
+    correspondence between $X^\omega$ and a proper subset of itself. 
+
+    \begin{proof}
+        \comment{Section not finished}
+    \end{proof}
+
+    \exnumber{4.} Let $A$ be a non-empty finite simply ordered set.
+    \begin{enumerate}[label=(\alph*)]
+        \item Show that $A$ has a largest element. [Hint: Proceed by induction
+        on the cardinality of $A$].
+        \begin{proof}
+            If $A$ has cardinality $1$, then $A$ has only one element,
+            and thus said element is also the largest element. Assume now
+            for induction that a non-empty finite simply ordered set of cardinality $n$ has a largest
+            element. Now consider $A$ with cardinality $n + 1$. 
+            Let $a \in A$ and define $A_n = A - \{a\}$, noting $A_n$ has
+            cardinality $n$. By our induction assumption, $A_n$ has a largest
+            element, call it $a_n$. If $a_n > a$ then $a_n$ is the largest
+            element of $A$, otherwise if $a_n < a$, then since $a_n$
+            is the largest element of $A_n$, we have $a_n \geq p$ for all
+            $p \in A_n$, implying thus $a > p$ for all $p \in A_n$.
+            As such, $a$ is the largest element of $A$. In either case 
+            one can conclude $A$ has a largest element.
+        \end{proof}
+        \item Show that $A$ has the order type of a section of the positive
+        integers.
+        \begin{proof}
+            Since $A$ is finite, there exists a bijection from $A$ 
+            onto a section of the positive integers $S_n$.
+            If the cardinality of $A$ is one, then the single existing
+            bijection is trivially order preserving.
+            Assume for induction that for a non-empty finite simply order set $A$
+            of cardinality $n$, it has the same order type as $S_n$, i.e.,
+            there exists an order preserving bijection between the two sets.
+            Consider now the case $A$ has cardinality $n + 1$. 
+            Let $a \in A$ be the largest element of $A$ (which exists by part (a)), 
+            and consider the subset $A_n \subset A$
+            defined as $A_n = A - \{a\}$. Note by our induction assumption
+            there exists an order preserving bijection $g: A_n \to S_n$.
+            Define now $f: A \to S_{n+1}$ as $f(p) = g(p)$ for $p \in A_n$
+            and $f(a) = n + 1$. Note $f$ is order preserving on all $p \in A_n$
+            and since $a$ and $n + 1$ are the largest element of $A$ and
+            $S_n$ respectively, $f$ is also order preserving with respect to
+            them. Thus, $f$ is an order preserving bijection between
+            $A$ and $S_{n+1}$.
+        \end{proof} 
+    \end{enumerate}
+
+    \exnumber{5.} If $A \times B$ is finite, does it follow that $A$ and $B$
+    are finite?
+
+    \begin{proof}
+        It does not follow from $A \times B$ that $A$ and $B$ are finite.
+        Consider the sets $A = \RR^\omega$ and $B = \emptyset$, then
+        $A \times B = \emptyset$. Thus, we noted an example of a 
+        finite set created by the Cartesian product of an infinite set
+        and the empty set. 
+    \end{proof}
+
+    \exnumber{6.} 
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $A = \{1, \ldots, n\}$. Show there is a bijection of 
+        $\pset(A)$ with the Cartesian product $X^n$, where $X$ is the 
+        two-element set $X = \{0, 1\}$.
+        \begin{proof}
+            Define the function $f: \pset(A) \to X^n$ by 
+            the map $S \subseteq A$ is mapped to $(x_1, x_2, \ldots, x_n)$
+            where $x_i = 1$ if $i \in S$ and $x_i = 0$ otherwise,
+            noting $1 \leq i \leq n$. To show that this function is 
+            injective, assume $S_1, S_2 \subseteq A$ such that
+            $f$ maps both subsets of $A$ onto the same element of 
+            $X^n$. Then, if $i \in S_1$, it implies $x_i = 1$,
+            also making it that $i \in S_2$. Thus, $S_1 \subseteq S_2$.
+            By an analogous argument we have $S_2 \subseteq S_1$, and 
+            thus $S_1 = S_2$. Hence, $f$ is injective.
+            
+            To show $f$ is surjective, let $(x_1, \ldots, x_n) \in X^n$
+            be an arbitrary element of $X^n$. Let $I$ be the set contain all the indexes
+            $i$ such that $x_i = 1$. Note then $I \subseteq A$, and thus
+            $I \in \pset(A)$. In particular, $f(I) = (x_1, \ldots, x_n)$
+            by definition of $f$. Therefore, $f$ is also surjective, and we 
+            thus conclude $f$ is a bijection. 
+        \end{proof}
+        \item Show that if $A$ is finite, then $\pset(A)$ is finite.
+        \begin{proof}
+            It was proved in an earlier section that if a set has $n$ 
+            elements, its power set contains $2^n$ elements. 
+            Thus, if $A$ is finite and has $n$ elements, then
+            $\pset(A)$ has $2^n$ elements. In particular, this
+            shows $\pset(A)$ is finite if $A$ is finite.
+        \end{proof}
+    \end{enumerate}
+
+    \exnumber{7.} If $A$ and $B$ are finite, show that the set of 
+    functions $f: A \to B$ is finite.
+    \begin{proof}
+        Let $A$ and $B$ be finite sets. Note that any function
+        $f: A \to B$ must map every element of $A$ to some element
+        in $B$. As such, if $A$ has cardinality $n$ and $B$ has cardinality
+        $m$, each element of $A$ has $m$ possible elements it can be 
+        mapped onto. Thus, there must be $m^n$ total 
+        distinct functions that map $A$ to $B$. As such,
+        there is a finite total amount of functions $f: A \to B$.
+    \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

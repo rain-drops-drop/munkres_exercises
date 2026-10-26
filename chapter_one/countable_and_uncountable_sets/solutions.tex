@@ -1,0 +1,187 @@
+\documentclass[12pt]{article}
+
+\input{../../preamble.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\title{Countable and Uncountable Sets Solutions}
+	\author{Solutions by: Raindrops\_drop}
+	\date{October 11, 2026}
+	\maketitle
+	
+	\section*{Exercises}
+
+	\exnumber{1.} Show that $\QQ$ is countably infinite.
+
+	\begin{proof}
+		Recall $\ZZ$ is countably infinite. Note $\ZZ - \{0\}$
+		is an infinite subset of $\ZZ$, and thus by Theorem 7.3 the set 
+		$\ZZ - \{0\}$ is countable.
+		Furthermore, the set $\ZZ \times (\ZZ - \{0\})$ is also countable
+		by Theorem 7.6. Thus, define $f: \ZZ \times (\ZZ - \{0\}) \to \QQ$
+		by the equation $f(n, m) = n/m$. Note that $f$ is a surjection
+		since for any $a/b \in \QQ$, $a \in \ZZ$ and $b \in \ZZ - \{0\}$.
+		Given that $\ZZ \times (\ZZ - \{0\})$ is countable, there exists
+		a surjection $g: \ZZ_{+} \to \ZZ \times (\ZZ - \{0\})$.
+		As such, $f \circ g: \ZZ_{+} \to \QQ$ is a surjection. Therefore,
+		$\QQ$ is countable. Since $\ZZ \subset \QQ$, we further conclude
+		$\QQ$ is countably infinite. 
+	\end{proof}
+
+	\exnumber{2.} Show that the maps $f$ and $g$ of Examples 1 and 2
+	are bijections. 
+
+	\begin{proof}
+		The map $f: \ZZ \to \ZZ_{+}$ in Example 1 is defined as 
+		$$
+		f(n) = 
+		\begin{cases}
+			2n & n > 0, \\
+			-2n + 1 & n \leq 0.
+		\end{cases}
+		$$
+		To show $f$ is an injective map, let $m, n \in \ZZ$ such
+		that $f(n) = f(m) = a$. In particular, note $m$ and 
+		$n$ must either be both positive or both non-positive. This is 
+		because if without loss of generality $n$ is positive and $m$
+		is non-positive we have $f(n) = 2n$ and $f(m) = -2m + 1$. 
+		In particular, $2n = -2m + 1 = a$, which cannot be true
+		since $2n$ is even and $-2m + 1$ is odd, and a positive integer
+		cannot be both even and odd. Thus, if both $n$ and $m$ are positive,
+		then $2n = 2m$ by assumption, which implies $n = m$.
+		Hence, $f$ is injective. If $n, m$ are both non-positive,
+		then $-2n + 1 = -2m + 1$. This implies $-2n = -2m$, and 
+		thus $n = m$, which allows us to conclude $f$ is injective.
+
+		To show $f$ is surjective, consider $a \in \ZZ_{+}$. If 
+		$a$ is even, $a = 2n$ for some $n \in \ZZ_{+}$, 
+		as such there exists such $n \in \ZZ$ that is positive and is 
+		mapped by $f$ onto $a$. If $a$ is odd, let $n = (1 - a)/2$.
+		Since $a$ is odd, $1 - a$ is equivalent to $1 - 2k - 1$ for 
+		some $k \in \ZZ$, and thus $1 - a$ is an even integer,
+		implying $(1 - a)/2$ is also an integer. Since $a \geq 1$,
+		$1 - a \leq 0$, implying $(1-a)/2 \leq 0$ also. Thus,
+		$n \in \ZZ$ is a non-positive integer which is mapped by $f$
+		onto $a$. Therefore, $f$ is surjective, and thus we conclude 
+		$f$ is a bijection.
+
+		The map $g: A \to \ZZ_{+}$ is defined 
+		by the formula
+		$$
+		g(n, m) = \frac{1}{2}(n - m)n + m,
+		$$
+		where $A$ is the  subset of $\ZZ_{+} \times \ZZ_{+}$ consisting
+		of pairs $(n, m)$ for which $m \leq n$.  
+		\comment{Haven't proved that this g function is a bijection.}
+	\end{proof}
+
+	\exnumber{3.} Let $X$ ve the two-element set $\{0, 1\}$. Show there is 
+	a bijective correspondence between the set $\pset(\ZZ_{+})$ abd the 
+	cartesian product $X^\omega$.
+
+	\exnumber{4.}
+	\begin{enumerate}[label=(\alph*)]
+		\item A real number $x$ is said to be \textbf{algebraic} 
+		(over the rationals) if it satisfies some polynomial equation 
+		of positive degree 
+		$$
+		x^n + a_{n - 1}x^{n - 1} + \cdots + a_1 x + a_0 = 0
+		$$
+		with rational coefficients $a_i$. Assuming that each polynomial
+		equation has only finitely many roots, show that the set 
+		of algebraic numbers is countable. 
+		\item A real number is said to be \textbf{transcendental} if it is 
+		not algebraic. Assuming that the reals are uncountable, show that 
+		the transcendental numbers are uncountable. (It is a somewhat 
+		surprising fact that only two transcendental numbers are familiar
+		to us: $e$ and $\pi$. Even proving these two numbers transcendental
+		is highly non-trivial).
+	\end{enumerate}
+
+	\exnumber{5.} Determine, for each of the following sets, whether or 
+	not it is countable. Justify your answers.
+	\begin{enumerate}[label=(\alph*)]
+		\item The set $A$ of all functions $f: \{0, 1\} \to \ZZ_{+}$.
+		\item The set $B_n$ of all functions $f: \{1, \ldots, n\} \to \ZZ_{+}$.
+		\item The set $C = \bigcup_{n \in \ZZ_{+}} B_n$.
+		\item The set $D$ of all functions $f: \ZZ_{+} \to \ZZ_{+}$.
+		\item The set $E$ of all functions $f: \ZZ_{+} \to \{0, 1\}$.
+		\item The set $F$ of all functions $f: \ZZ_{+} \to \{0, 1\}$ that
+		are "eventually zero." [We say that $f$ is \textbf{eventually zero} 
+		uf there is a positive integer $N$ such that $f(n) = 0$ for all
+		$n \geq N$].
+		\item The set $G$ of all functions $f: \ZZ_{+} \to \ZZ_{+}$ that 
+		are eventually 1.
+		\item The set $H$ of all functions $f: \ZZ_{+} \to \ZZ_{+}$ that
+		are eventually constant. 
+		\item The set $I$ of all two-element subsets of $\ZZ_{+}$.
+		\item The set $J$ of all finite subsets of $\ZZ_{+}$. 
+	\end{enumerate}
+
+	\exnumber{6.} We say that two sets $A$ and $B$ \textbf{have the same
+	cardinality} if there is a bijection of $A$ with $B$.
+	\begin{enumerate}[label=(\alph*)]
+		\item Show that if $B \subseteq A$ and if there is an injection
+		$$
+		f: A \into B,
+		$$
+		then $A$ and $B$ have the same cardinality. [Hint: Define $A_1 = A$,
+		$B_1 = B$, and for $n > 1$, $A_n = f(A_{n - 1})$ and $B_n = f(B_{n - 1})$.
+		Note that $A_1 \supseteq B_1 \supseteq A_2 \supseteq B_2 \supseteq \cdots$.
+		Define a bijection $h: A \to B$ by the rule
+		$$
+		h(x) = 
+		\begin{cases}
+			f(x) & \text{if } x \in A_n - B_n \text{ for some } n, \\
+			x & \text{otherwise.}]
+		\end{cases}
+		$$
+		\item 
+		\begin{theorem}
+			(Schroeder-Bernstein Theorem) If there are injections $f: 
+			A \into C$ and $g: C \into A$, then $A$ and $C$ have the 
+			same cardinality.  	
+		\end{theorem}
+	\end{enumerate}
+
+	\exnumber{7.} Show that the sets $D$ and $E$ of Exercise 5. have the 
+	same cardinality.
+
+	\exnumber{8.} Let $X$ denote the two-element set $\{0, 1\}$;
+	let $\mathcal{B}$ be the set of countable subsets of $X^\omega$.
+	Show that $X^\omega$ and $\mathcal{B}$ have the same cardinality.
+
+	\exnumber{9.} 
+	\begin{enumerate}[label=(\alph*)]
+		\item The formula
+		$$
+		\begin{aligned}
+			h(1) &= 1  \\
+			h(2) &= 2  \\
+			h(n) &= [h(n + 1)]^2 - [h(n - 1)]^2 \hspace{5mm} n \geq 2
+		\end{aligned}
+		$$
+		is not one to which the principle of recursive definition 
+		applies. Show that nevertheless there does exists a function 
+		$h: \ZZ_{+} \to \RR$ satisfying this formula. [Hint: Reformulate
+		the formula so that the principle will apply and require $h$ to 
+		be positive].
+
+		\item Show that the formula in part (a) does not determine $h$
+		uniquely. [Hint: If $h$ is a positive function satisfying the formula 
+		let $f(i) = h(i)$ for $i \neq 3$, and let $f(3) = -h(3)$].
+		
+		\item Show that there is no function $f: \ZZ_{+} \to \RR$ satisfying
+		the formula 
+		$$
+		\begin{aligned}
+			h(1) &= 1  \\
+			h(2) &= 2  \\
+			h(n) &= [h(n + 1)]^2 + [h(n - 1)]^2 \hspace{5mm} n \geq 2
+		\end{aligned}
+		$$
+	\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
